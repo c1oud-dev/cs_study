@@ -3,12 +3,85 @@ layout: default
 title: "CS 정리 – 홈"
 ---
 
+<!-- Hero & Category Styles -->
+<style>
+  /* Hero */
+  .hero {
+    padding: 3rem 2rem;
+    background: #fff;
+    text-align: center;
+  }
+  .hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  .hero p {
+    font-size: 1.125rem;
+    color: #555;
+    margin-bottom: 1.5rem;
+  }
+  .search-input {
+    padding: 0.75rem 1rem;
+    width: 300px;
+    max-width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+  }
+
+  /* Category Section */
+  .category-section {
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+  }
+  .category-section h2 {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+  .category-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 1rem;
+    justify-items: center;
+  }
+  .category-card {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: #0366d6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #fff;
+    font-size: 0.9rem;
+    text-align: center;
+    padding: 1rem;
+    transition: background 0.2s;
+  }
+  .category-card:hover {
+    background: #0255a5;
+  }
+
+  /* Responsive */
+  @media (max-width: 600px) {
+    .hero { padding: 2rem 1rem; }
+    .search-input { width: 100%; }
+    .category-grid { grid-template-columns: repeat(auto-fill, minmax(80px, 1fr)); }
+    .category-card { width: 80px; height: 80px; font-size: 0.8rem; }
+  }
+</style>
+
+<!-- Hero Section -->
 <section class="hero">
   <h1>CS 개념 학습 자료</h1>
   <p>아래 카테고리에서 학습하고 싶은 주제를 선택하거나 검색해보세요.</p>
   <input type="text" id="category-search" class="search-input" placeholder="카테고리 검색..." />
 </section>
 
+<!-- Category Cards -->
 <section class="category-section">
   <h2>Category</h2>
   <div class="category-grid" id="category-grid">
@@ -36,8 +109,8 @@ title: "CS 정리 – 홈"
   </div>
 </section>
 
+<!-- Search Script -->
 <script>
-  // 카테고리 검색 필터
   document.getElementById('category-search').addEventListener('input', function(e) {
     const filter = e.target.value.toLowerCase();
     document.querySelectorAll('#category-grid .category-card').forEach(card => {
