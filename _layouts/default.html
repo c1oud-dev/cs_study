@@ -10,7 +10,7 @@
     a { text-decoration: none; color: inherit; }
 
     /* Header */
-    header { padding: 1rem 2rem; background: #fff; border-bottom: 1px solid #ddd; }
+    header { padding: 1rem 2rem; background: #fff; border-bottom: 1px solid #ddd; margin-right: 200px; }
     .logo { font-size: 1.5rem; font-weight: bold; color: #0366d6; }
 
     /* Layout Container */
@@ -71,14 +71,14 @@
   </div>
 
   <script>
-    // 아코디언 토글 indicator 업데이트
+    // Accordion toggle indicator update
     document.querySelectorAll('details').forEach(detail => {
       const indicator = detail.querySelector('.indicator');
       detail.addEventListener('toggle', () => {
         indicator.textContent = detail.open ? '접기' : '펼치기';
       });
     });
-    // 홈 페이지 카테고리 검색 필터
+    // Home category search filter
     const searchInput = document.querySelector('.search-input');
     if (searchInput) {
       searchInput.addEventListener('input', e => {
