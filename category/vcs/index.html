@@ -1,0 +1,204 @@
+<!-- internet.html -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>VCS</title>
+  <style>
+    body { 
+        margin: 0; 
+        font-family: sans-serif; 
+        line-height: 1.6; 
+    }
+    .header { 
+        padding: 2rem 1rem 1rem; 
+        background: #fff; 
+        border-bottom: 1px solid #ddd; 
+        text-align: left; 
+        margin-right: 220px; 
+        margin-left: 10px; 
+    }
+    .header p.breadcrumb { 
+        margin: 0 0 0.5rem; 
+    }
+    .header p.breadcrumb a { 
+        text-decoration: none; 
+        color: #0366d6; 
+        font-size: 0.9rem; 
+    }
+    .header h1 { 
+        margin: 0; 
+        font-size: 1.75rem; 
+    }
+    .header p.description { margin: 
+        0.5rem 0 0; 
+        font-size: 1rem; 
+        color: #555; 
+    }
+    .container { 
+        display: flex; 
+        flex-wrap: wrap; 
+    }
+    .content { 
+        flex: 1; 
+        padding: 1rem; 
+        margin: 0 240px 0 1rem; 
+    }
+    .sidebar { 
+        position: fixed; 
+        top: 0; right: 0; width: 180px; height: 100vh; 
+        background: #f5f5f5; 
+        padding: 1rem; 
+        box-shadow: -2px 0 5px rgba(0,0,0,0.1); 
+        overflow-y: auto; 
+    }
+    .sidebar ul { 
+        list-style: none; 
+        padding: 0; 
+        margin: 0; 
+    }
+    .sidebar li { 
+        margin-bottom: 0.5rem; 
+    }
+    .sidebar a { 
+        text-decoration: none; 
+        color: #0366d6; 
+        display: block; 
+        padding: 0.25rem 0; 
+    }
+    .sidebar a.active { 
+        font-weight: bold; 
+    }
+    details { 
+        border: 1px solid #ddd; 
+        border-radius: 6px; 
+        margin-bottom: 1.5rem; 
+        background: #fff; 
+    }
+    summary { 
+        cursor: pointer; 
+        padding: 0.75rem 1rem; 
+        display: flex; 
+        justify-content: space-between; 
+        align-items: center; 
+        font-size: 1.25rem; }
+    summary a {
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    color: #0366d6;
+    cursor: pointer;
+    }
+    summary a:hover {
+        color: #024e9a;
+    }
+    .indicator { 
+        font-size: 0.875rem; 
+        color: #0366d6; 
+    }
+    .accordion-content { 
+        padding: 0 1rem 1rem; 
+    }
+    /* 아코디언 콘텐츠 안의 모든 리스트 글씨를 0.9rem로 줄이기 */
+    .accordion-content ul {
+      font-size: 0.9rem;
+      line-height: 1.4; /* 필요하다면 줄 간격도 조절 */
+    }
+    /* 리스트 항목 사이 여백 좁히기 */
+    .accordion-content ul li {
+      margin-bottom: 0.25rem;
+    }
+    /* 반응형 */
+    @media screen and (max-width: 768px) {
+      .container { flex-direction: column; }
+      .sidebar { position: static; width: 100%; height: auto; box-shadow: none; margin-bottom: 1rem; }
+      .content { margin: 0; }
+      .header { margin-right: 0; }
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <p class="breadcrumb"><a href="../../home.html">🏠 홈으로</a></p>
+    <h1>VCS(Version Control System)</h1>
+    <p class="description">
+        버전 제어 시스템(VCS)은 코드나 문서의 변경 사항을 시간 경과에 따라 관리하고 추적하여 여러 사용자가
+        프로젝트에서 효율적으로 협업할 수 있도록 하는 도구이다. VCS는 파일의 모든 변경 사항을 기록하여
+        개발자가 이전 버전으로 되돌리고, 변경 사항을 비교하고, 수정 내역을 관리할 수 있도록 한다. VCS는
+        저장소가 중앙 서버에 호스팅 되는 중앙 집중식(예: Subversion) 또는 각 사용자가 저장소의 전체 사본을 
+        갖는 분산식(예: Git, Mercurial)으로 나뉜다. 버전 제어는 동시 변경 사항을 원활하게 관리하고 충돌을
+        해결하여 협업을 촉진하고, 코드 무결성을 향상시키며, 지속적인 통합을 지원한다.
+    </p>
+  </header>
+
+  <div class="container">
+    <main class="content">
+
+      <details open>
+        <summary><a href="category/vcs/git.html">Git</a> <span class="indicator">펼치기</span></summary>
+        <div class="accordion-content">
+          <p>Git은 규모에 관계없이 모든 프로젝트를 빠르고 효율적으로 처리하도록 설계된 분산 버전 관리 시스템이다.
+            2025년 리누스 토발즈가 개발한 Git은 SW 개발 과정에서 소스 코드의 변경 사항을 추적하여 여러 개발자가
+            *비선형적인 개발 환경에서 함께 작업할 수 있도록 지원한다. Git은 모든 변경 사항에 대한 완전한 히스토리를
+            유지하여 버전 간 *롤백 및 비교를 용이하게 한다. 분산 환경 덕분에 각 개발자는 저장소의 전체 사본을 보유하여
+            오프라인 작업 및 백업이 가능하다. Git의 주요 기능으로는 *브랜칭 및 병합 기능, 커밋을 위한 *스테이징 영역,
+            *풀 리퀘스트와 같은 협업 워크플로 지원 등이 있다. 빠른 속도, 유연성, 그리고 강력한 브랜칭 및 병합 기능 덕분에
+            Git은 SW 개발, 특히 오픈 소스 프로젝트와 팀 협업 분야에서 가장 널리 사용되는 VCS로 자리매김했다.
+
+        </p>
+
+        <ul>
+          <li><strong>비선형적:</strong> 개발 과정이 일직선(요구사항→설계→구현→테스트→배포)의 순차적인 흐름만 따르지 않는다는 뜻</li>
+          <ul>
+            <li>즉, 기능 구현 중간에 설계를 수정하거나, 테스트를 하다가 바로 코드 구조를 바꾸는 등 여러 단계가 얽히고설켜 반복·병행되는 형태를 가리킨다.</li>
+          </ul>
+          <li><strong>롤백(Rollback):</strong> 잘못된 커밋이나 배포 후 문제 발생 시, 이전 안정 상태로 변경 이력을 되돌리는 작업 </li>
+          <li><strong>브랜칭(Branching):</strong> 주요 코드베이스에서 분기된 독립된 작업 공간을 만들어 기능 개발·버그 수정 등을 병행할 수 있게 하는 Git 기능</li>
+          <li><strong>스테이징 영역(Staging Area):</strong> <em>git add</em> 명령으로 커밋 전 변경 파일을 임시로 모아 두는 공간으로, 어떤 변경을 커밋할지 선택할 수 있게 해 준다.</li>
+          <li><strong>풀 리퀘스트(Pull Request):</strong> 분기된 브랜치에서 작업한 내용을 메인 브랜치에 병합해 달라고 요청하는 절차로, 코드 리뷰와 자동 테스트를 거쳐 안전하게 통합한다.</li>
+        </ul>
+
+        </div>
+      </details>
+
+    </main>
+
+    <aside class="sidebar">
+      <nav>
+        <ul>
+          <li><a href="category/internet/index.html" class="active">Internet</a></li>
+          <li><a href="category/language/index.html">Language</a></li>
+          <li><a href="category/vcs/index.html">VCS</a></li>
+          <li><a href="category/repo_hosting_services/index.html">Repo Hosting Services</a></li>
+          <li><a href="category/postgresql/index.html">PostgreSQL</a></li>
+          <li><a href="category/relational_database/index.html">Relational Databases</a></li>
+          <li><a href="category/apis/index.html">APIs</a></li>
+          <li><a href="category/caching/index.html">Caching</a></li>
+          <li><a href="category/web_security/index.html">Web Security</a></li>
+          <li><a href="category/ci_cd/index.html">CI/CD</a></li>
+          <li><a href="category/databases/index.html">Databases</a></li>
+          <li><a href="category/scaling_databases/index.html">Scaling Databases</a></li>
+          <li><a href="category/architectural_patterns/index.html">Architectural Patterns</a></li>
+          <li><a href="category/design_and_deploymen_principle/index.html">Design and Development Principles</a></li>
+          <li><a href="category/containerization_and_virtualization/index.html">Containerization vs. Virtualization</a></li>
+          <li><a href="category/message_brokers/index.html">Message Brokers</a></li>
+          <li><a href="category/search_engines/index.html">Search Engines</a></li>
+          <li><a href="category/web_servers/index.html">Web Servers</a></li>
+          <li><a href="category/real_time_data/index.html">Real Time Data</a></li>
+          <li><a href="category/nosql_databases/index.html">NoSQL databases</a></li>
+          <li><a href="category/building_for_scale/index.html">Building for Scale</a></li>
+        </ul>
+      </nav>
+    </aside>
+  </div>
+
+  <script>
+    document.querySelectorAll('details').forEach(detail => {
+      const indicator = detail.querySelector('.indicator');
+      detail.addEventListener('toggle', () => {
+        indicator.textContent = detail.open ? '접기' : '펼치기';
+      });
+    });
+  </script>
+</body>
+</html>
