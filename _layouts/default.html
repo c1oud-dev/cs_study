@@ -30,11 +30,30 @@
     .indicator { font-size: 0.875rem; color: #0366d6; }
     .accordion-content { padding: 0 1rem 1rem; }
 
+    /* Hero Styles */
+    .hero { padding: 3rem 2rem; background: #fff; text-align: center; }
+    .hero h1 { font-size: 2.5rem; margin-bottom: 1rem; }
+    .hero p { font-size: 1.125rem; color: #555; margin-bottom: 1.5rem; }
+    .search-input { padding: 0.75rem 1rem; width: 300px; max-width: 100%; border: 1px solid #ccc; border-radius: 4px; font-size: 1rem; }
+
+    /* Category Section */
+    .category-section { max-width: 1000px; margin: 2rem auto; padding: 0 2rem; }
+    .category-section h2 { font-size: 1.75rem; margin-bottom: 1rem; text-align: center; }
+    .category-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 1rem; justify-items: center; }
+    .category-card { width: 100px; height: 100px; border-radius: 4px; background: #0366d6; display: flex; align-items: center; justify-content: center; text-decoration: none; color: #fff; font-size: 0.9rem; text-align: center; padding: 1rem; transition: background 0.2s; }
+    .category-card:hover { background: #0255a5; }
+
     /* Responsive */
     @media screen and (max-width: 768px) {
       .container { flex-direction: column; }
       main { margin-right: 0; }
       .sidebar { position: static; width: 100%; height: auto; box-shadow: none; margin-bottom: 1rem; }
+    }
+    @media screen and (max-width: 600px) {
+      .hero { padding: 2rem 1rem; }
+      .search-input { width: 100%; }
+      .category-grid { grid-template-columns: repeat(auto-fill, minmax(80px, 1fr)); }
+      .category-card { width: 80px; height: 80px; font-size: 0.8rem; border-radius: 4px; }
     }
   </style>
 </head>
@@ -59,6 +78,17 @@
         indicator.textContent = detail.open ? '접기' : '펼치기';
       });
     });
+    // 홈 페이지 카테고리 검색 필터
+    const searchInput = document.querySelector('.search-input');
+    if (searchInput) {
+      searchInput.addEventListener('input', e => {
+        const filter = e.target.value.toLowerCase();
+        document.querySelectorAll('.category-card').forEach(card => {
+          const text = card.textContent.toLowerCase();
+          card.style.display = text.includes(filter) ? 'flex' : 'none';
+        });
+      });
+    }
   </script>
 
 </body>
