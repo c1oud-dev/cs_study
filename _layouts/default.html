@@ -123,7 +123,9 @@
     <main>
       {{ content }}
     </main>
+    {%- unless page.sidebar == false -%}
     {% include sidebar.html %}
+    {%- endunless -%}
   </div>
 
   <script>
