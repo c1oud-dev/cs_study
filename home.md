@@ -1,6 +1,7 @@
 ---
 layout: default
 title: "CS 정리 – 홈"
+sidebar: false
 ---
 
 <!-- Hero & Category Styles -->
