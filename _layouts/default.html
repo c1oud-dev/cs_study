@@ -119,12 +119,14 @@
     <a href="/cs_study/home.html" class="logo">CS 정리</a>
   </header>
 
-  <div class="container">
-    <main>
+  <div class="container" style="display: flex; gap: 2rem;">
+    <main style="flex: 1;">
       {{ content }}
     </main>
     {%- unless page.sidebar == false -%}
-    {% include sidebar.html %}
+    <aside class="sidebar" style="width: 300px; flex-shrink: 0;">
+      {% include sidebar.html %}
+    </aside>
     {%- endunless -%}
   </div>
 
