@@ -8,57 +8,106 @@ title: "APIs"
 <section>
   <h2>APIs</h2>
   <p>
-    API(애플리케이션 프로그래밍 인터페이스)는 서로 다른 소프트웨어 애플리케이션이 서로 통신하고 상호작용할 수 있도록 하는 정의된 규칙과 프로토콜의 집합입니다. 개발자가 서비스, 애플리케이션 또는 플랫폼의 내부 작동 방식을 이해하지 않고도 해당 기능이나 데이터에 접근하고 조작할 수 있는 표준화된 방법을 제공합니다. API는 공개 또는 비공개로 제공되며, 일반적으로 서로 다른 시스템을 통합하고, 타사 개발을 용이하게 하며, 애플리케이션 간 상호 운용성을 지원하는 데 사용됩니다. 일반적으로 API에는 엔드포인트, 요청 메서드(GET, POST, PUT 등), 그리고 상호작용할 데이터 형식(JSON 또는 XML 등)이 포함됩니다.
+    API(Application Programming Interface)는 서로 다른 소프트웨어 애플리케이션이 서로 통신하고 상호작용할 수 있도록 하는 정의된 규칙과 프로토콜의 집합이다. 개발자가 서비스, 애플리케이션 또는 플랫폼의 내부 작동 방식을 이해하지 않고도 해당 기능이나 데이터에 접근하고 조작할 수 있는 표준화된 방법을 제공한다. API는 공개 또는 비공개로 제공되며, 일반적으로 서로 다른 시스템을 통합하고, 타사 개발을 용이하게 하며, 애플리케이션 간 상호 운용성을 지원하는 데 사용된다. 일반적으로 API에는 엔드포인트, 요청 메서드(GET, POST, PUT 등), 그리고 상호작용할 데이터 형식(JSON 또는 XML 등)이 포함된다.
   </p>
+  <p><strong>정리: API는 프로그램들이 서로 대화할 수 있게 하는 약속된 규칙집 </strong></p>
 </section>
 
 <details open>
-<summary><a href="category/repo_hosting_services/github.html">GitHub</a> <span class="indicator">펼치기</span></summary>
+<summary>API Authentication <span class="indicator">펼치기</span></summary>
 <div class="accordion-content">
-    <p>GitHub는 Git을 활용한 버전 관리 및 협업을 위한 웹 기반 플랫폼이다. Microsoft가 소유한 GitHub는 SW 개발을 위한
-    호스팅을 제공하고 기본적인 Git 기능 외의 다양한 기능을 제공한다. GitHub에는 프로젝트 관리, 코드 검토, 소셜 코딩
-    도구가 포함되어 있다. 주요 기능으로는 코드 저장을 위한 저장소, 변경 사항 제안 및 검토를 위한 풀 리퀘스트, 버그 작업
-    및 작업 추적을 위한 이슈, 워크플로 자동화를 위한 액션 등이 있다. 공개 및 비공개 저장소를 모두 지원하여 오픈소스
-    프로젝트와 비공개 개발에 널리 사용된다. 저장소 포킹 및 인라인 코드 주석과 같은 GitHub의 협업 기능은 팀 개발
-    및 커뮤니티 기여를 용이하게 한다. 광범위한 통합 기능과 광범위한 사용자 기반을 바탕으로 GitHub는 개발자를 위한 중심
-    *허브로 자리 잡았으며, 모든 규모의 SW 프로젝트를 위한 포트폴리오, 협업 플랫폼, 배포 도구 역할을 한다.
-</p>
+  <p>API 인증은 API에 액세스하려는 클라이언트의 신원을 확인하고, 권한이 있는 사용자 또는 애플리케이션만 API 리소스와 상호 작용할 수 있도록 하는 *프로세스이다. 일반적인 방법으로는 *API 키, *OAuth 2.0, *JSON 웹 토큰(JWT), *기본 인증, *OpenID Connect 등이 있다. 이러한 기술은 단순한 *토큰 기반 방식부터 인증과 권한 부여를 모두 처리하는 더욱 정교한 프로토콜까지 복잡성과 보안 수준이 다양하다. API 인증은 민감한 데이터를 보호하고, 무단 액세스를 차단하며, 사용량 추적을 지원하고, 리소스 액세스에 대한 세부적인 제어를 제공할 수 있다. 인증 방법은 보안 요구 사항, 클라이언트 유형, 구현 용이성, 확장성 요구 사항 등의 요인에 따라 달라진다. 상호 연결된 현대 소프트웨어 생태계에서 웹 서비스와 애플리케이션의 무결성, 보안 및 제어된 사용을 유지하려면 강력한 API 인증을 구현하는 것이 매우 중요하다.</p>
+  <p><strong>정리: API 인증은 권한 있는 사용자만 API를 쓸 수 있게 신원을 확인하는 절차</strong></p>
 
-<ul>
-    <li><strong>허브(hub):</strong> ‘중심 거점’이라는 의미로, 여러 개발자와 도구·프로젝트가 모여 서로 연결되고 교류하는 핵심 플랫폼을</li>
-    <ul>
-    <li>즉, GitHub가 개발 생태계의 중심축 역할을 한다는 비유적 표현</li>
-    </ul>
-    <li><strong>롤백(Rollback):</strong> 잘못된 커밋이나 배포 후 문제 발생 시, 이전 안정 상태로 변경 이력을 되돌리는 작업 </li>
-    <li><strong>브랜칭(Branching):</strong> 주요 코드베이스에서 분기된 독립된 작업 공간을 만들어 기능 개발·버그 수정 등을 병행할 수 있게 하는 Git 기능</li>
-    <li><strong>스테이징 영역(Staging Area):</strong> <em>git add</em> 명령으로 커밋 전 변경 파일을 임시로 모아 두는 공간으로, 어떤 변경을 커밋할지 선택할 수 있게 해 준다.</li>
-    <li><strong>풀 리퀘스트(Pull Request):</strong> 분기된 브랜치에서 작업한 내용을 메인 브랜치에 병합해 달라고 요청하는 절차로, 코드 리뷰와 자동 테스트를 거쳐 안전하게 통합한다.</li>
-</ul>
+  <ul>
+    <li><strong>프로세스(Process):</strong> 컴퓨터에서 실행 중인 프로그램 또는 작업의 흐름. 여기서는 인증을 진행하는 절차나 단계들을 의미.</li>
+    <li><strong>API 키(API Key):</strong> API 사용자를 식별하기 위한 고유 문자열. 요청 시 키를 포함해 서버가 사용자 신원을 확인.</li>
+    <li><strong>OAuth 2.0:</strong> 비밀번호를 직접 주지 않고, 제3자 앱이 사용자 권한을 위임받아 API를 쓸 수 있도록 하는 인증 방식. (예: 구글 계정 로그인)</li>
+    <li><strong>JSON 웹 토큰(JWT):</strong> JSON 형식으로 인코딩된 토큰. 인증·권한 정보를 담아 서명하여 위변조를 방지하고, 클라이언트-서버 간 안전하게 전달.</li>
+    <li><strong>기본 인증(Basic Auth):</strong> 사용자 이름과 비밀번호를 Base64로 인코딩해 HTTP 요청 헤더에 포함하는 간단한 인증 방식. 보안에 취약해 HTTPS와 함께 사용해야 함.</li>
+    <li><strong>OpenID Connect:</strong> OAuth 2.0 위에서 동작하는 인증 프로토콜로, 로그인 및 사용자 프로필 정보 제공을 표준화. (예: 소셜 로그인)</li>
+    <li><strong>토큰(Token):</strong> 인증이 완료된 사용자를 식별하고 권한을 부여하기 위해 발급되는 임시 인증 정보. 일정 시간 동안만 유효.</li>
+  </ul>
+
+  <!-- 박스 추가 -->
+  <details>
+    <summary>JWT <span class="indicator">펼치기</span></summary>
+    <div class="accordion-content">
+      <p>JWT(JSON 웹 토큰)는 당사자 간에 JSON 객체 형태로 정보를 안전하게 전송하기 위한 개방형 표준이다. JWT는 세 부분으로 구성된다. 헤더(토큰 유형 및 서명에 사용되는 알고리즘 지정), 페이로드(전송되는 클레임 또는 데이터 포함), 서명(토큰의 무결성 및 진위성 확인)이다. JWT는 일반적으로 인증 및 권한 부여 목적으로 사용되며, 사용자가 웹 애플리케이션과 API를 통해 신원과 권한을 안전하게 전송하고 검증할 수 있도록 한다. JWT는 작고 독립적이며 HTTP 헤더를 통해 쉽게 전송할 수 있어 최신 웹 및 모바일 애플리케이션에서 널리 사용된다.</p>
+      <ul>
+        <li>예시 1</li>
+        <li>예시 2</li>
+      </ul>
+    </div>
+  </details>
+
+</div>
+</details>
+
+<details open>
+<summary>REST API <span class="indicator">펼치기</span></summary>
+<div class="accordion-content">
+  <p>REST API(Representational State Transfer Application Programming Interface)는 *네트워크 애플리케이션을 설계하는 아키텍처 스타일이다. 표준 HTTP 메서드(GET, POST, PUT, DELETE)를 사용하여 리소스와 상호 작용하며, 리소스는 *URI(Uniform Resource Identifier)로 표현된다. REST API는 상태를 저장하지 않으므로 클라이언트에서 서버로 보내는 각 요청에는 요청을 이해하고 처리하는 데 필요한 모든 정보가 포함되어야 한다. 표준 HTTP 상태 코드를 사용하여 요청 결과를 나타내며, *JSON이나 *XML과 같은 형식으로 통신하는 경우가 많다. REST API는 단순성, 확장성, 그리고 웹 서비스 및 애플리케이션과의 통합 용이성으로 인해 널리 사용된다.
+  </p>
+  <p><strong>정리: REST API는 HTTP 규칙으로 리소스를 주고받는 상태 없는 설계 방식</strong></p>
+
+  <ul>
+    <li><strong>네트워크 애플리케이션:</strong> 인터넷이나 로컬 네트워크를 통해 다른 컴퓨터나 서버와 통신하며 동작하는 프로그램 (예: 웹 브라우저, 메신저 앱)</li>
+    <li><strong>URI(Uniform Resource Identifier):</strong> 인터넷에서 자원(리소스)을 식별하는 주소 체계(예: https://example.com/users/1)</li>
+    <li><strong>JSON (JavaScript Object Notation):</strong> 데이터를 사람이 읽기 쉽고 기계가 처리하기 쉬운 텍스트 형식으로 표현하는 방법</li>
+      <ul>
+        <li>주로 {키: 값} 구조를 사용</li>
+      </ul>
+    <li><strong>XML (eXtensible Markup Language):</strong> 태그(<tag>내용</tag>)를 이용해 데이터를 구조적으로 표현하는 마크업 언어</li>
+      <ul>
+        <li>HTML과 비슷하지만 데이터 저장·전송에 초점</li>
+      </ul>
+  </ul>
 
 </div>
 </details>
 
 <details>
-<summary><a href="category/repo_hosting_services/gitlab.html">GitLab</a> <span class="indicator">펼치기</span></summary>
+<summary>JSON API <span class="indicator">펼치기</span></summary>
 <div class="accordion-content">
-    <p>GitLab은 SW 개발 라이프사이클을 위한 완벽한 솔루션을 제공하는 웹 기반 *DevOps 플랫폼이다. 소스 코드 관리, 
-    *지속적 통합/지속적 배포(CI/CD), 이슈 추적 등 다양한 기능을 *단일 애플리케이션에 통합하여 제공한다. GitLab은 Git 
-    저장소를 지원하며, GitHub의 풀 리퀘스트와 유사한 병합 요청, 위키 페이지, 이슈 보드 등의 기능을 제공합니다. DevOps 
-    실행 방식을 강조하여 *CI/CD 파이프라인, *컨테이너 레지스트리, *쿠버네티스 통합 기능을 기본 제공한다. GitLab은 *클라우드 
-    호스팅 및 *셀프 호스팅 옵션을 모두 제공하여 기업의 배포 유연성을 높인다. GitLab의 *올인원 접근 방식은 다른 생태계에서는 
-    여러 도구가 필요할 수 있는 기능을 포함하고 있어 경쟁사와 차별화된다. GitLab은 계획부터 모니터링까지 DevOps 라이프사이클 
-    전체에 중점을 두고 있어 개발 워크플로우를 위한 통합 플랫폼을 찾는 기업과 팀에게 인기가 높다.
-</p>
+  <p>JSON(JavaScript Object Notation)은 정의된 방식으로 통신하는 서버와 각 애플리케이션이 통신할 때 *임시 코드가 필요 없도록 설계된 *인코딩 체계이다. JSON API 모듈은 엔티티 유형, 번들, 필드와 같은 데이터 저장소 및 데이터 구조에 대한 구현을 제공한다.
+  </p>
+  <p><strong>정리: JSON은 서버와 앱이 간단하고 표준화된 방식으로 데이터를 주고받게 하는 형식</strong></p>
 
-<ul>
-    <li><strong>DevOps:</strong> 개발(Development)과 운영(Operations)의 경계를 허물어 협업·자동화를 통해 빠르고 안정적인 SW 제공을 실현하는 문화·방법론</li>
-    <li><strong>CI/CD:</strong> 코드 통합(CI)과 지속적 배포/전달(CD)을 자동화해 빌드→테스트→배포 전 과정을 효율화하는 기법</li>
-    <li><strong>단일 애플리케이션(모놀리식):</strong> 기능들을 하나의 배포 단위로 묶어 운영하는 구조로, 구현이 단순하지만 서비스 확장·유연성에 제약이 있음</li>
-    <li><strong>CI/CD 파이프라인:</strong> 코드 커밋부터 프로덕션 배포까지 빌드·테스트·배포 단계를 연속적으로 실행하는 자동화된 워크플로우</li>
-    <li><strong>컨테이너 레지스트리:</strong> Docker 이미지 등의 컨테이너 패키지를 저장·버전 관리·배포할 수 있는 중앙 저장소 서비스(예: Docker Hub)</li>
-    <li><strong>쿠버네티스 통합 기능:</strong> CI/CD 도구가 Kubernetes 클러스터와 연동되어 컨테이너 배포·스케일링·롤백 등을 자동으로 수행하도록 지원하는 기능</li>
-    <li><strong>클라우드 호스팅 및 셀프 호스팅:</strong> AWS·GCP 같은 외부 클라우드에 인프라를 맡기거나, 자체 서버에 소프트웨어를 설치해 운영하는 두 가지 방식</li>
-    <li><strong>올인원 접근 방식:</strong> 빌드·테스트·배포·모니터링 등 개발·운영에 필요한 모든 기능을 하나의 플랫폼이나 도구에서 통합 제공하는 방식</li>
-</ul>
+  <ul>
+    <li><strong>임시 코드:</strong> 특정 상황이나 문제를 해결하기 위해 급하게 작성한, 재사용성·유지보수성이 떨어지는 코드. 흔히 "하드코딩"과 비슷한 개념으로, 표준화된 형식이 없으면 이런 코드를 많이 쓰게 됨.</li>
+    <li><strong>인코딩(Encoding):</strong> 데이터를 저장하거나 전송하기 위해 다른 형식으로 변환하는 과정 (예: 텍스트를 UTF-8로 변환, 이미지를 JPG로 저장)</li>
+  </ul>
+
+</div>
+</details>
+
+<details>
+<summary>SOAP <span class="indicator">펼치기</span></summary>
+<div class="accordion-content">
+  <p>SOAP(Simple Object Access Protocol)는 시스템과 애플리케이션 간의 정보 교환을 위한 메시지 프로토콜이다. 애플리케이션 프로그래밍 인터페이스(API)의 경우, SOAP API는 더욱 체계적이고 정형화된 방식으로 개발된다. SOAP 메시지는 웹 관련 하이퍼텍스트 전송 프로토콜(HTTP)을 포함한 다양한 하위 수준 프로토콜을 통해 전송될 수 있다.
+  </p>
+  <p><strong>정리: SOAP는 정형화된 규칙으로 메시지를 주고받는 API 통신 프로토콜</strong></p>
+
+</div>
+</details>
+
+<details>
+<summary>gRPC <span class="indicator">펼치기</span></summary>
+<div class="accordion-content">
+  <p>gRPC는 고성능 오픈 소스 범용 RPC 프레임워크이다. RPC는 원격 프로시저 호출(Remote Procedure Call)의 약자이다. g가 무엇을 의미하는지에 대한 논쟁이 계속되고 있다. RPC는 프로그램이 다른 컴퓨터에 있는 다른 프로그램의 프로시저를 실행할 수 있도록 하는 프로토콜이다. 가장 큰 장점은 개발자가 원격 상호 작용의 세부 사항을 코딩할 필요가 없다는 것이다. 원격 프로시저는 다른 함수와 마찬가지로 호출된다. 하지만 클라이언트와 서버는 서로 다른 언어로 코딩할 수 있다.
+  </p>
+  <p><strong>정리: gRPC는 빠르고 효율적으로 서버 간 데이터를 주고받는 원격 호출 프로토콜</strong></p>
+
+</div>
+</details>
+
+<details>
+<summary>GraphQL <span class="indicator">펼치기</span></summary>
+<div class="accordion-content">
+  <p>GraphQL은 페이스북에서 개발한 API용 쿼리 언어이자 해당 쿼리를 실행하는 런타임이다. 고정된 엔드포인트가 미리 정의된 데이터를 반환하는 REST와 달리, GraphQL은 클라이언트가 필요한 데이터를 정확하게 요청할 수 있도록 하여 API 상호작용을 더욱 유연하고 효율적으로 만든다. GraphQL은 단일 엔드포인트를 사용하고 사용 가능한 데이터의 유형과 구조를 정의하는 스키마를 사용한다. 이러한 접근 방식은 데이터 오버페칭(overfetching)과 언더페칭(underfetching)을 줄여 여러 플랫폼(예: 웹, 모바일)에서 다양한 데이터 요구 사항을 가진 복잡한 애플리케이션에 이상적이다.
+  </p>
+  <p><strong>정리: GraphQL은 클라이언트가 필요한 데이터만 선택해 요청할 수 있는 쿼리 언어</strong></p>
+
 </div>
 </details>
