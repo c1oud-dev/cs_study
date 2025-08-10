@@ -57,6 +57,10 @@
     .sidebar li { margin-bottom: 0.5rem; }
     .sidebar a { display: block; padding: 0.25rem 0; color: #0366d6; }
     .sidebar a.active { font-weight: bold; }
+    /* 사이드바가 있는 페이지에서만, 오른쪽에 자리를 미리 확보 */
+    .has-sidebar .container {
+      padding-right: 320px; /* 300px(사이드바) + 여유 */
+    }
 
     /* Accordion */
     details {
@@ -119,10 +123,14 @@
     .category-card:hover { background: #0255a5; }
 
     /* Responsive */
-    @media screen and (max-width: 768px) {
-      .container { flex-direction: column; }
-      .sidebar { position: static; width: 100%; height: auto; box-shadow: none; margin-bottom: 1rem; }
-    }
+   @media screen and (max-width: 1200px) {
+     .has-sidebar .container { padding-right: 0; }   /* 오른쪽 예약 해제 */
+     .container { flex-direction: column; }          /* 메인 위, 사이드바 아래 */
+     .sidebar {
+       position: static; width: 100%; height: auto;
+       box-shadow: none; margin-top: 1rem;
+     }
+   }
     @media screen and (max-width: 600px) {
       .hero { padding: 2rem 1rem; }
       .search-input { width: 100%; }
@@ -131,7 +139,7 @@
     }
   </style>
 </head>
-<body>
+<body class="{% unless page.sidebar == false %}has-sidebar{% endunless %}">
   <header>
     <a href="/cs_study/home.html" class="logo">CS 정리</a>
   </header>
