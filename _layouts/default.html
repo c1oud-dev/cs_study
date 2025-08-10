@@ -17,7 +17,7 @@
 
     /* Header */
     header {
-      padding: 1rem 2rem;
+      padding: 1rem 1rem;
       background: #fff;
       border-bottom: 1px solid #ddd;
     }
@@ -26,17 +26,17 @@
     /* Layout Container */
     .container {
       display: flex;
-      justify-content: center;    /* 중앙 정렬 */
+      justify-content: flex-start;  /* 왼쪽 정렬 */
       gap: 2rem;                   /* 콘텐츠와 사이드바 사이 간격 */
-      max-width: 1200px;           /* 페이지 전체 최대 너비 */
+      max-width: 1280px;           /* 페이지 전체 최대 너비 */
       margin: 0 auto;              /* 화면 중앙 배치 */
-      padding: 0 1rem;             /* 화면 가장자리 여백 */
+      padding: 0 0.75rem;            /* 화면 가장자리 여백 */
       flex-wrap: wrap;
     }
     .container > main {
       width: 100%;
-      max-width: 900px;            /* 본문 최대 너비 */
-      padding: 0 1rem;             /* 본문 좌우 여백 */
+      max-width: 1100px;            /* 본문 최대 너비 */
+      padding: 0 0.75rem;             /* 본문 좌우 여백 */
       box-sizing: border-box;
       margin: 0 auto;              /* 본문 중앙 정렬 */
     }
@@ -77,6 +77,7 @@
     }
     .indicator { font-size: 0.875rem; color: #0366d6; }
     .accordion-content { padding: 0 1rem 1rem; }
+    .accordion-content li { font-size: 0.9rem; line-height: 1.6; }
 
     /* Hero & Category Styles (for home) */
     .hero { padding: 3rem 2rem; background: #fff; text-align: center; }
