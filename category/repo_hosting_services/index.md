@@ -30,7 +30,7 @@ title: "Repo Hosting Services"
 </p>
 
 <ul>
-    <li><strong>허브(hub):</strong> ‘중심 거점’이라는 의미로, 여러 개발자와 도구·프로젝트가 모여 서로 연결되고 교류하는 핵심 플랫폼을</li>
+    <li><strong>허브(hub):</strong> ‘중심 거점’이라는 의미로, 여러 개발자와 도구·프로젝트가 모여 서로 연결되고 교류하는 핵심 플랫폼</li>
     <ul>
     <li>즉, GitHub가 개발 생태계의 중심축 역할을 한다는 비유적 표현</li>
     </ul>
