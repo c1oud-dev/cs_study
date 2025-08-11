@@ -168,7 +168,7 @@ title: "Web Security"
     <summary><span class="accordion-title">Server Security </span> <span class="indicator">펼치기</span></summary>
     <div class="accordion-content">
       <p>
-      서버 보안은 서버를 위협과 취약점으로부터 보호하여 관리하는 데이터와 서비스의 기밀성, 무결성, 가용성을 보장하는 것을 의미합니다. 주요 보안 수칙은 다음과 같습니다.
+      서버 보안은 서버를 위협과 취약점으로부터 보호하여 관리하는 데이터와 서비스의 기밀성, 무결성, 가용성을 보장하는 것을 의미한다. 주요 보안 수칙은 다음과 같다.
         <ol>
           <li><strong>패치 관리:</strong> 취약점을 수정하기 위해 소프트웨어와 운영 체제를 정기적으로 업데이트한다.</li>
           <li><strong>접근 제어:</strong> 강력한 인증 메커니즘을 구현하고 권한이 있는 사용자에게만 접근을 제한한다.</li>
