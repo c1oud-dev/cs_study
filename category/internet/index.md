@@ -14,7 +14,7 @@ title: "Internet"
 </section>
 
 <details open>
-  <summary><a href="category/internet/http.html">HTTP</a> <span class="indicator">접기</span></summary>
+  <summary><span class="accordion-title"><a href="category/internet/http.html">HTTP</a></span> <span class="indicator">접기</span></summary>
   <div class="accordion-content">
     <p>HTTP(Hypertext Transfer Protocol)는 *월드 와이드 웹(WWW)을 통해 *하이퍼텍스트를 전송하는 데
         사용되는 *프로토콜이다. HTTP는 메시지의 형식과 전송 방식, 그리고 *웹 서버와 *브라우저가 다양한 
@@ -37,7 +37,7 @@ title: "Internet"
 </details>
 
 <details>
-<summary><a href="category/internet/domain_name.html">Domain Name</a> <span class="indicator">펼치기</span></summary>
+<summary><span class="accordion-title"><a href="category/internet/domain_name.html">Domain Name</a></span> <span class="indicator">펼치기</span></summary>
     <div class="accordion-content">
         <p>도메인 이름은 인터넷에서 특정 위치를 식별하는 데 사용되는 사람이 읽을 수 있는 주소로, 웹 사이트와
         온라인 서비스에 쉽게 접근할 수 있도록 한다. *IP 주소는 컴퓨터가 서버를 찾고 연결하는 데 사용하는
@@ -60,7 +60,7 @@ title: "Internet"
 </details>
 
 <details>
-<summary><a href="category/internet/hosting.html">Hosting</a> <span class="indicator">펼치기</span></summary>
+<summary><span class="accordion-title"><a href="category/internet/hosting.html">Hosting</a> </span><span class="indicator">펼치기</span></summary>
 <div class="accordion-content">
     <p>호스팅은 인터넷을 통해 사용자에게 웹사이트 파일과 애플리케이션을 저장하고 전송하기 위한 서버 공간과 
     리소스를 제공하는 서비스를 말한다. 호스팅 제공업체는 웹사이트와 애플리케이션이 온라인에서 접근 가능
@@ -93,7 +93,7 @@ title: "Internet"
 </details>
 
 <details>
-<summary><a href="category/internet/dns.html">DNS</a> <span class="indicator">펼치기</span></summary>
+<summary><span class="accordion-title"><a href="category/internet/dns.html">DNS</a> </span><span class="indicator">펼치기</span></summary>
 <div class="accordion-content">
     <p>DNS(도메인 이름 시스템)는 인터넷이나 *사설망에 연결된 컴퓨터, 서비스 또는 기타 리소스에 대한 계층적이고 
     분산된 *네이밍 시스템이다. 사람이 읽을 수 있는 도메인 이름(예: www.example.com)을 컴퓨터가 서로를 
@@ -116,7 +116,7 @@ title: "Internet"
 </details>
 
 <details>
-<summary><a href="category/internet/browser.html">Browser</a> <span class="indicator">펼치기</span></summary>
+<summary><span class="accordion-title"><a href="category/internet/browser.html">Browser</a> </span><span class="indicator">펼치기</span></summary>
 <div class="accordion-content">
     <p>웹 브라우저는 사용자가 월드 와이드 웹(WWW)의 정보에 접근하고, 검색하고, 탐색할 수 있도록 하는 소프트웨어 
     애플리케이션이다. HTML, CSS, JavaScript를 해석하고 표시하여 웹 페이지를 *렌더링한다. Google Chrome, 
