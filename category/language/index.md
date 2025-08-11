@@ -13,7 +13,7 @@ title: "Language"
 </section>
 
 <details open>
-<summary><a href="category/language/javascript.html">JavaScript</a> <span class="indicator">펼치기</span></summary>
+<summary><span class="accordion-title"><a href="category/language/javascript.html">JavaScript</a></span> <span class="indicator">펼치기</span></summary>
 <div class="accordion-content">
     <p>JavaScript는 웹사이트에 상호작용성과 동적 기능을 추가하는 데 주로 사용되는 다재다능한 고급
     프로그래밍 언어이다. 브라우저에서 실행되므로 *HTML과 *CSS를 조작하고, *사용자 이벤트에 응답하고,
@@ -41,7 +41,7 @@ title: "Language"
 </details>
 
 <details>
-<summary><a href="category/language/go.html">Go</a> <span class="indicator">펼치기</span></summary>
+<summary><span class="accordion-title"><a href="category/language/go.html">Go</a></span> <span class="indicator">펼치기</span></summary>
 <div class="accordion-content">
     <p>Go(Golang)는 구글에서 설계한 *정적 타입 *컴파일 프로그래밍 언어이다. 
     컴파일 언어의 효율성과 동적 타입 인터프리터 언어의 사용 편의성을 결합한 것이다. 
