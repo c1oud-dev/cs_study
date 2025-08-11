@@ -13,7 +13,7 @@ title: "VCS"
 </section>
 
 <details open>
-  <summary>Git <span class="indicator">접기</span></summary>
+  <summary><span class="accordion-title">Git </span> <span class="indicator">접기</span></summary>
   <div class="accordion-content">
     <p>
       Git은 규모에 관계없이 모든 프로젝트를 빠르고 효율적으로 처리하도록 설계된 분산 버전 관리 시스템이다.
