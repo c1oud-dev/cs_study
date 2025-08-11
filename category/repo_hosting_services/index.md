@@ -18,7 +18,7 @@ title: "Repo Hosting Services"
 </section>
 
 <details open>
-<summary><a href="category/repo_hosting_services/github.html">GitHub</a> <span class="indicator">펼치기</span></summary>
+<summary><span class="accordion-title"><a href="category/repo_hosting_services/github.html">GitHub</a></span> <span class="indicator">펼치기</span></summary>
 <div class="accordion-content">
     <p>GitHub는 Git을 활용한 버전 관리 및 협업을 위한 웹 기반 플랫폼이다. Microsoft가 소유한 GitHub는 SW 개발을 위한
     호스팅을 제공하고 기본적인 Git 기능 외의 다양한 기능을 제공한다. GitHub에는 프로젝트 관리, 코드 검토, 소셜 코딩
@@ -30,7 +30,7 @@ title: "Repo Hosting Services"
 </p>
 
 <ul>
-    <li><strong>허브(hub):</strong> ‘중심 거점’이라는 의미로, 여러 개발자와 도구·프로젝트가 모여 서로 연결되고 교류하는 핵심 플랫폼</li>
+    <li><strong>허브(hub):</strong> ‘중심 거점’이라는 의미로, 여러 개발자와 도구·프로젝트가 모여 서로 연결되고 교류하는 핵심 플랫폼을</li>
     <ul>
     <li>즉, GitHub가 개발 생태계의 중심축 역할을 한다는 비유적 표현</li>
     </ul>
