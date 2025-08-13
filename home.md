@@ -94,6 +94,7 @@ sidebar: false
     <a href="/cs_study/category/apis/index.html" class="category-card">APIs</a>
     <a href="/cs_study/category/caching/index.html" class="category-card">Caching</a>
     <a href="/cs_study/category/web_security/index.html" class="category-card">Web Security</a>
+    <a href="/cs_study/category/testing/index.html" class="category-card">Testing</a>
     <a href="/cs_study/category/ci_cd/index.html" class="category-card">CI/CD</a>
     <a href="/cs_study/category/databases/index.html" class="category-card">Databases</a>
     <a href="/cs_study/category/scaling_databases/index.html" class="category-card">Scaling Databases</a>
