@@ -98,7 +98,7 @@ sidebar: false
     <a href="/cs_study/category/ci_cd/index.html" class="category-card">CI/CD</a>
     <a href="/cs_study/category/databases/index.html" class="category-card">Databases</a>
     <a href="/cs_study/category/scaling_databases/index.html" class="category-card">Scaling Databases</a>
-    <li><a href="/cs_study/category/sw_design_and_architecture/index.html">SW Design and Architecture</a></li>
+    <a href="/cs_study/category/sw_design_and_architecture/index.html">SW Design and Architecture</a>
     <a href="/cs_study/category/architectural_patterns/index.html" class="category-card">Architectural Patterns</a>
     <a href="/cs_study/category/design_and_deploymen_principle/index.html" class="category-card">Design & Dev Principles</a>
     <a href="/cs_study/category/containerization_and_virtualization/index.html" class="category-card">Containerization vs Virtualization</a>
