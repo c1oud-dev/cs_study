@@ -31,7 +31,7 @@ title: "Web Security"
   </ul>
 
   <!-- 박스 추가 -->
-  <details>
+  <details class="nested-details">
     <summary><span class="accordion-title">MD5 </span> <span class="indicator">펼치기</span></summary>
     <div class="accordion-content">
       <p>
@@ -42,7 +42,7 @@ title: "Web Security"
   </details>
 
   <!-- 박스 추가 -->
-  <details>
+  <details class="nested-details">
     <summary><span class="accordion-title">SHA family </span> <span class="indicator">펼치기</span></summary>
     <div class="accordion-content">
       <p>
@@ -53,7 +53,7 @@ title: "Web Security"
   </details>
 
   <!-- 박스 추가 -->
-  <details>
+  <details class="nested-details">
     <summary><span class="accordion-title">Scrypt </span> <span class="indicator">펼치기</span></summary>
     <div class="accordion-content">
       <p>
@@ -71,7 +71,7 @@ title: "Web Security"
   </details>
 
   <!-- 박스 추가 -->
-  <details>
+  <details class="nested-details">
     <summary><span class="accordion-title">Bcrypt </span> <span class="indicator">펼치기</span></summary>
     <div class="accordion-content">
       <p>
@@ -99,7 +99,7 @@ title: "Web Security"
   <p><strong>정리: API Security는 API를 통한 데이터·서비스 접근을 인증·인가·암호화로 보호해 무단 사용과 공격을 방지하는 보안 체계이다.</strong></p>
 
   <!-- 박스 추가 -->
-  <details>
+  <details class="nested-details">
     <summary><span class="accordion-title">HTTPS </span> <span class="indicator">펼치기</span></summary>
     <div class="accordion-content">
       <p>
@@ -117,7 +117,7 @@ title: "Web Security"
   </details>
 
   <!-- 박스 추가 -->
-  <details>
+  <details class="nested-details">
     <summary><span class="accordion-title">CORS </span> <span class="indicator">펼치기</span></summary>
     <div class="accordion-content">
       <p>
@@ -135,7 +135,7 @@ title: "Web Security"
   </details>
 
   <!-- 박스 추가 -->
-  <details>
+  <details class="nested-details">
     <summary><span class="accordion-title">CSP </span> <span class="indicator">펼치기</span></summary>
     <div class="accordion-content">
       <p>
@@ -154,7 +154,7 @@ title: "Web Security"
   </details>
 
   <!-- 박스 추가 -->
-  <details>
+  <details class="nested-details">
     <summary><span class="accordion-title">OWASP Security Risks </span> <span class="indicator">펼치기</span></summary>
     <div class="accordion-content">
       <p>
@@ -175,7 +175,7 @@ title: "Web Security"
   </details>
 
   <!-- 박스 추가 -->
-  <details>
+  <details class="nested-details">
     <summary><span class="accordion-title">Server Security </span> <span class="indicator">펼치기</span></summary>
     <div class="accordion-content">
       <p>
