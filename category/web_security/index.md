@@ -30,9 +30,9 @@ title: "Web Security"
   </ul>
 
   <!-- 하위 항목은 들여쓰기 -->
-    <div style="margin-left: 20px; border-left: 3px solid #ddd; padding-left: 10px;">
-      <details>
-        <summary><span class="accordion-title">MD5</span> <span class="indicator">펼치기</span></summary>
+  <div style="margin-left: 20px; border-left: 3px solid #ddd; padding-left: 10px;">
+    <details>
+      <summary><span class="accordion-title">MD5</span> <span class="indicator">펼치기</span></summary>
         <div class="accordion-content">
           <p>MD5 설명...</p>
         </div>
