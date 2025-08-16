@@ -164,7 +164,7 @@ title: "Web Security"
   </details>
 
   <!-- 박스 추가 -->
-  <details>
+  <details class="nested-details">
     <summary><span class="accordion-title">SSL/TLS </span> <span class="indicator">펼치기</span></summary>
     <div class="accordion-content">
       <p>
