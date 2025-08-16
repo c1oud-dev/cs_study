@@ -29,6 +29,36 @@ title: "Web Security"
     <li><strong>해싱 알고리즘:</strong> 데이터를 고정된 길이로 변환하는 알고리즘으로, 대표적으로 MD5, SHA-1, SHA-256, bcrypt 등이 있으며 속도·보안성·충돌 가능성에 따라 선택함</li>
   </ul>
 
+  <!-- 하위 항목은 들여쓰기 -->
+    <div style="margin-left: 20px; border-left: 3px solid #ddd; padding-left: 10px;">
+      <details>
+        <summary><span class="accordion-title">MD5</span> <span class="indicator">펼치기</span></summary>
+        <div class="accordion-content">
+          <p>MD5 설명...</p>
+        </div>
+      </details>
+    </div>
+  </div>
+</details>
+
+<details>
+  <summary><span class="accordion-title">MD5</span> <span class="indicator">펼치기</span></summary>
+  <div class="accordion-content" style="background-color:#f9f9f9; border:1px solid #ccc; padding:10px;">
+    <p>MD5 설명...</p>
+  </div>
+</details>
+
+<!-- 아이콘 추가 -->
+  <details>
+    <summary><span class="accordion-title">📄 MD5 </span> <span class="indicator">펼치기</span></summary>
+    <div class="accordion-content">
+      <p>
+      MD5(Message-Digest Algorithm 5)는 널리 사용되는 암호화 해시 함수로, 일반적으로 32자리 16진수로 표현되는 128비트 해시 값을 생성한다. 모든 입력에 대해 고정된 크기의 출력(해시)을 생성하여 데이터의 고유 식별자를 제공하도록 설계되었다. MD5는 한때 데이터 무결성 검증 및 비밀번호 저장에 널리 사용되었지만, 현재는 충돌 공격(두 개의 서로 다른 입력이 동일한 해시 값을 생성하는 공격)을 허용하는 취약점으로 인해 암호학적으로 취약하며 보안에 민감한 애플리케이션에는 적합하지 않은 것으로 간주된다. 결과적으로 MD5는 SHA-256과 같은 더 안전한 해시 함수로 대체되었다.
+      </p>
+      <p><strong>정리: MD5는 128비트 해시값을 생성하는 빠른 해시 알고리즘이지만 충돌 취약성으로 인해 보안 용도로는 권장되지 않는다.</strong></p>
+    </div>
+  </details>
+
   <!-- 박스 추가 -->
   <details>
     <summary><span class="accordion-title">MD5 </span> <span class="indicator">펼치기</span></summary>
