@@ -21,7 +21,7 @@ title: "Programming Paradigms"
 
 <!-- 섹션 -->
 <details open>
-<summary>Structured Programming <span class="indicator">펼치기</span></summary>
+<summary><span class="accordion-title" style="font-weight: bold;">Structured Programming</span> <span class="indicator">펼치기</span></summary>
 <div class="accordion-content">
   <p>
   구조적 프로그래밍은 루프, 조건문, 서브루틴과 같은 잘 구조화된 제어 흐름 구조의 사용을 강조하는 프로그래밍 패러다임이다. 1960년대와 1970년대에 goto 문이 널리 사용되면서 생겨난 "스파게티 코드"에 대한 대응으로 개발되었다.
@@ -39,7 +39,7 @@ title: "Programming Paradigms"
 
 <!-- 섹션 -->
 <details>
-<summary>Functional Programming <span class="indicator">펼치기</span></summary>
+<summary><span class="accordion-title" style="font-weight: bold;">Functional Programming</span> <span class="indicator">펼치기</span></summary>
 <div class="accordion-content">
   <p>
   함수형 프로그래밍은 계산을 수학 함수의 계산으로 취급하고 상태 변화나 변경 가능한 데이터를 사용하지 않는 프로그래밍 패러다임이다. 함수형 프로그래밍은 고차 함수, 불변성, 재귀를 활용하여 문제를 해결하는 함수를 강조한다. 데이터를 수정하는 대신, 함수형 프로그래밍은 새로운 데이터 구조를 생성한다.
@@ -62,7 +62,7 @@ title: "Programming Paradigms"
 
 <!-- 섹션 -->
 <details>
-<summary>Object Oriented Programming <span class="indicator">펼치기</span></summary>
+<summary><span class="accordion-title" style="font-weight: bold;">Object Oriented Programming</span> <span class="indicator">펼치기</span></summary>
 <div class="accordion-content">
   <p>
   객체 지향 프로그래밍(OOP)은 객체와 클래스를 사용하여 코드를 구조화하고 구성하는 프로그래밍 패러다임이다. OOP에서 객체는 클래스의 인스턴스이며, 클래스는 객체의 속성과 동작을 정의하는 템플릿이다. OOP는 캡슐화, 상속, 다형성의 원칙을 기반으로 한다.
