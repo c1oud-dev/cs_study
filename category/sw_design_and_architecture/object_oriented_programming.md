@@ -14,7 +14,7 @@ title: "Object Oriented Programming"
 
 <!-- 설명 -->
 <details open>
-<summary>Primary Principles(객체지향의 기본 원칙) <span class="indicator">펼치기</span></summary>
+<summary><span class="accordion-title">Primary Principles(객체지향의 기본 원칙)</span> <span class="indicator">펼치기</span></summary>
 <div class="accordion-content">
 
   <!-- 박스 추가 -->
@@ -87,7 +87,7 @@ title: "Object Oriented Programming"
 
 <!-- 설명 -->
 <details open>
-<summary>Paradigm Features(객체지향 패러다임의 특징) <span class="indicator">펼치기</span></summary>
+<summary><span class="accordion-title">Paradigm Features(객체지향 패러다임의 특징)</span> <span class="indicator">펼치기</span></summary>
 <div class="accordion-content">
 
   <!-- 박스 추가 -->
@@ -157,7 +157,7 @@ title: "Object Oriented Programming"
 
 <!-- 설명 -->
 <details open>
-<summary>Model Driven Design(모델 기반 설계) <span class="indicator">펼치기</span></summary>
+<summary><span class="accordion-title">Model Driven Design(모델 기반 설계)</span> <span class="indicator">펼치기</span></summary>
 <div class="accordion-content">
   <p>
   MDD는 시스템 설계를 일련의 모델로 표현하고, 이 모델을 사용하여 시스템 개발을 추진하는 소프트웨어 개발 방법론이다. MDD는 시스템 설계를 일련의 모델로 표현할 수 있으며, 이 모델을 사용하여 시스템 코드를 생성할 수 있다는 생각에 기반한다.
