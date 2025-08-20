@@ -19,6 +19,10 @@ title: "Containerization vs Virtualization"
 <summary><a href="./docker.html"><span class="accordion-title">Docker</span></a> </summary>
 </details>
 
+<details open>
+<summary><a href="./kubernetes.html"><span class="accordion-title">Kubernetes</span></a> </summary>
+</details>
+
 <!-- 설명 -->
 <details open>
 <summary><span class="accordion-title" style="color: #000; font-weight: bold;">LXC(Linux Containers)</span> <span class="indicator">펼치기</span></summary>
