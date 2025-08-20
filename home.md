@@ -92,7 +92,7 @@ sidebar: false
     <a href="/cs_study/category/language/index.html" class="category-card">Language</a>
     <a href="/cs_study/category/vcs/index.html" class="category-card">VCS</a>
     <a href="/cs_study/category/repo_hosting_services/index.html" class="category-card">Repo Hosting Services</a>
-    <a href="/cs_study/category/relational_database/index.html" class="category-card">Relational Databases</a>
+    <a href="/cs_study/category/relational_databases/index.html" class="category-card">Relational Databases</a>
     <a href="/cs_study/category/apis/index.html" class="category-card">APIs</a>
     <a href="/cs_study/category/caching/index.html" class="category-card">Caching</a>
     <a href="/cs_study/category/web_security/index.html" class="category-card">Web Security</a>
