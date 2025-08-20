@@ -121,13 +121,20 @@ title: "Architectural Patterns"
 <details>
 <summary><span class="accordion-title">Twelve-Factor Apps </span> <span class="indicator">펼치기</span></summary>
 <div class="accordion-content">
-  <p>설명</p>
-  <p><strong>정리:</strong></p>
-  <!-- 가로선 추가 -->
-  <hr>
-  <ul>
-    <li><strong>:</strong> </li>
-  </ul>
-
-</div>
-</details>
+  <p><b>12-Factor App 방법론</b>은 현대적이고 확장 가능하며 유지보수가 용이한 웹 애플리케이션을 구축하기 위한 원칙들의 집합으로, 특히 <b>클라우드 환경</b>에 적합하다. 이 방법론은 애플리케이션을 <b>이식성, 확장성, 배포 용이성</b>을 높일 수 있도록 개발하는 모범 사례들을 강조한다.</p>
+  <p>주요 원칙은 다음과 같다.</p>
+  <ol>
+    <li><strong>Codebase(코드베이스):</strong> 하나의 코드베이스를 버전 관리 시스템에서 추적하며, 여러 배포에 활용한다.</li>
+    <li><strong>Dependencies(의존성):</strong> 의존성을 명시적으로 선언하고 격리한다.</li>
+    <li><strong>Config(설정):</strong> 설정 정보를 환경 변수에 저장한다.</li>
+    <li><strong>Backing Services(백엔드 서비스):</strong> DB, 메시지 브로커 등 백엔드 서비스를 연결된 자원으로 취급한다.</li>
+    <li><strong>Build, Release, Run(빌드, 릴리스, 실행):</strong> 빌드 단계와 실행 단계를 분리한다.</li>
+    <li><strong>Processes(프로세스):</strong> 앱을 하나 이상의 무상태 프로세스로 실행한다.</li>
+    <li><strong>Port Binding(포트 바인딩):</strong> 서비스를 포트 바인딩을 통해 외부로 노출한다.</li>
+    <li><strong>Concurrency(동시성):</strong> 프로세스 모델을 통해 확장한다.</li>
+    <li><strong>Disposability(폐기성):</strong> 빠른 시작과 우아한 종료를 통해 강건성을 극대화한다.</li>
+    <li><strong>Dev/Prod Parity(개발/운영 환경 일치):</strong> 개발, 스테이징, 운영 환경을 최대한 비슷하게 유지한다.</li>
+    <li><strong>Logs(로그):</strong> 로그를 이벤트 스트림으로 취급한다.</li>
+    <li><strong>Admin Processes(관리 프로세스):</strong> 관리 및 운영 작업은 일회성 프로세스로 실행한다.</li>
+  </ol>
+  <p><strong>정리: 12-Factor App은 클라우드 시대에 맞춘 이식성·확장성·유지보수성을 위한 12가지 원칙이다.</strong></p>
