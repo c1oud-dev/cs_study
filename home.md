@@ -102,7 +102,7 @@ sidebar: false
     <a href="/cs_study/category/scaling_databases/index.html" class="category-card">Scaling Databases</a>
     <a href="/cs_study/category/sw_design_and_architecture/index.html" class="category-card">SW Design & Architecture</a>
     <a href="/cs_study/category/architectural_patterns/index.html" class="category-card">Architectural Patterns</a>
-    <a href="/cs_study/category/design_and_development_principle/index.html" class="category-card">Design & Dev Principles</a>
+    <a href="/cs_study/category/design_and_development_principles/index.html" class="category-card">Design & Dev Principles</a>
     <a href="/cs_study/category/containerization_and_virtualization/index.html" class="category-card">Containerization vs Virtualization</a>
     <a href="/cs_study/category/message_brokers/index.html" class="category-card">Message Brokers</a>
     <a href="/cs_study/category/search_engines/index.html" class="category-card">Search Engines</a>
