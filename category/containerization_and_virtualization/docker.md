@@ -289,7 +289,7 @@ title: "Containerization vs Virtualization"
 <details>
 <summary><span class="accordion-title" style="color: #000; font-weight: bold;">Deploying Containers</span> <span class="indicator">펼치기</span></summary>
 <div class="accordion-content">
-  <p></p>
+  <p>컨테이너 배포는 도커와 컨테이너화를 활용해 애플리케이션을 <b>더 효율적으로 관리하고, 손쉽게 확장하며, 환경 간 일관된 성능</b>을 보장하기 위한 핵심 단계다. 이 주제에서는 애플리케이션을 만들고 실행하기 위해 도커 컨테이너를 배포하는 방법에 대한 <b>개요</b>를 다룬다.</p>
 
   <hr>
   <h3>Nomad: Deploying Containers</h3>
