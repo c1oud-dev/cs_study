@@ -22,7 +22,7 @@ title: "Language"
     스타일을 지원하며, *React, *Angualr, *Vue와 같은 풍부한 *라이브러리 및 *프레임워크 생태계를 통해
     JavaScript의 기능을 향상시키고 개발을 간소화한다.
 </p>
-
+<hr>
 <ul>
     <li><strong>HTML:</strong> 웹 페이지의 뼈대를 구성하는 마크업 언어로, 제목·문단·이미지·링크 등 요소를 태그로 정의한다.</li>
     <li><strong>CSS:</strong> HTML에 스타일(색상·레이아웃·폰트 등)을 입히는 언어로, 선택자와 속성으로 디자인을 제어한다. </li>
@@ -53,7 +53,7 @@ title: "Language"
     성능, 단순성, 그리고 강력한 툴 덕분에 클라우드 네이티브 개발, DevOps 도구, 대규모 백엔드 
     시스템에 널리 사용된다.
 </p>
-
+<hr>
 <ul>
     <li><strong>컴파일:</strong> 사람이 읽을 수 있는 고수준 언어를 기계어(바이너리)로 번역해 실행 가능한 파일을 생성하는 과정이다.</li>
     <li><strong>정적 타입(Static Typing):</strong> 변수의 타입이 컴파일 시에 고정되어 타입 오류를 사전에 잡아내며, 최적화된 코드 생성을 돕는다.</li>
@@ -80,7 +80,7 @@ title: "Language"
 </details>
 
 <details>
-<summary><a href="category/language/python.html">Python </a> <span class="indicator">펼치기</span></summary>
+<summary><span class="accordion-title" style="color: #000; font-weight: bold;"><a href="category/language/python.html">Python </a></span> <span class="indicator">펼치기</span></summary>
 <div class="accordion-content">
     <p>Python은 가독성, 단순성, 그리고 다재다능함으로 유명한 고급 인터프리터 프로그래밍 언어이다. 
     코드 가독성과 명확하고 직관적인 구문을 중시하여 초보자와 숙련된 개발자 모두 쉽게 사용할 수 있도록
@@ -94,7 +94,7 @@ title: "Language"
 </details>
 
 <details>
-<summary><a href="category/language/ruby.html">Ruby </a> <span class="indicator">펼치기</span></summary>
+<summary><span class="accordion-title" style="color: #000; font-weight: bold;"><a href="category/language/ruby.html">Ruby </a></span> <span class="indicator">펼치기</span></summary>
 <div class="accordion-content">
     <p>Ruby는 단순함, 생산성, 그리고 우아한 구문으로 유명한 고급 객체 지향 프로그래밍 언어이다. 
     직관적이고 읽기 쉬운 Ruby는 개발자의 편의성과 빠른 개발 주기를 강조한다. 
@@ -107,7 +107,7 @@ title: "Language"
 </details>
 
 <details>
-<summary><a href="category/language/java.html">Java </a> <span class="indicator">펼치기</span></summary>
+<summary><span class="accordion-title" style="color: #000; font-weight: bold;"><a href="category/language/java.html">Java </a></span> <span class="indicator">펼치기</span></summary>
 <div class="accordion-content">
     <p>Java는 이식성, 견고성, 그리고 확장성으로 유명한 고급 객체 지향 프로그래밍 언어이다. 
     Sun Microsystems(현 Oracle)에서 개발한 Java는 "한 번 작성하면 어디서나 실행"이라는 
@@ -120,7 +120,7 @@ title: "Language"
 </details>
 
 <details>
-<summary><a href="category/language/c-sharp.html">C# </a> <span class="indicator">펼치기</span></summary>
+<summary><span class="accordion-title" style="color: #000; font-weight: bold;"><a href="category/language/c-sharp.html">C# </a></span> <span class="indicator">펼치기</span></summary>
 <div class="accordion-content">
     <p>C#은 Microsoft에서 .NET 프레임워크의 일부로 개발한 현대적인 객체 지향 프로그래밍 언어이다. 
     C++의 강력함과 효율성에 Visual Basic의 간편함을 결합하여 강력한 타이핑, 어휘적 범위 지정, 
@@ -135,7 +135,7 @@ title: "Language"
 </details>
 
 <details>
-<summary><a href="category/language/php.html">PHP </a> <span class="indicator">펼치기</span></summary>
+<summary><span class="accordion-title" style="color: #000; font-weight: bold;"><a href="category/language/php.html">PHP </a></span> <span class="indicator">펼치기</span></summary>
 <div class="accordion-content">
     <p>PHP(하이퍼텍스트 전처리기)는 널리 사용되는 오픈 소스 스크립팅 언어로, 주로 웹 개발용으로 설계되었지만 
     범용 프로그래밍에도 적용 가능하다. HTML에 내장되어 동적 웹 페이지를 생성하고 데이터베이스와 상호 
@@ -149,7 +149,7 @@ title: "Language"
 </details>
 
 <details>
-<summary><a href="category/language/rust.html">Rust </a> <span class="indicator">펼치기</span></summary>
+<summary><span class="accordion-title" style="color: #000; font-weight: bold;"><a href="category/language/rust.html">Rust </a></span> <span class="indicator">펼치기</span></summary>
 <div class="accordion-content">
     <p>Rust는 안전성, 성능, 그리고 동시성에 중점을 둔 시스템 프로그래밍 언어로 잘 알려져 있다. 
     가비지 컬렉터 없이도 메모리 안전성을 보장하면서 시스템 리소스에 대한 세밀한 제어를 제공한다. 
