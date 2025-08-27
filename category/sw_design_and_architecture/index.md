@@ -10,38 +10,55 @@ title: "SW Design & Architecture"
 </section>
 
 <details>
-<summary><a href="./clean_code_principles.html"><span class="accordion-title">Clean Code Principles</span></a> </summary>
+  <summary><span class="accordion-title">Clean Code Principles</span>
+  <a href="./clean_code_principles.html" style="margin-left: 8px; font-size: 0.7em; color: #0366d6;">이동하기 👉</a> 
+  </summary>
 </details>
 
 <details>
-<summary><a href="./programming_paradigms.html"><span class="accordion-title">Programming Paradigms</span></a> </summary>
+  <summary><span class="accordion-title">Programming Paradigms</span>
+  <a href="./programming_paradigms.html" style="margin-left: 8px; font-size: 0.7em; color: #0366d6;">이동하기 👉</a> 
+  </summary>
 </details>
 
 <details>
-<summary><a href="./object_oriented_programming.html"><span class="accordion-title">Object Oriented Programming</span></a> </summary>
+  <summary><span class="accordion-title">Object Oriented Programming</span>
+  <a href="./object_oriented_programming.html" style="margin-left: 8px; font-size: 0.7em; color: #0366d6;">이동하기 👉</a> 
+  </summary>
 </details>
 
 <details>
-<summary><a href="./design_principles.html"><span class="accordion-title">Design Principles</span></a> </summary>
+  <summary><span class="accordion-title">Design Principles</span>
+  <a href="./design_principles.html" style="margin-left: 8px; font-size: 0.7em; color: #0366d6;">이동하기 👉</a> 
+  </summary>
 </details>
 
 <details>
-<summary><a href="./design_patterns.html"><span class="accordion-title">Design Patterns</span></a> </summary>
+  <summary><span class="accordion-title">Design Patterns</span>
+  <a href="./design_patterns.html" style="margin-left: 8px; font-size: 0.7em; color: #0366d6;">이동하기 👉</a> 
+  </summary>
 </details>
 
 <details>
-<summary><a href="./architectural_principles.html"><span class="accordion-title">Architectural Principles
-</span></a> </summary>
+  <summary><span class="accordion-title">Architectural Principles</span>
+  <a href="./architectural_principles.html" style="margin-left: 8px; font-size: 0.7em; color: #0366d6;">이동하기 👉</a> 
+  </summary>
 </details>
 
 <details>
-<summary><a href="./architectural_styles.html"><span class="accordion-title">Architectural Styles</span></a> </summary>
+  <summary><span class="accordion-title">Architectural Styles</span>
+  <a href="./architectural_styles.html" style="margin-left: 8px; font-size: 0.7em; color: #0366d6;">이동하기 👉</a> 
+  </summary>
 </details>
 
 <details>
-<summary><a href="./architectural_patterns.html"><span class="accordion-title">Architectural Patterns</span></a> </summary>
+  <summary><span class="accordion-title">Architectural Patterns</span>
+  <a href="./architectural_patterns.html" style="margin-left: 8px; font-size: 0.7em; color: #0366d6;">이동하기 👉</a>
+  </summary>
 </details>
 
 <details>
-<summary><a href="./enterprise_patterns.html"><span class="accordion-title">Enterprise Patterns</span></a> </summary>
+  <summary><span class="accordion-title">Enterprise Patterns</span>
+  <a href="./enterprise_patterns.html" style="margin-left: 8px; font-size: 0.7em; color: #0366d6;">이동하기 👉</a>
+  </summary>
 </details>
