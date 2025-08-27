@@ -16,11 +16,16 @@ title: "Containerization vs Virtualization"
 </section>
 
 <details open>
-<summary><a href="./docker.html"><span class="accordion-title">Docker</span></a> </summary>
+  <summary>
+    <span class="accordion-title">Docker</span> 
+    <a href="./docker.html" style="margin-left: 8px; font-size: 0.9em; color: #0366d6;">이동하기 →</a>
+  </summary>
 </details>
 
 <details open>
-<summary><a href="./kubernetes.html"><span class="accordion-title">Kubernetes</span></a> </summary>
+  <summary><span class="accordion-title">Kubernetes</span>
+  <a href="./kubernetes.html" style="margin-left: 8px; font-size: 0.9em; color: #0366d6;">이동하기 →</a> 
+  </summary>
 </details>
 
 <!-- 설명 -->
