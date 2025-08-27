@@ -88,7 +88,7 @@ sidebar: false
 <section class="category-section">
   <h2>Category</h2>
   <div class="category-grid" id="category-grid">
-    <a href="/cs_study/category/programming_basics.html" class="category-card">Internet</a>
+    <a href="/cs_study/category/programming_basics.html" class="category-card">기초 프로그래밍</a>
     <a href="/cs_study/category/internet/index.html" class="category-card">Internet</a>
     <a href="/cs_study/category/language/index.html" class="category-card">Language</a>
     <a href="/cs_study/category/vcs/index.html" class="category-card">VCS</a>
