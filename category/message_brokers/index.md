@@ -25,11 +25,11 @@ title: "Message Brokers"
 <div class="accordion-content">
     <p>RabbitMQ는 <b>오픈 소스 메시지 브로커</b>로, <b>AMQP(Advanced Message Queuing Protocol)</b>를 사용하여 분산 시스템 간의 메시지 교환을 가능하게 한다.</p>
     <p>이것은 메시지를 <b>큐잉(queuing)</b>하고 <b>라우팅(routing)</b>하여 <b>생산자(Producer)</b>와 <b>소비자(Consumer)</b> 사이에서 <b>비동기 통신</b>을 지원하며, 애플리케이션 컴포넌트를 <b>분리(디커플링)</b>시켜 <b>확장성</b>과 <b>신뢰성</b>을 향상시킨다.</p>
-    <p>RabbitMQ는 다음과 같은 기능을 제공한다.</p>
+    <p>RabbitMQ는 다음과 같은 기능을 제공한다.
     <ul>
         <li><strong>메시지 내구성(Message durability)</strong> </li>
         <li><strong>승인(Acknowledgment)</strong> </li>
-        <li><strong>익스체인지(Exchange)와 큐(Queue)를 통한 유연한 라우팅</strong> </li>
+        <li><strong>익스체인지(Exchange)와 큐(Queue)를 통한 유연한 라우팅</strong> </li></p>
     </ul>
     <p>또한 <b>높은 수준의 설정 가능성</b>을 제공하여 다음과 같은 다양한 메시징 패턴을 지원한다.</p>
     <ul>
