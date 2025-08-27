@@ -108,6 +108,7 @@ sidebar: false
     <a href="/cs_study/category/search_engines/index.html" class="category-card">Search Engines</a>
     <a href="/cs_study/category/web_servers/index.html" class="category-card">Web Servers</a>
     <a href="/cs_study/category/real_time_data/index.html" class="category-card">Real Time Data</a>
+    <a href="/cs_study/category/graphql/index.html" class="category-card">GraphQL</a>
     <a href="/cs_study/category/nosql_databases/index.html" class="category-card">NoSQL Databases</a>
     <a href="/cs_study/category/building_for_scale/index.html" class="category-card">Building for Scale</a>
   </div>
