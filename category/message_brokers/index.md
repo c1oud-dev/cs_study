@@ -29,8 +29,8 @@ title: "Message Brokers"
     <ul>
         <li><strong>메시지 내구성(Message durability)</strong> </li>
         <li><strong>승인(Acknowledgment)</strong> </li>
-        <li><strong>익스체인지(Exchange)와 큐(Queue)를 통한 유연한 라우팅</strong> </li></p>
-    </ul>
+        <li><strong>익스체인지(Exchange)와 큐(Queue)를 통한 유연한 라우팅</strong> </li>
+    </ul></p>
     <p>또한 <b>높은 수준의 설정 가능성</b>을 제공하여 다음과 같은 다양한 메시징 패턴을 지원한다.</p>
     <ul>
         <li><strong>발행/구독(Publish/Subscribe)</strong> </li>
