@@ -24,7 +24,16 @@ sidebar: false
   height: 200%;
   background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.15), transparent 70%);
   transform: rotate(25deg);
+  pointer-events: none;
 }
+
+/* 입력/카드가 오버레이 위로 오도록 */
+.hero .hero-card,
+.hero .search-input {
+  position: relative;               /* ← 추가 */
+  z-index: 1;                       /* ← 추가 */
+}
+
 .hero h1 {
   font-size: 3rem;
   font-weight: 800;
@@ -193,6 +202,16 @@ sidebar: false
   .category-card { height: 80px; font-size: 0.85rem; }
 }
 
+/* 작은 폰: 2~3열 강제 */
+@media (max-width: 600px) {
+  .category-grid { grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); } /* ↓ 더 작게 */
+}
+
+/* 아주 작은 폰: 최소 120px로 2열 확보 */
+@media (max-width: 380px) {
+  .category-grid { grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); }
+}
+
 </style>
 
 <!-- Hero Section (About 포함) -->
@@ -204,7 +223,7 @@ sidebar: false
     <h2>About This Site</h2>
     <p>
       CS 면접과 실무에 꼭 필요한 핵심 개념들을 한눈에 정리했습니다.</p>
-   
+
   <div class="search-wrap">
     <input type="text" id="category-search" class="search-input" placeholder="카테고리 검색..." />
   </div>
