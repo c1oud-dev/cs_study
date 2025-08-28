@@ -204,9 +204,7 @@ sidebar: false
     <h2>About This Site</h2>
     <p>
       CS 면접과 실무에 꼭 필요한 핵심 개념들을 한눈에 정리했습니다.</p>
-      <p>아래 카테고리로 이동하거나 검색을 통해 빠르게 찾아보세요.
-    </p>
-
+   
   <div class="search-wrap">
     <input type="text" id="category-search" class="search-input" placeholder="카테고리 검색..." />
   </div>
