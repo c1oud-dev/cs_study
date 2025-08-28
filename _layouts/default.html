@@ -41,16 +41,19 @@
       margin: 0;              /* 본문 중앙 정렬 */
     }
 
-/* Sidebar (left sticky on desktop) */
-.has-sidebar .container {
-  /* 데스크톱: 좌측 260px, 우측 본문 영역 1fr 그리드 */
-  display: grid;
-  grid-template-columns: 260px 1fr;
-  gap: 2rem;
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 0 1rem;
-}
+    /* Sidebar (left sticky on desktop) */
+    .has-sidebar .container {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 2rem;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+    
+    /* 칼럼 위치를 명시적으로 지정해 순서를 뒤집음 */
+    .container > main { grid-column: 2; }
+    .sidebar         { grid-column: 1; }
 
 .sidebar {
   position: sticky;      /* 스크롤해도 상단 기준으로 고정 */
