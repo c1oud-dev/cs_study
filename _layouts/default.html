@@ -169,6 +169,74 @@
       .search-input { width: 100%; }
     }
   </style>
+<style id="sidebar-hotfix">
+/* === 레이아웃 강제 오버라이드 === */
+
+/* 홈/기본(사이드바 없음) */
+.no-sidebar .container{
+  display:block !important;
+  max-width:1280px !important;
+  margin:0 auto !important;
+  padding:0 1rem !important;
+}
+.no-sidebar .container>main{
+  max-width:1100px !important;
+  margin:0 auto !important;
+  padding:0 .75rem !important;
+}
+
+/* 사이드바 있는 페이지: 좌측 사이드바 + 우측 본문 그리드 강제 */
+.has-sidebar .container{
+  display:grid !important;
+  grid-template-columns:260px 1fr !important;
+  gap:2rem !important;
+  max-width:1280px !important;
+  margin:0 auto !important;
+  padding:0 1rem !important;
+}
+/* 칼럼 위치 고정(HTML 순서와 무관) */
+.has-sidebar .container>main{
+  grid-column:2 !important;
+  max-width:none !important;
+  width:100% !important;
+  margin:0 !important;
+  padding-left:.25rem !important;
+  padding-right:.25rem !important;
+}
+.has-sidebar .sidebar{
+  grid-column:1 !important;
+  position:sticky !important;
+  top:56px !important;          /* 헤더 높이에 맞춰 필요시 56~72px 조절 */
+  align-self:start !important;
+  background:#f7f7f7 !important;
+  border-right:1px solid #e5e5e5 !important;
+  padding:1rem !important;
+  border-radius:8px !important;
+  height:auto !important;       /* 내부 스크롤 제거 → 페이지 하나만 스크롤 */
+  overflow:visible !important;
+}
+
+/* 링크/하이라이트(있으면 보기 좋음) */
+.has-sidebar .sidebar a{
+  display:block; padding:.35rem .4rem .35rem .6rem;
+  color:#2b6cb0; border-radius:6px;
+}
+.has-sidebar .sidebar a:hover{ background:#e9eef9; }
+.has-sidebar .sidebar a.active{
+  background:#e2e8ff; color:#1e40af; font-weight:700;
+  border-left:3px solid #6a5af9;
+}
+
+/* 1024px 이하: 단일 컬럼으로 전환 */
+@media (max-width:1024px){
+  .has-sidebar .container{ display:block !important; padding:0 .75rem !important; }
+  .has-sidebar .sidebar{
+    position:static !important; height:auto !important;
+    margin:.75rem 0 0 !important; border-right:none !important;
+  }
+  .has-sidebar .container>main{ max-width:1100px !important; margin:0 auto !important; }
+}
+</style>
 
 </head>
   
