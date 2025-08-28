@@ -6,90 +6,235 @@ sidebar: false
 
 <!-- Hero & Category Styles -->
 <style>
-  /* Hero */
-  .hero {
-    padding: 3rem 2rem;
-    background: #fff;
-    text-align: center;
-  }
-  .hero h1 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-  }
-  .hero p {
-    font-size: 1.125rem;
-    color: #555;
-    margin-bottom: 1.5rem;
-  }
-  .search-input {
-    padding: 0.75rem 1rem;
-    width: 300px;
-    max-width: 100%;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 1rem;
-  }
+ /* Hero */
+.hero {
+  padding: 5rem 2rem;
+  background: linear-gradient(135deg, #4f9dff, #6a5af9); /* 그라데이션 배경 */
+  color: #fff;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.hero::after {
+  content: "";
+  position: absolute;
+  top: -50px;
+  left: -50px;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.15), transparent 70%);
+  transform: rotate(25deg);
+}
+.hero h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+/* Hero inner card (About + Search in one box) */
+.hero .hero-card {
+  max-width: 900px;
+  margin: 0 auto;
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 16px;
+  padding: 2rem 1.5rem;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  backdrop-filter: blur(6px);
+}
+.hero .hero-card h2 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin: 0 0 0.75rem 0;
+  color: #fff;
+}
+.hero .hero-card p {
+  margin: 0 0 1.25rem 0;
+  color: rgba(255,255,255,0.9);
+  line-height: 1.7;
+}
+.hero .search-wrap {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
 
-  /* Category Section */
-  .category-section {
-    max-width: 1000px;
-    margin: 2rem auto;
-    padding: 0 2rem;
-  }
-  .category-section h2 {
-    font-size: 1.75rem;
-    margin-bottom: 1rem;
-    text-align: center;
-  }
-  .category-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-    gap: 1rem;
-    justify-items: center;
-  }
-  .category-card {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    background: #0366d6;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    color: #fff;
-    font-size: 0.9rem;
-    text-align: center;
-    padding: 1rem;
-    transition: background 0.2s;
-    line-height: 1.15;     /* 줄바꿈 시 균형 */
-    word-break: keep-all;  /* 단어 중간 분리 방지 */
-  }
-  .category-card:hover {
-    background: #0255a5;
-  }
+.search-input {
+  padding: 0.85rem 1rem;
+  width: 100%;
+  max-width: 600px;
+  border: none;
+  border-radius: 50px;
+  font-size: 1rem;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
 
-  /* Responsive */
-  @media (max-width: 600px) {
-    .hero { padding: 2rem 1rem; }
-    .search-input { width: 100%; }
-    .category-grid { grid-template-columns: repeat(auto-fill, minmax(80px, 1fr)); }
-    .category-card { width: 80px; height: 80px; font-size: 0.8rem; }
-  }
+/* Recommended Section */
+.recommended-section {
+  max-width: 1000px;
+  margin: 4rem auto;
+  text-align: center;
+  padding: 0 1.5rem;
+}
+.recommended-section h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #333;
+}
+.recommended-grid {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.recommended-card {
+  background: linear-gradient(135deg, #6a5af9, #4f9dff);
+  color: #fff;
+  border: none;
+  padding: 1.5rem 2rem;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+.recommended-card:hover {
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* Category Section */
+.category-section {
+  max-width: 1100px;
+  margin: 4rem auto;
+  padding: 0 2rem;
+  display: flex;                  /* 추천 학습 + 카테고리 나란히 */
+  gap: 2rem;
+}
+.category-section h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  color: #444;
+  border-left: 5px solid #6a5af9;
+  padding-left: 0.75rem;
+}
+
+/* 왼쪽 추천 학습 */
+.recommended-sidebar {
+  flex: 0 0 220px;                /* 고정 폭 */
+}
+.recommended-sidebar h2 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+.recommended-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.recommended-card {
+  background: linear-gradient(135deg, #6a5af9, #4f9dff);
+  color: #fff;
+  border-radius: 8px;
+  padding: 0.9rem 1rem;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-align: center;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+.recommended-card:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.2);
+}
+
+/* 오른쪽 카테고리 */
+.category-grid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); /* 카드 크기 줄임 */
+  gap: 1rem;
+}
+.category-card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 1rem;
+  height: 90px;                  /* 크기 줄임 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  text-decoration: none;
+  color: #333;
+  font-size: 0.9rem;
+  font-weight: 600;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+  transition: all 0.25s ease;
+}
+.category-card:hover {
+  background: #6a5af9;
+  color: #fff;
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+/* Responsive */
+@media (max-width: 800px) {
+  .category-section { flex-direction: column; }
+  .recommended-sidebar { flex: unset; width: 100%; }
+  .category-grid { grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); }
+  .category-card { height: 80px; font-size: 0.85rem; }
+}
+
 </style>
 
-<!-- Hero Section -->
+<!-- Hero Section (About 포함) -->
 <section class="hero">
   <h1>CS 개념 학습 자료</h1>
-  <p>아래 카테고리에서 학습하고 싶은 주제를 선택하거나 검색해보세요.</p>
-  <input type="text" id="category-search" class="search-input" placeholder="카테고리 검색..." />
+  <p>원하는 주제를 검색하거나 카테고리를 클릭해 학습을 시작하세요.</p>
+
+  <div class="hero-card">
+    <h2>About This Site</h2>
+    <p>
+      CS 면접과 실무에 꼭 필요한 핵심 개념들을 한눈에 정리했습니다.</p>
+      <p>아래 카테고리로 이동하거나 검색을 통해 빠르게 찾아보세요.
+    </p>
+
+  <div class="search-wrap">
+    <input type="text" id="category-search" class="search-input" placeholder="카테고리 검색..." />
+  </div>
+  </div>
+</section>
+
+<!-- Recommended Section -->
+<section class="recommended-section">
+  <h2>추천 학습</h2>
+  <div class="recommended-grid">
+    <a href="/cs_study/category/data_structures_algorithms.html" class="recommended-card">📘 자료구조와 알고리즘</a>
+    <a href="/cs_study/category/web_security/index.html" class="recommended-card">🔒 Web Security</a>
+    <a href="/cs_study/category/databases/index.html" class="recommended-card">🗄️ Databases</a>
+  </div>
 </section>
 
 <!-- Category Cards -->
 <section class="category-section">
-  <h2>Category</h2>
-  <div class="category-grid" id="category-grid">
+  <h2>CS 기본 로드맵</h2>
+  <div class="category-grid small" id="cs-basic-grid">
     <a href="/cs_study/category/programming_basics.html" class="category-card">기초 프로그래밍</a>
     <a href="/cs_study/category/data_structures_algorithms.html" class="category-card">자료구조와 알고리즘</a>
+  </div>
+</section>
+
+<section class="category-section">
+  <h2>백엔드 로드맵</h2>
+  <div class="category-grid small" id="backend-grid">
     <a href="/cs_study/category/internet/index.html" class="category-card">Internet</a>
     <a href="/cs_study/category/language/index.html" class="category-card">Language</a>
     <a href="/cs_study/category/vcs/index.html" class="category-card">VCS</a>
@@ -118,9 +263,9 @@ sidebar: false
 
 <!-- Search Script -->
 <script>
-  document.getElementById('category-search').addEventListener('input', function(e) {
+  document.getElementById('category-search')?.addEventListener('input', function(e) {
     const filter = e.target.value.toLowerCase();
-    document.querySelectorAll('#category-grid .category-card').forEach(card => {
+    document.querySelectorAll('.category-card').forEach(card => {
       const text = card.textContent.toLowerCase();
       card.style.display = text.includes(filter) ? 'flex' : 'none';
     });
