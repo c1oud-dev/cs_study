@@ -14,7 +14,7 @@ title: "기초 프로그래밍 완전 정리"
 <summary><span class="accordion-title">면접 예상 질문 및 답변</span> <span class="indicator">펼치기</span></summary>
   <div class="accordion-content">
 <details>
-    <summary><b>Q1: 컴파일 언어와 인터프리터 언어의 차이점을 설명해주세요.</b></summary>
+    <summary style="font-size:1rem;"><b>Q1: 컴파일 언어와 인터프리터 언어의 차이점을 설명해주세요.</b></summary>
     <div class="accordion-content">
     <p><b>A:</b> 컴파일 언어는 소스코드를 실행 전에 기계어로 번역하여 실행 파일을 만드는 방식입니다. 실행 속도가 빠르고 배포 시 소스코드가 노출되지 않지만, 플랫폼에 종속적이고 컴파일 시간이 필요합니다. 인터프리터 언어는 코드를 한 줄씩 읽어가며 즉시 실행하는 방식으로, 플랫폼 독립적이고 개발과 테스트가 빠르지만 실행 속도가 상대적으로 느립니다.</p>
     </div>
