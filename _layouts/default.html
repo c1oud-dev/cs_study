@@ -73,11 +73,11 @@
     }
 
     .sidebar {
-      position: sticky;      /* 스크롤해도 상단 기준으로 고정 */
-      top: 72px;             /* 헤더 높이 감안 (필요시 조절) */
+      position: sticky;
+      top: 56px;             /* 헤더(padding 포함) 실높이에 맞춰 낮춤 */
       align-self: start;
-      height: auto; 
-      overflow: visible; 
+      height: auto;
+      overflow: visible;
       background: #f7f7f7;
       border-right: 1px solid #e5e5e5;
       padding: 1rem;
@@ -232,19 +232,23 @@
 
     /* Responsive */
    @media screen and (max-width: 1200px) {
-     .has-sidebar .container { padding-right: 0; }   /* 오른쪽 예약 해제 */
-     .container { flex-direction: column; }          /* 메인 위, 사이드바 아래 */
-     .sidebar {
-       position: static; width: 100%; height: auto;
-       box-shadow: none; margin-top: 1rem;
-     }
-   }
-    @media screen and (max-width: 600px) {
-      .hero { padding: 2rem 1rem; }
-      .search-input { width: 100%; }
-      .category-grid { grid-template-columns: repeat(auto-fill, minmax(80px, 1fr)); }
-      .category-card { width: 80px; height: 80px; font-size: 0.8rem; border-radius: 4px; }
+    .has-sidebar .container { padding-right: 0; }
+  
+    /* 전역 .container 영향 제거 → 사이드바 페이지에선 그리드 유지 */
+    /* 필요하면 1024px 이하에서만 단일 컬럼 전환(아래 3번에서 처리) */
+  
+    /* 사이드바도 has-sidebar 범위로 한정 */
+    .has-sidebar .sidebar {
+      position: static; width: 100%; height: auto;
+      box-shadow: none; margin-top: 1rem;
     }
+  }
+  @media screen and (max-width: 600px) {
+    .hero { padding: 2rem 1rem; }
+    .search-input { width: 100%; }
+    .category-grid { grid-template-columns: repeat(auto-fill, minmax(80px, 1fr)); }
+    .category-card { width: 80px; height: 80px; font-size: 0.8rem; border-radius: 4px; }
+  }
   </style>
 </head>
   
