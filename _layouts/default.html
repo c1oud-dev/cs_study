@@ -127,6 +127,19 @@
       font-weight: 700;
       border-left: 3px solid #6a5af9;
     }
+
+    /* 홈 등 사이드바 없는 페이지: 일반 블록 레이아웃 + 메인 중앙 정렬 */
+    .no-sidebar .container {
+      display: block;              /* flex 해제 */
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+    .no-sidebar .container > main {
+      max-width: 1100px;
+      margin: 0 auto;              /* 본문 가운데 정렬 */
+      padding: 0 0.75rem;          /* 홈 본문 좌우 여백 */
+    }
     
     /* 본문 컨테이너/메인 영역 보정 */
     .container > main {
