@@ -169,6 +169,7 @@
       .search-input { width: 100%; }
     }
   </style>
+  
 <style id="sidebar-hotfix">
 /* === 레이아웃 강제 오버라이드 === */
 
@@ -197,6 +198,7 @@
 /* 칼럼 위치 고정(HTML 순서와 무관) */
 .has-sidebar .container>main{
   grid-column:2 !important;
+  grid-row:1 !important;
   max-width:none !important;
   width:100% !important;
   margin:0 !important;
@@ -205,6 +207,7 @@
 }
 .has-sidebar .sidebar{
   grid-column:1 !important;
+  grid-row:1 !important;
   position:sticky !important;
   top:56px !important;          /* 헤더 높이에 맞춰 필요시 56~72px 조절 */
   align-self:start !important;
