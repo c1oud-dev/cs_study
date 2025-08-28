@@ -55,83 +55,83 @@
     .container > main { grid-column: 2; }
     .sidebar         { grid-column: 1; }
 
-.sidebar {
-  position: sticky;      /* 스크롤해도 상단 기준으로 고정 */
-  top: 72px;             /* 헤더 높이 감안 (필요시 조절) */
-  align-self: start;
-  height: calc(100vh - 72px);
-  overflow: auto;
-  background: #f7f7f7;
-  border-right: 1px solid #e5e5e5;
-  padding: 1rem;
-  border-radius: 8px;
-}
-
-/* 사이드바 내 네비게이션 */
-.sidebar nav { margin-top: 0.5rem; }
-.sidebar .nav-search {
-  margin-bottom: 0.75rem;
-}
-.sidebar .nav-search input {
-  width: 100%;
-  height: 36px;
-  padding: 0.4rem 0.6rem;
-  border: 1px solid #d0d0d0;
-  border-radius: 6px;
-  font-size: 0.95rem;
-  background: #fff;
-}
-
-.sidebar summary {
-  font-weight: 700;
-  cursor: pointer;
-  padding: 0.4rem 0;
-  color: #333;
-  list-style: none;
-}
-.sidebar details > ul {
-  list-style: none; margin: 0.25rem 0 0.5rem 0; padding: 0;
-}
-
-.sidebar a {
-  display: block;
-  padding: 0.35rem 0.4rem 0.35rem 0.6rem;
-  color: #2b6cb0;                /* 링크 컬러 */
-  border-radius: 6px;
-  text-decoration: none;
-  font-size: 0.95rem;
-}
-.sidebar a:hover {
-  background: #e9eef9;
-}
-.sidebar a.active {
-  background: #e2e8ff;           /* 현재 위치 하이라이트 */
-  color: #1e40af;
-  font-weight: 700;
-  border-left: 3px solid #6a5af9;
-}
-
-/* 본문 컨테이너/메인 영역 보정 */
-.container > main {
-  max-width: 1100px;
-  width: 100%;
-  padding: 0;  /* 그리드 기준으로 좌우 여백은 container에서 */
-  box-sizing: border-box;
-}
-
-/* Responsive: 태블릿/모바일은 단일 컬럼(사이드바 위, 본문 아래) */
-@media screen and (max-width: 1024px) {
-  .has-sidebar .container {
-    display: block;
-    padding: 0 0.75rem;
-  }
-  .sidebar {
-    position: static;
-    height: auto;
-    margin: 0.75rem 0 0;
-    border-right: none;
-  }
-}
+    .sidebar {
+      position: sticky;      /* 스크롤해도 상단 기준으로 고정 */
+      top: 72px;             /* 헤더 높이 감안 (필요시 조절) */
+      align-self: start;
+      height: auto; 
+      overflow: visible; 
+      background: #f7f7f7;
+      border-right: 1px solid #e5e5e5;
+      padding: 1rem;
+      border-radius: 8px;
+    }
+    
+    /* 사이드바 내 네비게이션 */
+    .sidebar nav { margin-top: 0.5rem; }
+    .sidebar .nav-search {
+      margin-bottom: 0.75rem;
+    }
+    .sidebar .nav-search input {
+      width: 100%;
+      height: 36px;
+      padding: 0.4rem 0.6rem;
+      border: 1px solid #d0d0d0;
+      border-radius: 6px;
+      font-size: 0.95rem;
+      background: #fff;
+    }
+    
+    .sidebar summary {
+      font-weight: 700;
+      cursor: pointer;
+      padding: 0.4rem 0;
+      color: #333;
+      list-style: none;
+    }
+    .sidebar details > ul {
+      list-style: none; margin: 0.25rem 0 0.5rem 0; padding: 0;
+    }
+    
+    .sidebar a {
+      display: block;
+      padding: 0.35rem 0.4rem 0.35rem 0.6rem;
+      color: #2b6cb0;                /* 링크 컬러 */
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+    .sidebar a:hover {
+      background: #e9eef9;
+    }
+    .sidebar a.active {
+      background: #e2e8ff;           /* 현재 위치 하이라이트 */
+      color: #1e40af;
+      font-weight: 700;
+      border-left: 3px solid #6a5af9;
+    }
+    
+    /* 본문 컨테이너/메인 영역 보정 */
+    .container > main {
+      max-width: 1100px;
+      width: 100%;
+      padding: 0;  /* 그리드 기준으로 좌우 여백은 container에서 */
+      box-sizing: border-box;
+    }
+    
+    /* Responsive: 태블릿/모바일은 단일 컬럼(사이드바 위, 본문 아래) */
+    @media screen and (max-width: 1024px) {
+      .has-sidebar .container {
+        display: block;
+        padding: 0 0.75rem;
+      }
+      .sidebar {
+        position: static;
+        height: auto;
+        margin: 0.75rem 0 0;
+        border-right: none;
+      }
+    }
     /* Accordion */
     details {
       border: 1px solid #ddd;
@@ -217,6 +217,7 @@
     }
   </style>
 </head>
+  
 <body class="{% unless page.sidebar == false %}has-sidebar{% endunless %}">
   <header>
     <a href="/cs_study/home.html" class="logo">CS 정리</a>
