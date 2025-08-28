@@ -4,8 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{{ page.title }}</title>
-  <style>
-    /* Base Styles */
+    <style>
+    /* ========== Base ========== */
     body {
       margin: 0;
       font-family: sans-serif;
@@ -23,72 +23,73 @@
     }
     .logo { font-size: 1.5rem; font-weight: bold; color: #0366d6; }
 
-    /* Layout Container */
+    /* ========== Container & Main ========== */
+    /* 기본은 일반 블록 레이아웃(홈 등) */
     .container {
-      display: flex;
-      justify-content: flex-start;  /* 왼쪽 정렬 */
-      gap: 2rem;                   /* 콘텐츠와 사이드바 사이 간격 */
-      max-width: 1280px;           /* 페이지 전체 최대 너비 */
-      margin: 0 auto;              /* 화면 중앙 배치 */
-      padding: 0 0.75rem;            /* 화면 가장자리 여백 */
-      flex-wrap: wrap;
+      display: block;                 /* ← flex 제거 */
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 1rem;
     }
     .container > main {
       width: 100%;
-      max-width: 1100px;            /* 본문 최대 너비 */
-      padding: 0 0.75rem;             /* 본문 좌우 여백 */
+      max-width: 1100px;
       box-sizing: border-box;
-      margin: 0;              /* 본문 중앙 정렬 */
+      padding: 0;
+      margin: 0 auto;                 /* 기본은 가운데 정렬 */
     }
 
-    /* Sidebar (left sticky on desktop) */
+    /* 사이드바 있는 페이지 전용 그리드 */
     .has-sidebar .container {
-      display: grid;
+      display: grid !important;       /* 충돌 방지용 */
       grid-template-columns: 260px 1fr;
       gap: 2rem;
       max-width: 1280px;
       margin: 0 auto;
       padding: 0 1rem;
     }
-    
-    /* 칼럼 위치를 명시적으로 지정해 순서를 뒤집음 */
-    .has-sidebar .container > main { grid-column: 2; }
-    .has-sidebar .sidebar         { grid-column: 1; }
-
-    /* ⬇ 문제 해결 핵심: 중앙 정렬을 풀고 왼쪽 정렬로 고정 */
     .has-sidebar .container > main {
-      max-width: 100%;          /* 가운데 고정폭을 해제 */
+      grid-column: 2;
+      max-width: none;                /* 고정폭 해제 → 칼럼 가득 */
       width: 100%;
-      justify-self: stretch;    /* 그리드 칼럼 너비를 꽉 채움 */
-    }
-    .has-sidebar .container > main > * {
-      margin-left: 0 !important;
-      margin-right: 0 !important;   /* 내부 섹션/박스의 auto 마진을 무력화 */
-    }
-    
-    /* (선택) 본문이 너무 들러붙지 않게 좌우 패딩 조금 */
-    .has-sidebar .container > main {
-      padding-left: 0.25rem;
-      padding-right: 0.25rem;
+      margin: 0;                      /* 가운데 정렬 해제 */
+      padding-left: .25rem;
+      padding-right: .25rem;
     }
 
+    /* ========== Sidebar ========== */
     .sidebar {
+      grid-column: 1;
       position: sticky;
-      top: 56px;             /* 헤더(padding 포함) 실높이에 맞춰 낮춤 */
+      top: 56px;                      /* 헤더 높이에 맞게 조절 가능 */
       align-self: start;
-      height: auto;
-      overflow: visible;
       background: #f7f7f7;
       border-right: 1px solid #e5e5e5;
       padding: 1rem;
       border-radius: 8px;
+      height: auto;                   /* 내부 스크롤 제거 → 페이지 하나만 스크롤 */
+      overflow: visible;
     }
-    
-    /* 사이드바 내 네비게이션 */
+    .sidebar ul { list-style: none; padding: 0; margin: 0; }
+    .sidebar li { margin-bottom: 0.5rem; }
+    .sidebar a { display: block; padding: 0.35rem 0.4rem 0.35rem 0.6rem; color: #2b6cb0; border-radius: 6px; }
+    .sidebar a:hover { background: #e9eef9; }
+    .sidebar a.active {
+      background: #e2e8ff;
+      color: #1e40af;
+      font-weight: 700;
+      border-left: 3px solid #6a5af9;
+    }
+    .sidebar summary {
+      font-weight: 700;
+      cursor: pointer;
+      padding: 0.4rem 0;
+      color: #333;
+      list-style: none;
+    }
+    .sidebar details > ul { list-style: none; margin: 0.25rem 0 0.5rem 0; padding: 0; }
     .sidebar nav { margin-top: 0.5rem; }
-    .sidebar .nav-search {
-      margin-bottom: 0.75rem;
-    }
+    .sidebar .nav-search { margin-bottom: 0.75rem; }
     .sidebar .nav-search input {
       width: 100%;
       height: 36px;
@@ -98,71 +99,8 @@
       font-size: 0.95rem;
       background: #fff;
     }
-    
-    .sidebar summary {
-      font-weight: 700;
-      cursor: pointer;
-      padding: 0.4rem 0;
-      color: #333;
-      list-style: none;
-    }
-    .sidebar details > ul {
-      list-style: none; margin: 0.25rem 0 0.5rem 0; padding: 0;
-    }
-    
-    .sidebar a {
-      display: block;
-      padding: 0.35rem 0.4rem 0.35rem 0.6rem;
-      color: #2b6cb0;                /* 링크 컬러 */
-      border-radius: 6px;
-      text-decoration: none;
-      font-size: 0.95rem;
-    }
-    .sidebar a:hover {
-      background: #e9eef9;
-    }
-    .sidebar a.active {
-      background: #e2e8ff;           /* 현재 위치 하이라이트 */
-      color: #1e40af;
-      font-weight: 700;
-      border-left: 3px solid #6a5af9;
-    }
 
-    /* 홈 등 사이드바 없는 페이지: 일반 블록 레이아웃 + 메인 중앙 정렬 */
-    .no-sidebar .container {
-      display: block;              /* flex 해제 */
-      max-width: 1280px;
-      margin: 0 auto;
-      padding: 0 1rem;
-    }
-    .no-sidebar .container > main {
-      max-width: 1100px;
-      margin: 0 auto;              /* 본문 가운데 정렬 */
-      padding: 0 0.75rem;          /* 홈 본문 좌우 여백 */
-    }
-    
-    /* 본문 컨테이너/메인 영역 보정 */
-    .container > main {
-      max-width: 1100px;
-      width: 100%;
-      padding: 0;  /* 그리드 기준으로 좌우 여백은 container에서 */
-      box-sizing: border-box;
-    }
-    
-    /* Responsive: 태블릿/모바일은 단일 컬럼(사이드바 위, 본문 아래) */
-    @media screen and (max-width: 1024px) {
-      .has-sidebar .container {
-        display: block;
-        padding: 0 0.75rem;
-      }
-      .sidebar {
-        position: static;
-        height: auto;
-        margin: 0.75rem 0 0;
-        border-right: none;
-      }
-    }
-    /* Accordion */
+    /* ========== Accordion (공통) ========== */
     details {
       border: 1px solid #ddd;
       border-radius: 6px;
@@ -182,15 +120,18 @@
     .indicator { font-size: 0.875rem; color: #0366d6; }
     .accordion-content { padding: 0 1rem 1rem; }
     .accordion-content li { font-size: 0.9rem; line-height: 1.6; }
-    .accordion-title {
-      font-weight: 700;      /* 굵게 */
-      color: #0366d6;        /* 강조 색상 */
-    }
-    summary:hover .accordion-title {
-      color: #0255a5;        /* 호버 시 조금 진하게 (선택) */
+    .accordion-title { font-weight: 700; color: #0366d6; }
+    summary:hover .accordion-title { color: #0255a5; }
+
+    /* ========== Nested details (들여쓰기) ========== */
+    .nested-details {
+      margin-left: 20px;
+      border-left: 3px solid #ddd;
+      padding-left: 10px;
+      margin-top: 0.75rem;
     }
 
-    /* Hero & Category Styles (for home) */
+    /* ========== Home 전용(있어도 무해) ========== */
     .hero { padding: 3rem 2rem; background: #fff; text-align: center; }
     .hero h1 { font-size: 2.5rem; margin-bottom: 1rem; }
     .hero p { font-size: 1.125rem; color: #555; margin-bottom: 1.5rem; }
@@ -202,54 +143,33 @@
       border-radius: 4px;
       font-size: 1rem;
     }
-    .category-section { max-width: 1000px; margin: 2rem auto; padding: 0 2rem; }
-    .category-section h2 { font-size: 1.75rem; margin-bottom: 1rem; text-align: center; }
-    .category-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 1rem; justify-items: center; }
-    .category-card {
-      width: 100px;
-      height: 100px;
-      border-radius: 4px;
-      background: #0366d6;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-decoration: none;
-      color: #fff;
-      font-size: 0.9rem;
-      text-align: center;
-      padding: 1rem;
-      transition: background 0.2s;
-    }
-    .category-card:hover { background: #0255a5; }
 
-    /* Nested details (들여쓰기 적용) */
-    .nested-details {
-      margin-left: 20px;
-      border-left: 3px solid #ddd;
-      padding-left: 10px;
-      margin-top: 0.75rem;
+    /* ========== Responsive ========== */
+    /* 1024px 이하: 사이드바 위/본문 아래 (단일 컬럼) */
+    @media screen and (max-width: 1024px) {
+      .has-sidebar .container {
+        display: block !important;
+        padding: 0 0.75rem;
+      }
+      .sidebar {
+        position: static;
+        height: auto;
+        margin: 0.75rem 0 0;
+        border-right: none;
+      }
+      .container > main {
+        max-width: 1100px;
+        margin: 0 auto;
+      }
     }
 
-    /* Responsive */
-   @media screen and (max-width: 1200px) {
-    .has-sidebar .container { padding-right: 0; }
-  
-    /* 전역 .container 영향 제거 → 사이드바 페이지에선 그리드 유지 */
-    /* 필요하면 1024px 이하에서만 단일 컬럼 전환(아래 3번에서 처리) */
-  
-    /* 사이드바도 has-sidebar 범위로 한정 */
-    .has-sidebar .sidebar {
-      position: static; width: 100%; height: auto;
-      box-shadow: none; margin-top: 1rem;
+    /* 600px 이하: 아코디언/검색 등 자잘한 보정 */
+    @media screen and (max-width: 600px) {
+      .hero { padding: 2rem 1rem; }
+      .search-input { width: 100%; }
     }
-  }
-  @media screen and (max-width: 600px) {
-    .hero { padding: 2rem 1rem; }
-    .search-input { width: 100%; }
-    .category-grid { grid-template-columns: repeat(auto-fill, minmax(80px, 1fr)); }
-    .category-card { width: 80px; height: 80px; font-size: 0.8rem; border-radius: 4px; }
-  }
   </style>
+
 </head>
   
 <body class="{% if page.sidebar == false %}no-sidebar{% else %}has-sidebar{% endif %}">
