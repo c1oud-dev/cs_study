@@ -24,6 +24,22 @@ title: "기초 프로그래밍 완전 정리"
     <summary><b>Q2: Call by Value와 Call by Reference의 차이점을 설명해주세요.</b></summary>
     <div class="accordion-content">
     <p><b>A:</b> Call by Value는 함수 호출 시 인자의 값 자체를 복사해서 전달하는 방식입니다. 함수 내에서 매개변수 값을 변경해도 원본 데이터에는 영향을 주지 않습니다. Call by Reference는 변수의 메모리 주소를 전달하는 방식으로, 함수 내에서 매개변수를 통해 원본 데이터를 직접 수정할 수 있습니다.</p>
+    <hr>
+    <ul>
+        <li><b>함수 (Function):</b> 코드 블럭</li>
+        <pre><code>
+        int add(int x, int y) {   // 함수 (메서드)
+            return x + y;
+        }
+        </code></pre>
+        <li><b>매개변수:</b> 입력값을 받기 위해 선언한 이름, 일종의 자리표시자. (int x, int y)</li>
+        <li><b>인자 (Argument):</b> 함수를 호출할 때 실제로 전달하는 값</li>
+        <pre><code>
+        int result = add(3, 5); // 3, 5 -> 인자
+        </code></pre>
+        <li><b>값 (Value)</b> 실제 데이터(예를 들어 int a = 10; 이라면 10이 값(value))</li>
+        <li><b>변수 (Variable)</b> 이름이 붙은 메모리 공간, 이름표(int a = 10; 에서 a가 변수, 10은 값.)</li>
+    </ul>
     </div>
 </details>
 
@@ -247,15 +263,18 @@ title: "기초 프로그래밍 완전 정리"
 <summary><b>5. 제어문</b></summary>
 <div class="accordion-content">
 <h3>5.1 조건문 (Conditional Statements)</h3>
-<pre><code>if (조건) {
+<pre><code>
+if (조건) {
     // 조건이 참일 때 실행
     } else if (다른조건) {
     // 다른 조건이 참일 때 실행
     } else {
     // 모든 조건이 거짓일 때 실행
-    }</code></pre>
+    }
+</code></pre>
 
-        <pre><code>switch (변수) {
+<pre><code>
+switch (변수) {
     case 값1:
         // 실행문
         break;
@@ -264,7 +283,8 @@ title: "기초 프로그래밍 완전 정리"
         break;
     default:
         // 기본 실행문
-}</code></pre>
+}
+</code></pre>
 
 <h3>5.2 반복문 (Loop Statements)</h3>
 <ul>
