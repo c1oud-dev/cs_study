@@ -52,8 +52,25 @@
     }
     
     /* 칼럼 위치를 명시적으로 지정해 순서를 뒤집음 */
-    .container > main { grid-column: 2; }
-    .sidebar         { grid-column: 1; }
+    .has-sidebar .container > main { grid-column: 2; }
+    .has-sidebar .sidebar         { grid-column: 1; }
+
+    /* ⬇ 문제 해결 핵심: 중앙 정렬을 풀고 왼쪽 정렬로 고정 */
+    .has-sidebar .container > main {
+      max-width: 100%;          /* 가운데 고정폭을 해제 */
+      width: 100%;
+      justify-self: stretch;    /* 그리드 칼럼 너비를 꽉 채움 */
+    }
+    .has-sidebar .container > main > * {
+      margin-left: 0 !important;
+      margin-right: 0 !important;   /* 내부 섹션/박스의 auto 마진을 무력화 */
+    }
+    
+    /* (선택) 본문이 너무 들러붙지 않게 좌우 패딩 조금 */
+    .has-sidebar .container > main {
+      padding-left: 0.25rem;
+      padding-right: 0.25rem;
+    }
 
     .sidebar {
       position: sticky;      /* 스크롤해도 상단 기준으로 고정 */
@@ -218,7 +235,7 @@
   </style>
 </head>
   
-<body class="{% unless page.sidebar == false %}has-sidebar{% endunless %}">
+<body class="{% if page.sidebar == false %}no-sidebar{% else %}has-sidebar{% endif %}">
   <header>
     <a href="/cs_study/home.html" class="logo">CS 정리</a>
   </header>
