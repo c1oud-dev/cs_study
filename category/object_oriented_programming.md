@@ -80,7 +80,7 @@ title: "객체지향 프로그래밍 완전 정리"
 
 <details>
   <summary style="font-size:1rem;"><b>Q10: 생성자와 소멸자의 역할을 설명해주세요.</b></summary>
-  <div class="accordion-content>
+  <div class="accordion-content">
     <p><b>A:</b> 생성자는 객체가 생성될 때 자동으로 호출되는 특수한 메서드로, 객체의 초기화를 담당합니다. 클래스명과 동일하며 반환 타입이 없습니다. 매개변수에 따라 여러 개의 생성자를 만들 수 있고, 기본 생성자가 자동으로 제공됩니다. 소멸자는 객체가 메모리에서 제거될 때 호출되어 리소스 해제나 정리 작업을 담당합니다. Java는 가비지 컬렉터가 있어 소멸자가 필요하지 않지만, C++에서는 명시적 소멸자가 중요합니다.</p>
   </div>
 </details>
@@ -93,7 +93,7 @@ title: "객체지향 프로그래밍 완전 정리"
   <summary><span class="accordion-title">추가 면접 예상 질문 및 답변</span> <span class="indicator">펼치기</span></summary>
   <div class="accordion-content">
 
-<p>설계 원칙 관련</p>
+<h3>설계 원칙 관련</h3>
 
 <details>
   <summary style="font-size:1rem;"><b>Q11: SOLID 원칙에 대해 설명해주세요.</b></summary>
@@ -116,7 +116,7 @@ title: "객체지향 프로그래밍 완전 정리"
   </div>
 </details>
 
-<p>디자인 패턴 관련</p>
+<h3>디자인 패턴 관련</h3>
 
 <details>
   <summary style="font-size:1rem;"><b>Q14: 싱글톤 패턴에 대해 설명해주세요.</b></summary>
@@ -139,7 +139,7 @@ title: "객체지향 프로그래밍 완전 정리"
   </div>
 </details>
 
-<p>실무 관련</p>
+<h3>실무 관련</h3>
 
 <details>
   <summary style="font-size:1rem;"><b>Q17: 객체지향과 절차지향 프로그래밍의 차이점을 설명해주세요.</b></summary>
