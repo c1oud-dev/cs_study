@@ -248,6 +248,7 @@ sidebar: false
     <a href="/cs_study/category/data_structures_algorithms.html" class="category-card">자료구조와 알고리즘</a>
     <a href="/cs_study/category/object_oriented_programming.html" class="category-card">객체지향 프로그래밍</a>
     <a href="/cs_study/category/system_fundamentals.html" class="category-card">시스템 기초</a>
+   <a href="/cs_study/category/database.html" class="category-card">데이터베이스</a>
   </div>
 </section>
 
