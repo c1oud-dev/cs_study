@@ -243,7 +243,6 @@ sidebar: false
 <!-- Category Cards -->
 <section class="category-section">
   <h2>면접 대비</h2>
-  <h3>기본·심화 Q&A + 개념 설명</h3>
   <div class="category-grid small" id="cs-basic-grid">
     <a href="/cs_study/category/interview/data_structures.html" class="category-card">자료구조 (Data Structures)</a>
     <a href="/cs_study/category/interview/algorithms.html" class="category-card">알고리즘 (Algorithms)</a>
