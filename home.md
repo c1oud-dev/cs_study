@@ -265,6 +265,7 @@ sidebar: false
     <a href="/cs_study/category/object_oriented_programming.html" class="category-card">객체지향 프로그래밍</a>
     <a href="/cs_study/category/system_fundamentals.html" class="category-card">시스템 기초</a>
    <a href="/cs_study/category/database.html" class="category-card">데이터베이스</a>
+   <a href="/cs_study/category/web_development.html" class="category-card">웹 개발</a>
   </div>
 </section>
 
