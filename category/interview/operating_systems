@@ -12,7 +12,7 @@ title: "운영체제 면접 대비 — 완전 정리"
 
 <!-- ① 기본 면접 Q&A -->
 <details open>
-  <summary><span class="accordion-title">① 기본 면접 Q&A</span> <span class="indicator">펼치기</span></summary>
+  <summary><span class="accordion-title">📋 기본 면접 Q&A</span> <span class="indicator">펼치기</span></summary>
   <div class="accordion-content">
 
   <details>
@@ -295,7 +295,7 @@ title: "운영체제 면접 대비 — 완전 정리"
 
 <!-- ④ 운영체제 개념 요약 노트 -->
 <details>
-  <summary><span class="accordion-title">④ 운영체제 개념 요약 노트</span> <span class="indicator">펼치기</span></summary>
+  <summary><span class="accordion-title">📚 운영체제 개념 요약 노트</span> <span class="indicator">펼치기</span></summary>
   <div class="accordion-content">
 
   <h3>🏗 운영체제 구조</h3>
