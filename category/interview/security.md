@@ -293,311 +293,170 @@ title: "보안 면접 대비 완벽 가이드"
 <details>
   <summary><span class="accordion-title">📚 보안 개념 요약 노트</span> <span class="indicator">펼치기</span></summary>
   <div class="accordion-content">
-  <pre><code>## 📚 보안 개념 요약 노트
-
-### 🔐 보안 기본 원칙
-
-**CIA 트라이어드**
-- **기밀성(Confidentiality)**: 인가된 사용자만 접근
-- **무결성(Integrity)**: 정보의 정확성과 완전성
-- **가용성(Availability)**: 필요시 접근 가능성
-
-**추가 보안 속성**
-- 인증성(Authenticity): 신원 확인
-- 부인 방지(Non-repudiation): 행위 부인 방지
-- 책임 추적성(Accountability): 행위 추적
-
-### 🔑 암호화 기술
-
-**대칭키 vs 비대칭키**
-| 구분 | 대칭키 | 비대칭키 |
-|------|--------|----------|
-| 키 개수 | 1개 | 2개 (공개키/개인키) |
-| 속도 | 빠름 | 느림 |
-| 키 배송 | 어려움 | 용이함 |
-| 용도 | 대용량 데이터 | 키 교환, 서명 |
-| 예시 | AES, DES | RSA, ECC |
-
-**해시 함수 특성**
-- 일방향성: 역연산 불가
-- 결정성: 동일 입력 → 동일 출력
-- 쇄도 효과: 작은 변화 → 큰 변화
-- 충돌 저항성: 동일 해시값 찾기 어려움
-
-### 🛡️ 접근 제어
-
-**인증 방법**
-- Something you know (지식): 패스워드, PIN
-- Something you have (소유): 스마트카드, OTP 토큰
-- Something you are (생체): 지문, 홍채, 얼굴
-- Something you do (행위): 서명, 음성 패턴
-
-**접근 제어 모델**
-- DAC (임의 접근 제어): 소유자가 권한 결정
-- MAC (강제 접근 제어): 시스템 정책 기반
-- RBAC (역할 기반): 역할에 따른 권한
-- ABAC (속성 기반): 다양한 속성 조합
-
-### 🌐 네트워크 보안
-
-**방화벽 유형**
-```
-패킷 필터링 (Layer 3/4)
-    ↓
-상태 추적 (Stateful)
-    ↓
-애플리케이션 계층 (Layer 7)
-    ↓
-차세대 방화벽 (NGFW)
-```
-
-**VPN 프로토콜**
-- IPSec: 네트워크 계층 보안
-- SSL/TLS: 전송 계층 보안
-- PPTP: 터널링 프로토콜 (구식)
-- L2TP: 계층 2 터널링
-
-**무선 보안**
-- WEP: 취약함 (사용 금지)
-- WPA: 개선되었으나 여전히 취약
-- WPA2: AES 암호화 (권장)
-- WPA3: 최신 보안 강화
-
-### 🔍 위협 탐지
-
-**IDS vs IPS**
-| 구분 | IDS | IPS |
-|------|-----|-----|
-| 동작 방식 | 패시브 | 액티브 |
-| 위치 | 아웃 오브 밴드 | 인라인 |
-| 대응 | 알림만 | 차단 가능 |
-| 성능 영향 | 없음 | 있음 |
-
-**탐지 방법**
-- 시그니처 기반: 알려진 패턴 매칭
-- 이상 행위 기반: 정상 기준선과 비교
-- 휴리스틱: 의심스러운 행위 분석
-- 머신러닝: AI 기반 패턴 학습
-
-### 🦠 악성코드 대응
-
-**악성코드 분류**
-```
-바이러스 → 파일 감염, 자가 복제
-웜 → 네트워크 전파, 독립 실행
-트로이 목마 → 정상 프로그램 위장
-랜섬웨어 → 파일 암호화, 금전 요구
-루트킷 → 시스템 깊숙이 은닉
-봇넷 → 원격 제어 네트워크
-```
-
-**방어 기법**
-- 시그니처 기반: 알려진 악성코드 탐지
-- 휴리스틱: 의심스러운 행위 분석
-- 샌드박스: 격리된 환경에서 실행
-- 행위 기반: 실시간 활동 모니터링
-
-### 🔐 웹 애플리케이션 보안
-
-**OWASP Top 10 (2021)**
-1. Broken Access Control
-2. Cryptographic Failures
-3. Injection
-4. Insecure Design
-5. Security Misconfiguration
-6. Vulnerable Components
-7. Identification and Authentication Failures
-8. Software and Data Integrity Failures
-9. Security Logging and Monitoring Failures
-10. Server-Side Request Forgery (SSRF)
-
-**보안 헤더**
-- HSTS: HTTPS 강제 사용
-- CSP: XSS 공격 방지
-- X-Frame-Options: 클릭재킹 방지
-- X-Content-Type-Options: MIME 스니핑 방지
-
-### ☁️ 클라우드 보안
-
-**공유 책임 모델**
-```
-고객 책임:
-├── 데이터 암호화
-├── 애플리케이션 보안
-├── 운영체제 패치
-└── 네트워크 방화벽
-
-제공자 책임:
-├── 물리적 보안
-├── 네트워크 인프라
-├── 하이퍼바이저
-└── 호스트 운영체제
-```
-
-**클라우드 보안 도구**
-- CASB: 클라우드 접근 보안 브로커
-- CSPM: 클라우드 보안 상태 관리
-- CWPP: 클라우드 워크로드 보호
-- CIEM: 클라우드 인프라 권한 관리
-
-### 🏛️ 거버넌스 & 컴플라이언스
-
-**보안 프레임워크**
-- NIST CSF: 식별→보호→탐지→대응→복구
-- ISO 27001: ISMS 국제 표준
-- COBIT: IT 거버넌스 프레임워크
-- COSO: 내부 통제 프레임워크
-
-**주요 규정**
-- GDPR: EU 개인정보보호 규정
-- CCPA: 캘리포니아 개인정보보호법
-- HIPAA: 의료정보 보호법 (미국)
-- PCI DSS: 신용카드 정보 보안 표준
-
-### 🚨 인시던트 대응
-
-**NIST 인시던트 대응 단계**
-```
-1. 준비 (Preparation)
-   ├── 팀 구성
-   ├── 절차 수립
-   └── 도구 준비
-
-2. 탐지 및 분석 (Detection & Analysis)
-   ├── 인시던트 식별
-   ├── 영향 범위 파악
-   └── 우선순위 결정
-
-3. 격리, 제거, 복구 (Containment, Eradication & Recovery)
-   ├── 추가 피해 방지
-   ├── 위협 제거
-   └── 시스템 복원
-
-4. 사후 활동 (Post-Incident Activity)
-   ├── 문서화
-   ├── 교훈 도출
-   └── 프로세스 개선
-```
-
-### 🔬 포렌식 조사
-
-**증거 수집 원칙**
-- 적법성: 법적 절차 준수
-- 신뢰성: 원본 데이터 보장
-- 완전성: 전체 증거 수집
-- 연속성: 체인 오브 커스터디
-
-**분석 도구**
-- 디스크 이미징: dd, FTK Imager
-- 메모리 분석: Volatility, Rekall
-- 네트워크 분석: Wireshark, tcpdump
-- 모바일 포렌식: Cellebrite, Oxygen
-
-### 🎯 신기술 보안
-
-**AI/ML 보안 적용**
-- 악성코드 탐지: 패턴 학습
-- 이상 행위 탐지: 기준선 학습
-- 자동화된 대응: SOAR 플랫폼
-- 위협 헌팅: 인텔리전스 분석
-
-**IoT 보안 과제**
-- 디바이스 인증: 기본 패스워드 문제
-- 업데이트 관리: 보안 패치 어려움
-- 대규모 공격: 봇넷 구성 위험
-- 프라이버시: 개인정보 수집
-
-### 📊 위험 관리
-
-**위험 평가 매트릭스**
-```
-        낮음    보통    높음
-높음    [ 중 ]  [ 고 ]  [매우고]
-보통    [ 저 ]  [ 중 ]  [ 고 ]
-낮음    [매우저] [ 저 ]  [ 중 ]
-        영향도
-```
-
-**위험 대응 전략**
-- 수용(Accept): 위험 그대로 감수
-- 경감(Mitigate): 통제로 위험 감소
-- 전가(Transfer): 보험 등으로 위험 이전
-- 회피(Avoid): 위험 활동 중단
-
-### 💡 보안 모범 사례
-
-**패스워드 정책**
-- 최소 12자 이상
-- 대소문자, 숫자, 특수문자 조합
-- 정기적 변경보다 유출 시 변경
-- 다중 인증(MFA) 필수
-- 패스워드 관리자 사용 권장
-
-**보안 문화 조성**
-- 최고 경영진 지원
-- 정기적 보안 교육
-- 시뮬레이션 훈련
-- 인시던트 신고 문화
-- 보안 챔피언 프로그램
-
-### 🔮 미래 보안 동향
-
-**제로 트러스트 확산**
-- 네트워크 위치 무관한 보안
-- 지속적 검증
-- 최소 권한 접근
-- 마이크로 세그멘테이션
-
-**AI/ML 보안 진화**
-- 공격자도 AI 활용
-- 적대적 AI 공격
-- 자율 보안 시스템
-- 설명 가능한 AI 필요
-
-**양자 컴퓨팅 대비**
-- 현재 암호화 위협
-- 양자 내성 암호화 준비
-- 암호화 민첩성 구현
-- 하이브리드 전환 전략
-
-### 🎯 면접 대비 팁
-
-**기술적 질문 대응**
-1. **보안 삼요소(CIA)** 정확히 설명
-2. **위협 vs 취약점 vs 위험** 구분
-3. **실무 경험 사례** 구체적 제시
-4. **최신 보안 동향** 관심 표현
-5. **비즈니스 관점** 연계 설명
-
-**상황 대응 질문**
-- 보안 사고 발생 시 대응 절차
-- 위험 평가 수행 방법
-- 보안 정책 수립 과정
-- 예산 제약 시 우선순위 결정
-- 경영진 보고 방법
-
-**윤리적 고려사항**
-- 화이트햇 vs 블랙햇
-- 취약점 공개 정책
-- 프라이버시 vs 보안
-- 법적 준수 의무
-- 윤리적 해킹 기준
-
-### 📚 추천 학습 자료
-
-**자격증**
-- CISSP: 보안 관리 전문가
-- CISM: 정보보안 관리
-- CEH: 윤리적 해킹
-- GSEC: 보안 전문가
-- CompTIA Security+: 보안 기초
-
-**참고 자료**
-- NIST 사이버보안 프레임워크
-- OWASP 가이드라인
-- SANS 보안 자료
-- CVE 취약점 데이터베이스
-- 보안 뉴스 및 블로그
-</code></pre>
+    <h3>🔐 보안 기본 원칙</h3>
+    <h4>CIA 트라이어드</h4>
+    <ul>
+      <li><b>기밀성(Confidentiality)</b>: 인가된 사용자만 접근</li>
+      <li><b>무결성(Integrity)</b>: 정보의 정확성과 완전성</li>
+      <li><b>가용성(Availability)</b>: 필요시 접근 가능성</li>
+    </ul>
+    <h4>추가 보안 속성</h4>
+    <ul>
+      <li>인증성(Authenticity) · 부인 방지(Non-repudiation) · 책임 추적성(Accountability)</li>
+    </ul>
+    <h3>🔑 암호화 기술</h3>
+    <h4>대칭키 vs 비대칭키</h4>
+    <table>
+      <thead>
+        <tr><th>구분</th><th>대칭키</th><th>비대칭키</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>키 개수</td><td>1개</td><td>2개 (공개키/개인키)</td></tr>
+        <tr><td>속도</td><td>빠름</td><td>느림</td></tr>
+        <tr><td>키 배송</td><td>어려움</td><td>용이함</td></tr>
+        <tr><td>용도</td><td>대용량 데이터</td><td>키 교환, 서명</td></tr>
+        <tr><td>예시</td><td>AES, DES</td><td>RSA, ECC</td></tr>
+      </tbody>
+    </table>
+    <h4>해시 함수 특성</h4>
+    <ul>
+      <li>일방향성(역연산 불가), 결정성(동일 입력→동일 출력), 쇄도 효과(작은 변화→큰 변화), 충돌 저항성</li>
+    </ul>
+    <h3>🛡️ 접근 제어</h3>
+    <h4>인증 방법</h4>
+    <ul>
+      <li>지식(Something you know): 패스워드, PIN</li>
+      <li>소유(Something you have): 스마트카드, OTP 토큰</li>
+      <li>생체(Something you are): 지문, 홍채, 얼굴</li>
+      <li>행위(Something you do): 서명, 음성 패턴</li>
+    </ul>
+    <h4>접근 제어 모델</h4>
+    <ul>
+      <li>DAC(임의), MAC(강제), RBAC(역할 기반), ABAC(속성 기반)</li>
+    </ul>
+    <h3>🌐 네트워크 보안</h3>
+    <h4>방화벽 유형</h4>
+    <ul>
+      <li>패킷 필터링(L3/4) → 상태 추적(Stateful) → 애플리케이션 계층(L7) → 차세대 방화벽(NGFW)</li>
+    </ul>
+    <h4>VPN 프로토콜</h4>
+    <ul>
+      <li>IPSec(네트워크 계층), SSL/TLS(전송 계층), PPTP(구식), L2TP</li>
+    </ul>
+    <h4>무선 보안</h4>
+    <ul>
+      <li>WEP(취약, 사용 금지) → WPA → <b>WPA2</b>(권장) → <b>WPA3</b>(최신)</li>
+    </ul>
+    <h3>🔍 위협 탐지</h3>
+    <h4>IDS vs IPS</h4>
+    <table>
+      <thead><tr><th>구분</th><th>IDS</th><th>IPS</th></tr></thead>
+      <tbody>
+        <tr><td>동작 방식</td><td>패시브(알림)</td><td>액티브(차단)</td></tr>
+        <tr><td>위치</td><td>아웃 오브 밴드</td><td>인라인</td></tr>
+        <tr><td>성능 영향</td><td>없음</td><td>있음</td></tr>
+      </tbody>
+    </table>
+    <h4>탐지 방법</h4>
+    <ul>
+      <li>시그니처 기반, 이상 행위 기반, 휴리스틱, 머신러닝</li>
+    </ul>
+    <h3>🦠 악성코드 대응</h3>
+    <h4>악성코드 분류</h4>
+    <ul>
+      <li>바이러스, 웜, 트로이 목마, 랜섬웨어, 루트킷, 봇넷, 스파이웨어/애드웨어</li>
+    </ul>
+    <h4>방어 기법</h4>
+    <ul>
+      <li>엔드포인트 보안, 시그니처/행위 기반 탐지, 샌드박스, 패치 관리, 백업</li>
+    </ul>
+    <h3>🔐 웹 애플리케이션 보안</h3>
+    <h4>OWASP Top 10 (2021)</h4>
+    <ol>
+      <li>Broken Access Control</li>
+      <li>Cryptographic Failures</li>
+      <li>Injection</li>
+      <li>Insecure Design</li>
+      <li>Security Misconfiguration</li>
+      <li>Vulnerable Components</li>
+      <li>Identification and Authentication Failures</li>
+      <li>Software and Data Integrity Failures</li>
+      <li>Security Logging and Monitoring Failures</li>
+      <li>Server-Side Request Forgery (SSRF)</li>
+    </ol>
+    <h4>보안 헤더</h4>
+    <ul>
+      <li>HSTS, CSP, X-Frame-Options, X-Content-Type-Options</li>
+    </ul>
+    <h3>☁️ 클라우드 보안</h3>
+    <h4>공유 책임 모델</h4>
+    <ul>
+      <li><b>고객</b>: 데이터 암호화, 애플리케이션 보안, OS 패치, 네트워크 방화벽</li>
+      <li><b>제공자</b>: 물리 보안, 네트워크 인프라, 하이퍼바이저, 호스트 OS</li>
+    </ul>
+    <h4>클라우드 보안 도구</h4>
+    <ul>
+      <li>CASB, CSPM, CWPP, CIEM</li>
+    </ul>
+    <h3>🏛️ 거버넌스 &amp; 컴플라이언스</h3>
+    <ul>
+      <li>프레임워크: NIST CSF(식별→보호→탐지→대응→복구), ISO 27001, COBIT, COSO</li>
+      <li>주요 규정: GDPR, CCPA, HIPAA, PCI DSS</li>
+    </ul>
+    <h3>🚨 인시던트 대응</h3>
+    <ol>
+      <li><b>준비</b>: 팀 구성, 절차 수립, 도구 준비</li>
+      <li><b>탐지 및 분석</b>: 식별, 영향 범위, 우선순위</li>
+      <li><b>격리·제거·복구</b>: 확산 방지, 위협 제거, 시스템 복원</li>
+      <li><b>사후 활동</b>: 문서화, 교훈, 프로세스 개선</li>
+    </ol>
+    <h3>🔬 포렌식 조사</h3>
+    <h4>증거 수집 원칙</h4>
+    <ul>
+      <li>적법성, 신뢰성(원본 보장), 완전성, 연속성(체인 오브 커스터디)</li>
+    </ul>
+    <h4>분석 도구</h4>
+    <ul>
+      <li>디스크 이미징(dd, FTK Imager), 메모리 분석(Volatility, Rekall), 네트워크 분석(Wireshark, tcpdump), 모바일 포렌식(Cellebrite, Oxygen)</li>
+    </ul>
+    <h3>🎯 신기술 보안</h3>
+    <ul>
+      <li>AI/ML: 악성코드/이상 행위 탐지, SOAR 자동화, 위협 헌팅</li>
+      <li>IoT 과제: 디바이스 인증, 업데이트 관리, 봇넷 위험, 프라이버시</li>
+    </ul>
+    <h3>📊 위험 관리</h3>
+    <h4>위험 평가 매트릭스 (행=발생 가능성, 열=영향도)</h4>
+    <table>
+      <thead><tr><th></th><th>낮음</th><th>보통</th><th>높음</th></tr></thead>
+      <tbody>
+        <tr><td><b>높음</b></td><td>중</td><td>고</td><td>매우 높음</td></tr>
+        <tr><td><b>보통</b></td><td>저</td><td>중</td><td>고</td></tr>
+        <tr><td><b>낮음</b></td><td>매우 저</td><td>저</td><td>중</td></tr>
+      </tbody>
+    </table>
+    <h4>위험 대응 전략</h4>
+    <ul>
+      <li>수용(Accept), 경감(Mitigate), 전가(Transfer), 회피(Avoid)</li>
+    </ul>
+    <h3>💡 보안 모범 사례</h3>
+    <ul>
+      <li>패스워드: 최소 12자, 대/소문자·숫자·특수문자, 유출 시 변경, MFA, 관리자 사용</li>
+      <li>보안 문화: 최고경영진 지원, 정기 교육, 시뮬레이션, 신고 문화, 보안 챔피언</li>
+    </ul>
+    <h3>🔮 미래 보안 동향</h3>
+    <ul>
+      <li>제로 트러스트 확산, AI 대 AI, 양자 대비(PQC·Crypto Agility)</li>
+    </ul>
+    <h3>🎯 면접 대비 팁</h3>
+    <ul>
+      <li><b>기술 질문</b>: CIA 정확히 설명, 위협·취약점·위험 구분, 최신 동향, 비즈니스 연계</li>
+      <li><b>상황 질문</b>: 사고 대응, 위험 평가, 정책 수립, 우선순위, 경영진 보고</li>
+      <li><b>윤리</b>: 취약점 공개, 프라이버시 vs 보안, 준법, 윤리적 해킹</li>
+    </ul>
+    <h3>📚 추천 학습 자료</h3>
+    <ul>
+      <li>자격증: CISSP, CISM, CEH, GSEC, CompTIA Security+</li>
+      <li>레퍼런스: NIST CSF, OWASP, SANS, CVE DB, 보안 뉴스/블로그</li>
+    </ul>
   </div>
 </details>
