@@ -252,7 +252,7 @@ sidebar: false
    <a href="/cs_study/category/interview/sw_and_architecture.html" class="category-card">소프트웨어 공학 & 아키텍처</a>
    <a href="/cs_study/category/interview/security.html" class="category-card">보안 (Security)</a>
    <a href="/cs_study/category/interview/cloud_and_distributed_systems.html" class="category-card">클라우드 & 분산 시스템</a>
-   <a href="/cs_study/category/interview/other.html" class="category-card">기타</a>
+   <a href="/cs_study/category/interview/other.html" class="category-card">DevOps</a>
   </div>
 </section>
 
