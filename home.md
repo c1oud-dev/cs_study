@@ -244,6 +244,9 @@ sidebar: false
 <section class="category-section">
   <h2>면접 대비</h2>
   <div class="category-grid small" id="cs-basic-grid">
+    <a href="/cs_study/category/interview/java.html" class="category-card">자바(Java)</a>
+   <a href="/cs_study/category/interview/spring.html" class="category-card">스프링(Spring)</a>
+   <a href="/cs_study/category/interview/jpa.html" class="category-card">JPA</a>
     <a href="/cs_study/category/interview/data_structures.html" class="category-card">자료구조 (Data Structures)</a>
     <a href="/cs_study/category/interview/algorithms.html" class="category-card">알고리즘 (Algorithms)</a>
     <a href="/cs_study/category/interview/operating_systems.html" class="category-card">운영체제 (Operating Systems)</a>
