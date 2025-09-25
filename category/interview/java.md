@@ -255,12 +255,13 @@ title: "Java Interview — 완벽 가이드"
     └── Queue (FIFO)
         ├── LinkedList
         └── PriorityQueue (우선순위)
-    <p>Map (키-값 쌍)
+    </pre></code>
+    <pre><code>Map (키-값 쌍)
     ├── HashMap (해시 테이블)
     ├── TreeMap (정렬)
     ├── LinkedHashMap (입력 순서)
     └── Hashtable (동기화)
-    &lt;/code&gt;&lt;/pre&gt;</p>
+    </pre></code>
     <h4>성능 비교</h4>
     <table>
     <thead><tr><th>구분</th><th>검색</th><th>삽입/삭제</th><th>정렬</th><th>동기화</th></tr></thead>
@@ -358,11 +359,13 @@ title: "Java Interview — 완벽 가이드"
     <li><b>풀링</b>: 객체 재사용</li>
     </ul>
     <h3>💡 면접 팁</h3>
-    <p>1. &lt;b&gt;기본기 탄탄히&lt;/b&gt;: OOP 4원칙과 자바 기본 문법 완벽 숙지
-    2. &lt;b&gt;예시 코드&lt;/b&gt;: 설명과 함께 간단한 코드 작성 능력 보여주기
-    3. &lt;b&gt;실무 경험&lt;/b&gt;: 프로젝트에서 사용한 라이브러리나 패턴 언급
-    4. &lt;b&gt;성능 고려&lt;/b&gt;: 시간복잡도와 메모리 사용량 분석
-    5. &lt;b&gt;최신 동향&lt;/b&gt;: 자바 8+ 특징과 스프링 생태계 이해
-    6. &lt;b&gt;트러블슈팅&lt;/b&gt;: 실제 겪은 문제와 해결 과정 준비</p>
+    <ol>
+    <li><b>기본기 탄탄히</b>: OOP 4원칙과 자바 기본 문법 완벽 숙지</li>
+    <li><b>예시 코드</b>: 설명과 함께 간단한 코드 작성 능력 보여주기</li>
+    <li><b>실무 경험</b>: 프로젝트에서 사용한 라이브러리나 패턴 언급</li>
+    <li><b>성능 고려</b>: 시간복잡도와 메모리 사용량 분석</li>
+    <li><b>최신 동향</b>: 자바 8+ 특징과 스프링 생태계 이해</li>
+    <li><b>트러블슈팅</b>: 실제 겪은 문제와 해결 과정 준비</li>
+    </ol>
   </div>
 </details>
