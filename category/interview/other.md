@@ -6,7 +6,7 @@ title: "DevOps 면접 대비 — 완전 정리"
 <p class="breadcrumb"><a href="/cs_study/home.html">🏠 홈으로</a></p>
 
 <section>
-  <h2>DevOps 면접 대비 — 기본·심화 Q&A + 추가 예상 질문 Q&A + 개념 요약</h2>
+  <h2>DevOps & 버전 관리 면접 대비</h2>
   <p>구성: 기본 면접 Q&A → 심화 면접 Q&A → 추가 예상 질문 Q&A → DevOps 개념 요약 노트</p>
 </section>
 
@@ -17,140 +17,184 @@ title: "DevOps 면접 대비 — 완전 정리"
 <details>
   <summary style="font-size:1rem;"><b>Q1. Git이란 무엇이며 다른 버전 관리 시스템과의 차이점은?</b></summary>
   <div class="accordion-content">
-<p>Git은 분산 버전 관리 시스템으로, 각 개발자가 로컬에 전체 프로젝트 히스토리를 가지고 작업할 수 있습니다. SVN이나 CVS와 달리 중앙 서버 없이도 독립적으로 작업 가능하며, 브랜치 생성과 병합이 매우 빠르고 효율적입니다. 또한 데이터 무결성을 위해 SHA-1 해시를 사용하여 모든 객체를 식별하고, 스냅샷 방식으로 변경사항을 저장합니다.</p>
+  <p>Git은 분산 버전 관리 시스템으로, 각 개발자가 로컬에 전체 프로젝트 히스토리를 가지고 작업할 수 있습니다. SVN이나 CVS와 달리 중앙 서버 없이도 독립적으로 작업 가능하며, 브랜치 생성과 병합이 매우 빠르고 효율적입니다. 또한 데이터 무결성을 위해 SHA-1 해시를 사용하여 모든 객체를 식별하고, 스냅샷 방식으로 변경사항을 저장합니다.</p>
+  <hr>
+    <h4>💡 SVN(Subversion)</h4>
+      <p>중앙집중형 버전관리 시스템. 중앙 서버에 코드 이력이 모이고, 개발자는 체크아웃/커밋으로 작업.</p>
+    <h4>💡 CVS</h4>
+      <p>SVN보다 더 오래된 중앙집중형 VCS. 원자적 커밋 부재, 디렉터리/리네임 처리 미흡 등 한계가 있어 SVN·Git로 많이 대체.</p>
+    <h4>💡 중앙서버</h4>
+      <p>중앙집중형 VCS에서 모든 변경 이력과 최신 코드가 저장되는 단일 서버. 서버 장애 시 전체 작업이 영향받을 수 있음.</p>
+    <h4>💡 브랜치(Branch)</h4>
+      <p>한 시점의 이력에서 독립적으로 변경을 이어가는 분기선. 기능 개발·버그 수정 등을 메인과 분리해 병행 작업 가능.</p>
+    <h4>💡 SHA-1 해시</h4>
+      <p>Git에서(기본) 콘텐츠 기반 식별자로 쓰이는 160비트 해시(16진수 40자리). 내용이 같으면 같은 해시 → 이력 무결성 검증에 활용.</p>
+    <h4>💡 객체(Objects, Git 문맥)</h4>
+      <p>Git 저장소 내부의 기본 저장 단위.</p>
+      <ul>
+        <li><b>blob(파일 내용), tree(디렉터리/파일 구조), commit(스냅샷+메타데이터), tag(주석 달린 참조)</b> </li>
+        <li>👉 이 객체들이 해시(SHA) 로 식별되고 조합되어 전체 이력을 구성합니다.</li>
+      </ul>
   </div>
 </details>
 
 <details>
   <summary style="font-size:1rem;"><b>Q2. Git의 세 가지 영역(Three Areas)을 설명해주세요.</b></summary>
   <div class="accordion-content">
-<p>**Working Directory**는 실제 파일이 있는 작업 공간으로 수정 중인 파일들이 있습니다. **Staging Area(Index)**는 다음 커밋에 포함될 변경사항들을 임시로 저장하는 영역입니다. **Repository**는 실제 커밋된 히스토리가 저장되는 곳입니다. 파일은 Working Directory에서 수정되고, `git add`로 Staging Area에 추가되며, `git commit`으로 Repository에 영구 저장됩니다.</p>
+  <p>Working Directory는 실제 파일이 있는 작업 공간으로 수정 중인 파일들이 있습니다. Staging Area(Index)는 다음 커밋에 포함할 변경사항들을 임시로 저장하는 영역입니다. Repository는 실제 커밋된 히스토리가 저장되는 곳입니다. 파일은 Working Directory에서 수정되고, `git add`로 Staging Area에 추가되며, `git commit`으로 Repository에 영구 저장됩니다.</p>
   </div>
 </details>
 
 <details>
   <summary style="font-size:1rem;"><b>Q3. Git 브랜치 전략들을 비교해주세요.</b></summary>
   <div class="accordion-content">
-<p>**Git Flow**는 master, develop, feature, release, hotfix 브랜치로 구성된 복잡한 모델로 대규모 프로젝트에 적합합니다. **GitHub Flow**는 master와 feature 브랜치만 사용하는 단순한 모델로 지속적 배포에 유리합니다. **GitLab Flow**는 environment 브랜치를 추가하여 배포 환경별 관리가 가능합니다. **Trunk-based Development**는 매우 짧은 생명주기의 브랜치를 사용하거나 직접 main에 커밋하는 방식입니다.</p>
+  <p>Git Flow는 master, develop, feature, release, hotfix 브랜치로 구성된 복잡한 모델로 대규모 프로젝트에 적합합니다. GitHub Flow는 master와 feature 브랜치만 사용하는 단순한 모델로 지속적 배포에 유리합니다. GitLab Flow는 environment 브랜치를 추가하여 배포 환경별 관리가 가능합니다. Trunk-based Development는 매우 짧은 생명주기의 브랜치를 사용하거나 직접 main에 커밋하는 방식입니다.</p>
+  <hr>
+    <h4>💡 브랜치들</h4>
+      <ul>
+        <li><b>master 브랜치:</b> 항상 배포 가능한 안정 버전을 유지하는 메인 브랜치(프로덕션 릴리스 이력).</li>
+        <li><b>develop 브랜치:</b> 다음 릴리스를 위한 통합 개발용 브랜치. feature들이 여기로 병합됨.</li>
+        <li><b>feature 브랜치:</b> 기능 단위 작업용 임시 브랜치. develop에서 분기 → 작업 완료 후 develop으로 머지.</li>
+        <li><b>release 브랜치:</b> 릴리스 직전 버그 수정/버전 태깅/문서 정리를 하는 안정화 브랜치. 준비 끝나면 master(배포)와 develop에 머지.</li>
+        <li><b>hotfix 브랜치:</b> 운영 중 긴급 문제를 즉시 수정하기 위한 브랜치. master에서 분기 → 수정 후 master와 develop에 머지.</li>
+        <li><b>environment 브랜치 (GitLab Flow):</b> 배포 환경별 상태를 표현하는 브랜치. 예: production, staging</li>
+        <ul>
+          <li>특정 커밋/머지를 통해 “이 커밋이 지금 어느 환경에 배포되어 있는지”를 브랜치로 명확히 관리.</li>
+        </ul>
+      </ul>
   </div>
 </details>
 
 <details>
   <summary style="font-size:1rem;"><b>Q4. CI/CD란 무엇이며 각각의 역할은?</b></summary>
   <div class="accordion-content">
-<p>**CI(Continuous Integration)**는 개발자들이 코드 변경사항을 자주 통합하고 자동화된 빌드와 테스트를 수행하여 통합 문제를 조기에 발견하는 것입니다. **CD(Continuous Deployment/Delivery)**는 Delivery의 경우 프로덕션 배포 준비 상태까지 자동화하고, Deployment는 프로덕션까지 완전 자동 배포하는 것입니다. 이를 통해 배포 리스크를 줄이고 릴리스 주기를 단축할 수 있습니다.</p>
+  <p>CI(Continuous Integration)는 개발자들이 코드 변경사항을 자주 통합하고 자동화된 빌드와 테스트를 수행하여 통합 문제를 조기에 발견하는 것입니다. CD(Continuous Deployment/Delivery)는 Delivery의 경우 프로덕션 배포 준비 상태까지 자동화하고, Deployment는 프로덕션까지 완전 자동 배포하는 것입니다. 이를 통해 배포 리스크를 줄이고 릴리스 주기를 단축할 수 있습니다.</p>
   </div>
 </details>
 
 <details>
   <summary style="font-size:1rem;"><b>Q5. Docker 컨테이너와 가상머신의 차이점은?</b></summary>
   <div class="accordion-content">
-<p>가상머신은 하이퍼바이저 위에서 완전한 운영체제를 실행하며 강력한 격리를 제공하지만 리소스 오버헤드가 큽니다. Docker 컨테이너는 호스트 OS 커널을 공유하면서 애플리케이션 레벨에서 격리를 제공합니다. 컨테이너는 시작 시간이 빠르고 리소스 효율적이며 이미지 크기가 작지만, 보안 격리가 상대적으로 약하고 같은 커널을 공유하므로 OS 레벨 버그에 취약할 수 있습니다.</p>
+  <p>가상머신은 하이퍼바이저 위에서 완전한 운영체제를 실행하며 강력한 격리를 제공하지만 리소스 오버헤드가 큽니다. Docker 컨테이너는 호스트 OS 커널을 공유하면서 애플리케이션 레벨에서 격리를 제공합니다. 컨테이너는 시작 시간이 빠르고 리소스 효율적이며 이미지 크기가 작지만, 보안 격리가 상대적으로 약하고 같은 커널을 공유하므로 OS 레벨 버그에 취약할 수 있습니다.</p>
+  <hr>
+    <h4>💡 하이퍼바이저</h4>
+      <p>물리 서버 위에서 가상머신(VM)을 만들고 관리하는 소프트웨어/펌웨어. (Type-1: 하드웨어 바로 위, Type-2: OS 위)</p>
+    <h4>💡 리소스 오버헤드</h4>
+      <p>가상화/관리 때문에 추가로 드는 CPU·메모리·I/O 비용. (VM은 OS 전체를 올리니 오버헤드가 큼)</p>
+    <h4>💡 호스트 OS 커널</h4>
+      <p>컨테이너가 함께 공유해서 쓰는 운영체제의 핵심. 프로세스/메모리/파일시스템 같은 기본 기능을 제공.</p>
+    <h4>💡 “리소스 효율적”이란?</h4>
+      <ul>
+        <li>같은 일을 할 때 적은 자원(CPU·RAM·디스크) 으로 동작하거나, 동일 자원으로 더 많은 인스턴스를 띄울 수 있다는 뜻.</li>
+        <li>컨테이너는 게스트 OS 부재 + 레이어드 이미지 덕에 VM보다 보통 더 가벼움.</li>
+      </ul>
+    <h4>💡 컨테이너는 게스트 OS 부재 + 레이어드 이미지 덕에 VM보다 보통 더 가벼움.</h4>
+      <p>커널/드라이버 같은 운영체제 핵심의 결함. 컨테이너는 커널을 공유하므로, 커널 취약점이 뚫리면 여러 컨테이너가 함께 영향을 받을 수 있음.</p>
   </div>
 </details>
 
 <details>
   <summary style="font-size:1rem;"><b>Q6. 마이크로서비스 아키텍처의 장단점은?</b></summary>
   <div class="accordion-content">
-<p>**장점**: 서비스별 독립적 개발과 배포가 가능하고, 기술 스택을 자유롭게 선택할 수 있으며, 장애 격리와 확장성이 우수합니다. 팀의 자율성이 높아지고 비즈니스 도메인에 맞는 최적화가 가능합니다. **단점**: 서비스 간 통신 복잡성이 증가하고, 분산 시스템의 복잡성(네트워크 지연, 장애 처리)을 다뤄야 하며, 데이터 일관성 관리와 모니터링이 어려워집니다. 운영 복잡도가 크게 증가합니다.</p>
+  <p>장점: 서비스별 독립적 개발과 배포가 가능하고, 기술 스택을 자유롭게 선택할 수 있으며, 장애 격리와 확장성이 우수합니다. 팀의 자율성이 높아지고 비즈니스 도메인에 맞는 최적화가 가능합니다. <br>단점: 서비스 간 통신 복잡성이 증가하고, 분산 시스템의 복잡성(네트워크 지연, 장애 처리)을 다뤄야 하며, 데이터 일관성 관리와 모니터링이 어려워집니다. 운영 복잡도 또한 크게 증가합니다.</p>
   </div>
 </details>
 
 <details>
   <summary style="font-size:1rem;"><b>Q7. 인프라스트럭처 as 코드(IaC)의 개념과 도구들은?</b></summary>
   <div class="accordion-content">
-<p>IaC는 인프라를 코드로 정의하고 관리하는 방식으로, 수동 설정 대신 선언적 파일로 인프라를 구성합니다. **Terraform**은 클라우드 무관한 프로비저닝 도구이고, **AWS CloudFormation**은 AWS 전용 서비스입니다. **Ansible**은 구성 관리와 애플리케이션 배포에 강점이 있고, **Kubernetes**는 컨테이너 오케스트레이션을 담당합니다. 이를 통해 인프라의 버전 관리, 재현성, 확장성을 확보할 수 있습니다.</p>
+  <p>IaC는 인프라를 코드로 정의하고 관리하는 방식으로, 수동 설정 대신 선언적 파일로 인프라를 구성합니다. <b>Terraform</b>은 클라우드 무관한 프로비저닝 도구이고, <b>AWS CloudFormation</b>은 AWS 전용 서비스입니다. <b>Ansible</b>은 구성 관리와 애플리케이션 배포에 강점이 있고, <b>Kubernetes</b>는 컨테이너 오케스트레이션을 담당합니다. 이를 통해 인프라의 버전 관리, 재현성, 확장성을 확보할 수 있습니다.</p>
   </div>
 </details>
 
 <details>
   <summary style="font-size:1rem;"><b>Q8. 모니터링과 로깅의 차이점 및 주요 도구들은?</b></summary>
   <div class="accordion-content">
-<p>**모니터링**은 시스템의 현재 상태와 성능 지표를 실시간으로 추적하여 문제를 사전에 감지하는 것입니다. **로깅**은 시스템에서 발생하는 이벤트를 기록하여 문제 분석과 디버깅에 활용합니다. Prometheus와 Grafana는 메트릭 수집과 시각화에 사용되고, ELK Stack(Elasticsearch, Logstash, Kibana)이나 EFK Stack은 로그 수집과 분석에 활용됩니다. APM 도구로는 New Relic, DataDog 등이 있습니다.</p>
+  <p>모니터링은 시스템의 현재 상태와 성능 지표를 실시간으로 추적하여 문제를 사전에 감지하는 것입니다. 로깅은 시스템에서 발생하는 이벤트를 기록하여 문제 분석과 디버깅에 활용합니다. Prometheus와 Grafana는 메트릭 수집과 시각화에 사용되고, ELK Stack(Elasticsearch, Logstash, Kibana)이나 EFK Stack은 로그 수집과 분석에 활용됩니다. APM 도구로는 New Relic, DataDog 등이 있습니다.</p>
   </div>
 </details>
 
 <details>
   <summary style="font-size:1rem;"><b>Q9. Blue-Green 배포와 Rolling 배포의 차이점은?</b></summary>
   <div class="accordion-content">
-<p>**Blue-Green 배포**는 현재 환경(Blue)과 동일한 새로운 환경(Green)을 구성하고, 트래픽을 한 번에 전환하는 방식입니다. 롤백이 빠르고 다운타임이 없지만 리소스가 2배로 필요합니다. **Rolling 배포**는 인스턴스를 점진적으로 교체하는 방식으로 리소스 효율적이지만 배포 중 버전이 혼재되고 롤백이 복잡할 수 있습니다. **Canary 배포**는 소수 사용자에게만 먼저 배포하여 안정성을 검증하는 방식입니다.</p>
+  <p>Blue-Green 배포는 현재 환경(Blue)과 동일한 새로운 환경(Green)을 구성하고, 트래픽을 한 번에 전환하는 방식입니다. 롤백이 빠르고 다운타임이 없지만 리소스가 2배로 필요합니다. Rolling 배포는 인스턴스를 점진적으로 교체하는 방식으로 리소스 효율적이지만 배포 중 버전이 혼재되고 롤백이 복잡할 수 있습니다. Canary 배포는 소수 사용자에게만 먼저 배포하여 안정성을 검증하는 방식입니다.</p>
   </div>
 </details>
 
 <details>
   <summary style="font-size:1rem;"><b>Q10. 컨테이너 오케스트레이션의 필요성과 Kubernetes의 주요 컴포넌트는?</b></summary>
   <div class="accordion-content">
-<p>대규모 컨테이너 환경에서는 자동 배포, 스케일링, 로드밸런싱, 장애 복구, 롤링 업데이트 등이 필요합니다. **Kubernetes**의 주요 컴포넌트로는 API Server(클러스터 관리), etcd(설정 저장소), Scheduler(파드 배치), Controller Manager(상태 관리), kubelet(노드 에이전트), kube-proxy(네트워킹)가 있습니다. Pod, Service, Deployment, ConfigMap, Secret 등의 리소스로 애플리케이션을 선언적으로 관리합니다.</p>
+  <p>대규모 컨테이너 환경에서는 자동 배포, 스케일링, 로드밸런싱, 장애 복구, 롤링 업데이트 등이 필요합니다. **Kubernetes**의 주요 컴포넌트로는 API Server(클러스터 관리), etcd(설정 저장소), Scheduler(파드 배치), Controller Manager(상태 관리), kubelet(노드 에이전트), kube-proxy(네트워킹)가 있습니다. Pod, Service, Deployment, ConfigMap, Secret 등의 리소스로 애플리케이션을 선언적으로 관리합니다.</p>
   </div>
 </details>
 
 <details>
   <summary style="font-size:1rem;"><b>Q11. DevOps란 무엇이며 전통적인 개발 방식과의 차이점은?</b></summary>
   <div class="accordion-content">
-<p>DevOps는 Development와 Operations의 합성어로, 개발팀과 운영팀 간의 협력과 소통을 강화하여 소프트웨어 개발과 배포를 자동화하는 문화와 방법론입니다. 전통적인 방식에서는 개발과 운영이 분리되어 사일로 효과가 발생했지만, DevOps는 전체 라이프사이클을 통합하여 빠른 피드백과 지속적인 개선을 추구합니다. 자동화, 협업, 측정, 공유의 핵심 가치를 통해 배포 빈도를 높이고 장애 복구 시간을 단축합니다.</p>
+  <p>DevOps는 Development와 Operations의 합성어로, 개발팀과 운영팀 간의 협력과 소통을 강화하여 소프트웨어 개발과 배포를 자동화하는 문화와 방법론입니다. 전통적인 방식에서는 개발과 운영이 분리되어 사일로 효과가 발생했지만, DevOps는 전체 라이프사이클을 통합하여 빠른 피드백과 지속적인 개선을 추구합니다. 자동화, 협업, 측정, 공유의 핵심 가치를 통해 배포 빈도를 높이고 장애 복구 시간을 단축합니다.</p>
   </div>
 </details>
 
 <details>
   <summary style="font-size:1rem;"><b>Q12. Docker 이미지와 컨테이너의 관계를 설명해주세요.</b></summary>
   <div class="accordion-content">
-<p>Docker 이미지는 애플리케이션과 그 실행 환경을 포함한 읽기 전용 템플릿입니다. 컨테이너는 이미지를 실행한 인스턴스로, 이미지 위에 쓰기 가능한 레이어가 추가됩니다. 하나의 이미지로 여러 개의 컨테이너를 생성할 수 있으며, 각 컨테이너는 독립적인 실행 환경을 가집니다. 이미지는 레이어 구조로 되어 있어 공통 레이어를 재사용하여 저장 공간을 효율적으로 사용합니다.</p>
+  <p>Docker 이미지는 애플리케이션과 그 실행 환경을 포함한 읽기 전용 템플릿입니다. 컨테이너는 이미지를 실행한 인스턴스로, 이미지 위에 쓰기 가능한 레이어가 추가됩니다. 하나의 이미지로 여러 개의 컨테이너를 생성할 수 있으며, 각 컨테이너는 독립적인 실행 환경을 가집니다. 이미지는 레이어 구조로 되어 있어 공통 레이어를 재사용하여 저장 공간을 효율적으로 사용합니다.</p>
   </div>
 </details>
 
 <details>
   <summary style="font-size:1rem;"><b>Q13. Kubernetes Pod와 Service의 역할과 관계는?</b></summary>
   <div class="accordion-content">
-<p>**Pod**는 Kubernetes의 최소 배포 단위로, 하나 이상의 컨테이너를 포함하며 동일한 네트워크와 스토리지를 공유합니다. Pod는 일시적이고 IP가 변경될 수 있습니다. **Service**는 Pod에 대한 안정적인 네트워크 엔드포인트를 제공하는 추상화 계층입니다. 로드밸런싱과 서비스 디스커버리를 담당하며, ClusterIP, NodePort, LoadBalancer, ExternalName 타입이 있습니다. Selector를 통해 Pod를 동적으로 연결합니다.</p>
+  <p>Pod는 Kubernetes의 최소 배포 단위로, 하나 이상의 컨테이너를 포함하며 동일한 네트워크와 스토리지를 공유합니다. Pod는 일시적이고 IP가 변경될 수 있습니다. Service는 Pod에 대한 안정적인 네트워크 엔드포인트를 제공하는 추상화 계층입니다. 로드밸런싱과 서비스 디스커버리를 담당하며, ClusterIP, NodePort, LoadBalancer, ExternalName 타입이 있습니다. Selector를 통해 Pod를 동적으로 연결합니다.</p>
   </div>
 </details>
 
 <details>
   <summary style="font-size:1rem;"><b>Q14. 로드밸런싱의 종류와 각각의 특징은?</b></summary>
   <div class="accordion-content">
-<p>**Layer 4 로드밸런싱**은 IP와 포트 정보를 기반으로 트래픽을 분산하며 속도가 빠르지만 세밀한 제어가 어렵습니다. **Layer 7 로드밸런싱**은 HTTP 헤더, URL, 쿠키 등을 분석하여 지능적인 라우팅이 가능하지만 처리 오버헤드가 있습니다. 알고리즘으로는 Round Robin(순차 분산), Least Connections(최소 연결), IP Hash(클라이언트 IP 기반), Weighted(가중치 기반) 등이 있습니다.</p>
+  <p>Layer 4 로드밸런싱은 IP와 포트 정보를 기반으로 트래픽을 분산하며 속도가 빠르지만 세밀한 제어가 어렵습니다. Layer 7 로드밸런싱은 HTTP 헤더, URL, 쿠키 등을 분석하여 지능적인 라우팅이 가능하지만 처리 오버헤드가 있습니다. 알고리즘으로는 Round Robin(순차 분산), Least Connections(최소 연결), IP Hash(클라이언트 IP 기반), Weighted(가중치 기반) 등이 있습니다.</p>
   </div>
 </details>
 
 <details>
   <summary style="font-size:1rem;"><b>Q15. 환경별 설정 관리 방법들을 설명해주세요.</b></summary>
   <div class="accordion-content">
-<p>**환경변수**는 가장 기본적인 방법으로 12-factor app 원칙에 따라 코드와 설정을 분리합니다. **설정 파일**은 환경별로 다른 파일을 사용하며, **Kubernetes ConfigMap/Secret**은 설정과 민감 정보를 별도로 관리합니다. **외부 설정 서비스**(Consul, etcd, AWS Parameter Store)를 사용하여 중앙화된 설정 관리도 가능합니다. 설정 변경 시 자동 재배포나 동적 리로드 기능도 고려해야 합니다.</p>
+  <p>환경변수는 가장 기본적인 방법으로 12-factor app 원칙에 따라 코드와 설정을 분리합니다. 설정 파일은 환경별로 다른 파일을 사용하며, Kubernetes ConfigMap/Secret은 설정과 민감 정보를 별도로 관리합니다. 외부 설정 서비스(Consul, etcd, AWS Parameter Store)를 사용하여 중앙화된 설정 관리도 가능합니다. 설정 변경 시 자동 재배포나 동적 리로드 기능도 고려해야 합니다.</p>
   </div>
 </details>
 
 <details>
   <summary style="font-size:1rem;"><b>Q16. API Gateway의 역할과 주요 기능들은?</b></summary>
   <div class="accordion-content">
-<p>API Gateway는 마이크로서비스 아키텍처에서 클라이언트와 백엔드 서비스 사이의 단일 진입점 역할을 합니다. **주요 기능**으로는 요청 라우팅과 로드밸런싱, 인증과 인가, Rate Limiting과 Throttling, 요청/응답 변환, 로깅과 모니터링, 캐싱, CORS 처리가 있습니다. Kong, AWS API Gateway, Istio Gateway, NGINX Plus 등의 솔루션이 있으며, 서비스별 횡단 관심사를 중앙에서 처리할 수 있습니다.</p>
+  <p>API Gateway는 마이크로서비스 아키텍처에서 클라이언트와 백엔드 서비스 사이의 단일 진입점 역할을 합니다. 주요 기능으로는 요청 라우팅과 로드밸런싱, 인증과 인가, Rate Limiting과 Throttling, 요청/응답 변환, 로깅과 모니터링, 캐싱, CORS 처리가 있습니다. Kong, AWS API Gateway, Istio Gateway, NGINX Plus 등의 솔루션이 있으며, 서비스별 횡단 관심사를 중앙에서 처리할 수 있습니다.</p>
   </div>
 </details>
 
 <details>
   <summary style="font-size:1rem;"><b>Q17. 컨테이너 레지스트리의 역할과 보안 고려사항은?</b></summary>
   <div class="accordion-content">
-<p>컨테이너 레지스트리는 Docker 이미지를 저장하고 배포하는 중앙 저장소입니다. Docker Hub, AWS ECR, Google GCR, Harbor 등이 있습니다. **보안 고려사항**으로는 이미지 취약점 스캔, 디지털 서명을 통한 이미지 무결성 검증, RBAC을 통한 접근 제어, 프라이빗 레지스트리 사용, 이미지 태그 관리가 있습니다. 또한 base 이미지 선택 시 공식 이미지나 최소 이미지(alpine) 사용을 권장합니다.</p>
+  <p>컨테이너 레지스트리는 Docker 이미지를 저장하고 배포하는 중앙 저장소입니다. Docker Hub, AWS ECR, Google GCR, Harbor 등이 있습니다. 보안 고려사항으로는 이미지 취약점 스캔, 디지털 서명을 통한 이미지 무결성 검증, RBAC을 통한 접근 제어, 프라이빗 레지스트리 사용, 이미지 태그 관리가 있습니다. 또한 base 이미지 선택 시 공식 이미지나 최소 이미지(alpine) 사용을 권장합니다.</p>
   </div>
 </details>
 
 <details>
   <summary style="font-size:1rem;"><b>Q18. 자동화 테스트의 종류와 CI/CD에서의 역할은?</b></summary>
   <div class="accordion-content">
-<p>**단위 테스트**는 개별 함수나 클래스를 검증하며 빠르고 격리된 테스트입니다. **통합 테스트**는 여러 컴포넌트 간의 상호작용을 검증하고, **E2E 테스트**는 전체 시스템의 동작을 사용자 관점에서 검증합니다. CI/CD에서는 단위 테스트→통합 테스트→E2E 테스트 순으로 실행하며, 실패 시 파이프라인을 중단합니다. 테스트 자동화를 통해 회귀 버그를 방지하고 배포 품질을 보장할 수 있습니다.</p>
+  <p>단위 테스트는 개별 함수나 클래스를 검증하며 빠르고 격리된 테스트입니다. 통합 테스트는 여러 컴포넌트 간의 상호작용을 검증하고, E2E 테스트는 전체 시스템의 동작을 사용자 관점에서 검증합니다. CI/CD에서는 단위 테스트→통합 테스트→E2E 테스트 순으로 실행하며, 실패 시 파이프라인을 중단합니다. 테스트 자동화를 통해 회귀 버그를 방지하고 배포 품질을 보장할 수 있습니다.</p>
   </div>
 </details>
 
 <details>
   <summary style="font-size:1rem;"><b>Q19. 컨테이너의 상태 관리(Stateful vs Stateless)를 설명해주세요.</b></summary>
   <div class="accordion-content">
-<p>**Stateless 애플리케이션**은 요청 간에 상태를 유지하지 않아 수평 확장이 쉽고 장애 복구가 간단합니다. 대부분의 웹 애플리케이션이 이에 해당합니다. **Stateful 애플리케이션**은 데이터베이스처럼 상태를 유지해야 하며, Kubernetes StatefulSet을 사용하여 관리합니다. Persistent Volume을 통해 데이터를 영구 저장하고, 순서가 있는 배포와 안정적인 네트워크 식별자를 제공합니다. 상태 분리 설계가 클라우드 네이티브의 핵심 원칙입니다.</p>
+  <p>Stateless 애플리케이션은 요청 간에 상태를 유지하지 않아 수평 확장이 쉽고 장애 복구가 간단합니다. 대부분의 웹 애플리케이션이 이에 해당합니다. Stateful 애플리케이션은 데이터베이스처럼 상태를 유지해야 하며, Kubernetes StatefulSet을 사용하여 관리합니다. Persistent Volume을 통해 데이터를 영구 저장하고, 순서가 있는 배포와 안정적인 네트워크 식별자를 제공합니다. 상태 분리 설계가 클라우드 네이티브의 핵심 원칙입니다.</p>
   </div>
 </details>
 
 <details>
   <summary style="font-size:1rem;"><b>Q20. 캐싱 전략들과 적용 시나리오를 설명해주세요.</b></summary>
   <div class="accordion-content">
-<p>**Redis/Memcached** 같은 인메모리 캐시는 빠른 응답이 필요한 데이터에 사용합니다. **CDN**은 정적 리소스의 지리적 분산 캐싱에 활용되고, **애플리케이션 레벨 캐싱**은 계산 비용이 높은 결과를 저장합니다. **데이터베이스 쿼리 캐싱**은 반복적인 조회 성능을 향상시킵니다. 캐시 무효화 전략(TTL, Cache-aside, Write-through, Write-behind)과 캐시 일관성 관리가 중요하며, 캐시 히트율 모니터링을 통해 효과를 측정해야 합니다.</p>
+  <p>Redis/Memcached 같은 인메모리 캐시는 빠른 응답이 필요한 데이터에 사용합니다. CDN은 정적 리소스의 지리적 분산 캐싱에 활용되고, 애플리케이션 레벨 캐싱은 계산 비용이 높은 결과를 저장합니다. 데이터베이스 쿼리 캐싱은 반복적인 조회 성능을 향상시킵니다. 캐시 무효화 전략(TTL, Cache-aside, Write-through, Write-behind)과 캐시 일관성 관리가 중요하며, 캐시 히트율 모니터링을 통해 효과를 측정해야 합니다.</p>
   </div>
 </details>
   </div>
@@ -163,53 +207,53 @@ title: "DevOps 면접 대비 — 완전 정리"
 <details>
   <summary style="font-size:1rem;"><b>Q11. Git Rebase와 Merge의 차이점과 사용 시나리오는?</b></summary>
   <div class="accordion-content">
-<p>**Merge**는 두 브랜치의 변경사항을 병합 커밋으로 합치는 방식으로 히스토리가 보존되지만 복잡해질 수 있습니다. **Rebase**는 커밋을 다른 브랜치 위에 재배치하여 선형적인 히스토리를 만듭니다. Rebase는 feature 브랜치를 깔끔하게 정리할 때 사용하고, Merge는 히스토리 보존이 중요한 경우나 공유 브랜치에서 사용합니다. **주의사항**: 공개된 브랜치에서는 rebase를 피해야 합니다.</p>
+  <p>**Merge**는 두 브랜치의 변경사항을 병합 커밋으로 합치는 방식으로 히스토리가 보존되지만 복잡해질 수 있습니다. **Rebase**는 커밋을 다른 브랜치 위에 재배치하여 선형적인 히스토리를 만듭니다. Rebase는 feature 브랜치를 깔끔하게 정리할 때 사용하고, Merge는 히스토리 보존이 중요한 경우나 공유 브랜치에서 사용합니다. **주의사항**: 공개된 브랜치에서는 rebase를 피해야 합니다.</p>
   </div>
 </details>
 
 <details>
   <summary style="font-size:1rem;"><b>Q12. 컨테이너 보안의 주요 고려사항들은?</b></summary>
   <div class="accordion-content">
-<p>**이미지 보안**: 최소한의 베이스 이미지 사용, 취약점 스캔, 신뢰할 수 있는 레지스트리 사용이 중요합니다. **런타임 보안**: 비특권 사용자로 실행, 읽기 전용 파일시스템, 리소스 제한 설정이 필요합니다. **네트워크 보안**: 네트워크 정책으로 트래픽 제한, 서비스 메시로 암호화된 통신을 구현합니다. **액세스 제어**: RBAC(Role-Based Access Control)과 Pod Security Standards를 활용합니다.</p>
+  <p>**이미지 보안**: 최소한의 베이스 이미지 사용, 취약점 스캔, 신뢰할 수 있는 레지스트리 사용이 중요합니다. **런타임 보안**: 비특권 사용자로 실행, 읽기 전용 파일시스템, 리소스 제한 설정이 필요합니다. **네트워크 보안**: 네트워크 정책으로 트래픽 제한, 서비스 메시로 암호화된 통신을 구현합니다. **액세스 제어**: RBAC(Role-Based Access Control)과 Pod Security Standards를 활용합니다.</p>
   </div>
 </details>
 
 <details>
   <summary style="font-size:1rem;"><b>Q13. DevSecOps의 개념과 구현 방법은?</b></summary>
   <div class="accordion-content">
-<p>DevSecOps는 개발 라이프사이클 전반에 보안을 통합하는 방식입니다. **Shift-Left** 접근으로 개발 초기부터 보안을 고려하고, 자동화된 보안 테스트를 CI/CD 파이프라인에 통합합니다. SAST(정적 분석), DAST(동적 분석), 의존성 취약점 검사, 컨테이너 이미지 스캔을 자동화하고, Infrastructure as Code의 보안 검증도 포함합니다. 지속적인 모니터링과 컴플라이언스 검사도 중요합니다.</p>
+  <p>DevSecOps는 개발 라이프사이클 전반에 보안을 통합하는 방식입니다. **Shift-Left** 접근으로 개발 초기부터 보안을 고려하고, 자동화된 보안 테스트를 CI/CD 파이프라인에 통합합니다. SAST(정적 분석), DAST(동적 분석), 의존성 취약점 검사, 컨테이너 이미지 스캔을 자동화하고, Infrastructure as Code의 보안 검증도 포함합니다. 지속적인 모니터링과 컴플라이언스 검사도 중요합니다.</p>
   </div>
 </details>
 
 <details>
   <summary style="font-size:1rem;"><b>Q14. 분산 시스템에서의 데이터 일관성 문제와 해결 방법은?</b></summary>
   <div class="accordion-content">
-<p>**CAP 정리**에 따르면 일관성(Consistency), 가용성(Availability), 분할 내성(Partition tolerance) 중 두 가지만 보장할 수 있습니다. **Eventually Consistent** 모델에서는 일정 시간 후 일관성이 보장되고, **Strong Consistency**는 모든 노드가 동시에 같은 값을 봅니다. **Saga 패턴**이나 **Two-Phase Commit**으로 분산 트랜잭션을 처리하고, **CQRS**와 **Event Sourcing**으로 읽기/쓰기를 분리할 수 있습니다.</p>
+  <p>**CAP 정리**에 따르면 일관성(Consistency), 가용성(Availability), 분할 내성(Partition tolerance) 중 두 가지만 보장할 수 있습니다. **Eventually Consistent** 모델에서는 일정 시간 후 일관성이 보장되고, **Strong Consistency**는 모든 노드가 동시에 같은 값을 봅니다. **Saga 패턴**이나 **Two-Phase Commit**으로 분산 트랜잭션을 처리하고, **CQRS**와 **Event Sourcing**으로 읽기/쓰기를 분리할 수 있습니다.</p>
   </div>
 </details>
 
 <details>
   <summary style="font-size:1rem;"><b>Q15. 서비스 메시(Service Mesh)의 개념과 필요성은?</b></summary>
   <div class="accordion-content">
-<p>서비스 메시는 마이크로서비스 간 통신을 관리하는 인프라 계층입니다. **Istio**나 **Linkerd** 같은 도구로 서비스 간 통신 암호화, 로드밸런싱, 서킷 브레이커, 분산 추적, 카나리 배포를 자동화할 수 있습니다. 애플리케이션 코드와 네트워킹 로직을 분리하여 개발팀은 비즈니스 로직에 집중하고, 운영팀은 네트워킹과 보안을 중앙에서 관리할 수 있습니다.</p>
+  <p>서비스 메시는 마이크로서비스 간 통신을 관리하는 인프라 계층입니다. **Istio**나 **Linkerd** 같은 도구로 서비스 간 통신 암호화, 로드밸런싱, 서킷 브레이커, 분산 추적, 카나리 배포를 자동화할 수 있습니다. 애플리케이션 코드와 네트워킹 로직을 분리하여 개발팀은 비즈니스 로직에 집중하고, 운영팀은 네트워킹과 보안을 중앙에서 관리할 수 있습니다.</p>
   </div>
 </details>
 
 <details>
   <summary style="font-size:1rem;"><b>Q16. 클라우드 네이티브 애플리케이션의 12 Factor App 원칙들은?</b></summary>
   <div class="accordion-content">
-<p>1. **코드베이스**: 하나의 코드베이스, 다양한 배포
-2. **의존성**: 명시적 선언과 격리
-3. **설정**: 환경별 설정을 환경변수로 관리
-4. **백엔드 서비스**: 리소스로 취급
-5. **빌드, 릴리스, 실행**: 단계별 엄격한 분리
-6. **프로세스**: 무상태 프로세스로 실행
-7. **포트 바인딩**: 서비스를 포트에 바인딩하여 내보내기
-8. **동시성**: 프로세스 모델로 확장
-9. **폐기 가능성**: 빠른 시작과 우아한 종료
-10. **개발/프로덕션 일치**: 환경 간 차이 최소화
-11. **로그**: 이벤트 스트림으로 처리
-12. **관리 프로세스**: 일회성 관리 작업을 별도 프로세스로 실행</p>
+  <p>1. **코드베이스**: 하나의 코드베이스, 다양한 배포
+  2. **의존성**: 명시적 선언과 격리
+  3. **설정**: 환경별 설정을 환경변수로 관리
+  4. **백엔드 서비스**: 리소스로 취급
+  5. **빌드, 릴리스, 실행**: 단계별 엄격한 분리
+  6. **프로세스**: 무상태 프로세스로 실행
+  7. **포트 바인딩**: 서비스를 포트에 바인딩하여 내보내기
+  8. **동시성**: 프로세스 모델로 확장
+  9. **폐기 가능성**: 빠른 시작과 우아한 종료
+  10. **개발/프로덕션 일치**: 환경 간 차이 최소화
+  11. **로그**: 이벤트 스트림으로 처리
+  12. **관리 프로세스**: 일회성 관리 작업을 별도 프로세스로 실행</p>
   </div>
 </details>
 
