@@ -14,7 +14,9 @@ title: "Java Interview — 완벽 가이드"
   <summary><span class="accordion-title">📋 기본 면접 Q&A</span> <span class="indicator">펼치기</span></summary>
   <div class="accordion-content">
 <details>
-  <summary style="font-size:1rem;"><b>Q1. 자바의 특징과 장점은 무엇인가요?</b></summary>
+  <summary style="font-size:1rem;"><b>Q1. 자바의 특징과 장점은 무엇인가요?</b>
+    <span style="float:right;">✅</span>
+  </summary>
   <div class="accordion-content">
     <p>자바는 객체지향 프로그래밍 언어로, 플랫폼 독립성, 메모리 관리 자동화, 멀티스레딩 지원이 주요 특징입니다. &quot;Write Once, Run Anywhere&quot;의 철학으로 JVM을 통해 어떤 운영체제에서든 실행 가능합니다. 가비지 컬렉터가 자동으로 메모리를 관리하며, 강력한 타입 검사와 예외 처리 메커니즘을 제공합니다. 풍부한 API와 라이브러리, 대규모 커뮤니티 지원도 큰 장점입니다.</p>
   </div>
