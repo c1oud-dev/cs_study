@@ -23,14 +23,18 @@ title: "Java Interview — 완벽 가이드"
 </details>
 <details>
 
-  <summary style="font-size:1rem;"><b>Q2. JVM, JRE, JDK의 차이점을 설명해주세요.</b></summary>
+  <summary style="font-size:1rem;"><b>Q2. JVM, JRE, JDK의 차이점을 설명해주세요.</b>
+    <span style="float:right;">🟩🟩🟩🟩🟩</span>
+  </summary>
   <div class="accordion-content">
     <p>JVM(Java Virtual Machine)은 자바 바이트코드를 실행하는 실행 환경입니다. JRE(Java Runtime Environment)는 JVM + 자바 실행에 필요한 라이브러리들의 집합으로, 자바 애플리케이션을 실행만 하려면 충분합니다. JDK(Java Development Kit)는 JRE + 컴파일러(javac), 디버거 등 개발 도구들을 포함한 개발 키트입니다. 즉, JDK ⊃ JRE ⊃ JVM의 포함 관계입니다.</p>
   </div>
 </details>
 
 <details>
-  <summary style="font-size:1rem;"><b>Q3. 객체지향 프로그래밍의 4대 특징을 설명해주세요.</b></summary>
+  <summary style="font-size:1rem;"><b>Q3. 객체지향 프로그래밍의 4대 특징을 설명해주세요.</b>
+    <span style="float:right;">🟩🟩🟩🟩🟩</span>
+  </summary>
   <div class="accordion-content">
     <b>캡슐화(Encapsulation)</b>: 데이터와 메서드를 하나로 묶고 외부에서의 접근을 제한하는 것입니다. private, protected, public 접근 제한자를 사용합니다. <b>상속(Inheritance)</b>: 기존 클래스의 속성과 메서드를 새로운 클래스가 물려받는 것으로, extends 키워드를 사용합니다. <b>다형성(Polymorphism)</b>: 같은 이름의 메서드가 다른 클래스에서 다른 기능을 수행하는 것으로, 오버로딩과 오버라이딩으로 구현됩니다. <b>추상화(Abstraction)</b>: 복잡한 구현 내용을 숨기고 필요한 기능만 노출하는 것으로, abstract 클래스나 interface를 통해 구현합니다.
   </div>
