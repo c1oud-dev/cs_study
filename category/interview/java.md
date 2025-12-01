@@ -41,7 +41,8 @@ title: "Java Interview — 완벽 가이드"
 </details>
 
 <details>
-  <summary style="font-size:1rem;"><b>Q4. String, StringBuffer, StringBuilder의 차이점은?</b></summary>
+  <summary style="font-size:1rem;"><b>Q4. String, StringBuffer, StringBuilder의 차이점은?</b>
+  <span style="float:right;">🟩🟩🟩🟩🟩</span></summary>
   <div class="accordion-content">
     <b>String</b>: 불변(immutable) 객체로, 문자열 수정 시마다 새로운 객체가 생성됩니다. 메모리 낭비가 발생할 수 있습니다. <b>StringBuffer</b>: 가변(mutable) 객체로 내부 버퍼에서 문자열을 수정합니다. 동기화(synchronized)되어 있어 스레드 안전하지만 성능이 느립니다. <b>StringBuilder</b>: StringBuffer와 동일하게 가변 객체이지만 동기화되지 않아 단일 스레드 환경에서 더 빠른 성능을 제공합니다. 문자열 연산이 많은 경우 StringBuilder 사용을 권장합니다.
   </div>
