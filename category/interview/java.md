@@ -26,7 +26,7 @@ title: "Java Interview — 완벽 가이드"
 <details>
 
   <summary style="font-size:1rem;"><b>Q2. JVM, JRE, JDK의 차이점을 설명해주세요.</b>
-    <span style="float:right;">🟩🟩🟩🟩🟩</span>
+    <span style="float:right;">✅🟩🟩🟩🟩</span>
   </summary>
   <div class="accordion-content">
     <p>JVM, JRE, JDK는 자바 프로그램이 실행되는 환경과 개발 도구를 단계별로 나눈 개념이라고 생각합니다.</p>
