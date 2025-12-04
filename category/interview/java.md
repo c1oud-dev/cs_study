@@ -38,7 +38,7 @@ title: "Java Interview — 완벽 가이드"
 
 <details>
   <summary style="font-size:1rem;"><b>Q3. 객체지향 프로그래밍의 4대 특징을 설명해주세요.</b>
-    <span style="float:right;">🟩🟩🟩🟩🟩</span>
+    <span style="float:right;">✅🟩🟩🟩🟩</span>
   </summary>
   <div class="accordion-content">
     <p>객체지향 프로그래밍의 4대 특징은 추상화, 캡슐화, 상속, 다형성입니다.</p>
@@ -52,7 +52,7 @@ title: "Java Interview — 완벽 가이드"
 
 <details>
   <summary style="font-size:1rem;"><b>Q4. String, StringBuffer, StringBuilder의 차이점은?</b>
-  <span style="float:right;">🟩🟩🟩🟩🟩</span></summary>
+  <span style="float:right;">✅🟩🟩🟩🟩</span></summary>
   <div class="accordion-content">
     <p>String, StringBuffer, StringBuilder의 차이는 불변 여부, 스레드 안전성, 성능/사용 목적 관점에서 나눠서 이해하고 있습니다.</p>
     <p>먼저 String은 불변(Immutable) 객체입니다. 한 번 생성되면 내부 값이 변하지 않고, 문자열을 더하거나 수정하는 연산을 하면 항상 새로운 String 객체가 생성됩니다. 그래서 코드가 직관적이고 안전하지만, 문자열을 자주 변경하는 상황에서는 객체가 많이 생성돼서 메모리와 성능에 부담이 될 수 있습니다.</p>
@@ -74,19 +74,19 @@ title: "Java Interview — 완벽 가이드"
 
 <details>
   <summary style="font-size:1rem;"><b>Q5. 접근 제한자(Access Modifier)의 종류와 특징은?</b>
-  <span style="float:right;">🟩🟩🟩🟩🟩</span></summary>
+  <span style="float:right;">✅🟩🟩🟩🟩</span></summary>
   <div class="accordion-content">
     <p>자바에서 접근 제한자는 크게 public, protected, (default), private 이렇게 네 가지가 있고, 이를 통해 클래스나 필드, 메서드의 접근 범위를 제어해서 캡슐화를 강화한다고 이해하고 있습니다.</p>
     <p>먼저 public은 가장 개방적인 접근 제한자로, 어디서든지 접근이 가능합니다. 패키지나 클래스 위치에 상관 없이 사용할 수 있어서, 외부에 공개해야 하는 API나 서비스 인터페이스 같은 부분에 주로 사용합니다.</p>
     <p>반대로 private은 가장 폐쇄적인 제한자로, 선언된 클래스 내부에서만 접근이 가능합니다. 다른 클래스는 물론이고, 같은 패키지의 클래스에서도 접근할 수 없기 때문에, 객체의 내부 상태를 감추고 외부에서는 메서드를 통해서만 조작하도록 만들 때 사용합니다. 캡슐화 측면에서 가장 중요한 키워드라고 생각합니다.</p>
-    <p>default, 즉 아무 접근 제한자를 쓰지 않았을 때는 흔히 패키지 프라이빗(package-private) 이라고 부르고, 같은 패키지 내에서는 접근 가능하지만, 다른 패키지에서는 접근할 수 없습니다. 외부에는 공개할 필요는 없지만, 같은 패키지 내부에서만 공유하고 싶은 경우에 사용합니다. 참고로, 최상위 클래스는 public이거나 default 둘 중 하나만 사용할 수 있습니다.</p>
+    <p>default, 즉 아무 접근 제한자를 쓰지 않았을 때는 흔히 패키지 프라이빗(package-private) 이라고 부르고, 같은 패키지 내에서는 접근 가능하지만, 다른 패키지에서는 접근할 수 없습니다. 외부에는 공개할 필요는 없지만, 같은 패키지 내부에서만 공유하고 싶은 경우에 사용합니다. (참고로, 최상위 클래스는 public이거나 default 둘 중 하나만 사용할 수 있습니다.)</p>
     <p>마지막으로 protected는 같은 패키지 내에서는 접근 가능하고, 다른 패키지라 하더라도 상속 관계에 있는 자식 클래스에서는 접근이 허용됩니다. 그래서 주로 상속을 고려한 설계에서, 완전히 숨기지는 않되 자식 클래스가 재사용하거나 확장할 수 있도록 열어두고 싶을 때 사용합니다.</p>
     <p>정리하자면, 자바의 접근 제한자는 public → protected → default → private 순으로 점점 범위가 좁아지고, 실제로는 일단 private을 기본으로 두고, 정말 필요한 최소 범위까지만 접근을 열어주는 방향으로 사용하는 것이 캡슐화와 유지보수 측면에서 바람직하다고 생각합니다.</p>
   </div>
 </details>
 
 <details>
-  <summary style="font-size:1rem;"><b>Q6. 오버로딩(Overloading)과 오버라이딩(Overriding)의 차이점은?</b><span style="float:right;">🟩🟩🟩🟩🟩</span></summary>
+  <summary style="font-size:1rem;"><b>Q6. 오버로딩(Overloading)과 오버라이딩(Overriding)의 차이점은?</b><span style="float:right;">✅🟩🟩🟩🟩</span></summary>
   <div class="accordion-content">
     <p>오버로딩과 오버라이딩은 이름은 비슷하지만, 목적과 발생 시점, 사용하는 자리가 완전히 다르다고 이해하고 있습니다.</p>
     <p>먼저 오버로딩(Overloading) 은 같은 클래스 안에서 메서드 이름은 같게 두되, 매개변수 목록을 다르게 정의하는 것을 말합니다. 매개변수의 개수, 타입, 순서를 바꿔서 여러 버전의 메서드를 제공하는 방식이고, 호출 시점에 컴파일러가 전달된 인자의 타입과 개수를 보고 어떤 메서드를 부를지 결정합니다. 그래서 오버로딩은 보통 컴파일 타임에 결정되는 정적 바인딩으로 분류되고, 같은 의미의 기능을 인자만 다르게 받고 싶을 때 사용해서 API를 더 직관적이고 편리하게 만드는 역할을 합니다. 이때 반환 타입만 다르고 매개변수가 같다면 오버로딩으로 인정되지 않는다는 제약도 있습니다.</p>
