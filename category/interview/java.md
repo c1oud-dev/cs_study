@@ -154,56 +154,80 @@ title: "Java Interview — 완벽 가이드"
 </details>
 
 <details>
-  <summary style="font-size:1rem;"><b>Q12. 가비지 컬렉션(Garbage Collection)이란 무엇인가요?</b><span style="float:right;">🟩🟩🟩🟩🟩</span></summary>
+  <summary style="font-size:1rem;"><b>Q12. 가비지 컬렉션(Garbage Collection)이란 무엇인가요?</b><span style="float:right;">✅🟩🟩🟩🟩</span></summary>
   <div class="accordion-content">
-    <p></p>
-    <p></p>
-    <p></p>
-    <p></p>
-    <p></p>
-    <p></p>
+    <p>가비지 컬렉션은 JVM이 더 이상 사용되지 않는 객체들을 자동으로 찾아서 메모리에서 정리해 주는 메커니즘입니다. 자바에서는 개발자가 new로 객체를 만들기만 하고, 그 객체를 더 이상 참조하지 않게 되면, JVM의 가비지 컬렉터가 그 객체를 “쓸모없는 쓰레기”로 판단하고 메모리를 회수합니다.</p>
+    <p>JVM 힙 메모리는 보통 Young Generation과 Old Generation으로 나뉘어 관리되고, 새로 생성된 객체는 Young 쪽에 먼저 들어갑니다. Young 영역에서 필요 없어진 객체들을 치우는 작업을 Minor GC, 오래 살아남아 Old 영역으로 올라간 객체들까지 대상으로 하는 큰 단위 수집을 Major GC 또는 Full GC라고 부릅니다.</p>
+    <p>이 덕분에 자바 개발자는 C처럼 메모리를 일일이 해제하지 않아도 된다는 큰 장점이 있지만, 가비지 컬렉션이 실행되는 순간에는 Stop-the-world라고 해서 애플리케이션이 잠깐 멈출 수 있다는 비용도 있습니다. 그래서 실무에서는 이 자동 메모리 관리가 주는 편리함을 활용하면서도, 멈춤 시간을 줄이기 위해 GC 방식이나 힙 크기를 튜닝하는 작업이 중요해집니다.</p>
   </div>
 </details>
 
 <details>
-  <summary style="font-size:1rem;"><b>Q13. 스레드(Thread)와 프로세스(Process)의 차이점은?</b><span style="float:right;">🟩🟩🟩🟩🟩</span></summary>
+  <summary style="font-size:1rem;"><b>Q13. 스레드(Thread)와 프로세스(Process)의 차이점은?</b><span style="float:right;">✅🟩🟩🟩🟩</span></summary>
   <div class="accordion-content">
-    <p></p>
-    <p></p>
-    <p></p>
-    <p></p>
-    <p></p>
-    <p></p>
-</details>
-
-<details>
-  <summary style="font-size:1rem;"><b>Q14. synchronized 키워드의 역할과 사용법은?</b><span style="float:right;">🟩🟩🟩🟩🟩</span></summary>
-  <div class="accordion-content">
-    <p></p>
-    <p></p>
-    <p></p>
-    <p></p>
-    <p></p>
-    <p></p>
+    <p>스레드와 프로세스의 차이는 보통 독립성이랑 자원 공유 범위로 나눠서 이야기할 수 있을 것 같습니다.</p>
+    <p>먼저 프로세스는 운영체제 입장에서 보면 “실행 중인 프로그램 하나”이고, 각각 독립된 메모리 공간을 가진 실행 단위입니다. 서로 다른 프로세스들은 기본적으로 메모리를 직접 공유하지 않기 때문에 한 프로세스가 죽어도 다른 프로세스에 바로 영향을 주지는 않지만, 대신 서로 데이터를 주고받으려면 IPC 같은 별도의 방법이 필요하고 전환 비용도 상대적으로 큰 편입니다.</p>
+    <p>반대로 스레드는 하나의 프로세스 안에서 돌아가는 더 작은 실행 흐름 단위입니다. 같은 프로세스에 속한 스레드들은 힙이나 데이터 영역 같은 메모리를 서로 공유하고, 각자 스택만 따로 가지고 있어서 생성·전환 비용이 더 가볍습니다. 그래서 한 프로그램 안에서 여러 작업을 동시에 처리할 때 많이 쓰지만, 공유 자원을 잘못 다루면 경쟁 조건이나 데드락 같은 문제가 생길 수 있고, 한 스레드가 치명적인 오류를 내면 프로세스 전체에 영향을 줄 수 있다는 단점도 있습니다.</p>
+    <p>정리해서 말하면, 프로세스는 서로 격리된 무거운 실행 단위, 스레드는 한 프로세스 안에서 자원을 공유하면서 병렬로 일하는 가벼운 실행 단위라고 이해하고 있습니다.</p>
   </div>
 </details>
 
 <details>
-  <summary style="font-size:1rem;"><b>Q15. final, finally, finalize의 차이점은?</b><span style="float:right;">🟩🟩🟩🟩🟩</span></summary>
+  <summary style="font-size:1rem;"><b>Q14. synchronized 키워드의 역할과 사용법은?</b><span style="float:right;">✅🟩🟩🟩🟩</span></summary>
   <div class="accordion-content">
-    <p></p>
-    <p></p>
-    <p></p>
-    <p></p>
-    <p></p>
-    <p></p>
+    <p>synchronized 키워드는 멀티스레드 환경에서 공유 자원에 대한 동시 접근을 제어하기 위해 사용하는 키워드라고 이해하고 있습니다. 즉, 한 번에 하나의 스레드만 특정 코드 블록을 실행하도록 막아서 원자성 보장과 메모리 일관성을 확보하는 역할을 합니다.</p>
+    <p>조금 더 구체적으로 보면, synchronized는 모니터 락(내부 락, intrinsic lock) 을 사용합니다. 어떤 객체에 대해 synchronized가 걸리면, 해당 객체의 락을 먼저 획득한 스레드만 그 블록을 실행할 수 있고, 다른 스레드는 락이 풀릴 때까지 대기하게 됩니다. 이 과정에서 단순히 “한 번에 하나만 들어간다”는 상호 배제뿐 아니라, 락을 획득·해제하는 시점에 메모리 가시성(visibility) 도 보장되어, 한 스레드가 변경한 값을 다른 스레드가 제대로 볼 수 있게 해줍니다.</p>
+    <p>사용법은 크게 두 가지로 정리할 수 있습니다.</p>
+    <p>첫째, 메서드 전체에 synchronized를 붙이는 방법입니다.</p>
+    <ul>
+      <li>public synchronized void method() 형태로 선언하면, 해당 인스턴스(this)에 대한 락을 기준으로 메서드 전체가 임계 구역이 됩니다.</li>
+      <li>static synchronized 메서드의 경우에는 클래스 객체(Class)에 대한 락을 사용합니다.</li>
+    </ul>
+    <p>둘째, synchronized 블록을 사용하는 방법입니다.</p>
+    <ul>
+      <li>synchronized(lockObject) { ... } 형태로, 임계 구역을 감싸고 싶은 부분만 선택적으로 잠글 수 있습니다.</li>
+      <li>이 방식은 락으로 사용할 객체를 명시적으로 고를 수 있고, 필요한 최소한의 범위에만 락을 걸 수 있어서 성능과 설계 측면에서 더 유연합니다.</li>
+    </ul>
+    <p>정리하면, synchronized는 멀티스레드 환경에서 공유 자원을 안전하게 보호하기 위한 가장 기본적인 동기화 메커니즘이고, 메서드나 블록에 적용해서 한 시점에 하나의 스레드만 접근하도록 보장합니다. 다만, 과도한 사용은 락 경합이나 데드락 같은 문제를 유발할 수 있기 때문에, 상황에 따라 java.util.concurrent 패키지의 Lock, 동시 컬렉션 등과 함께 적절히 선택하는 것이 중요하다고 생각합니다.</p>
   </div>
 </details>
 
 <details>
-  <summary style="font-size:1rem;"><b>Q16. static 키워드의 특징과 사용 용도는?</b><span style="float:right;">🟩🟩🟩🟩🟩</span></summary>
+  <summary style="font-size:1rem;"><b>Q15. final, finally, finalize의 차이점은?</b><span style="float:right;">✅🟩🟩🟩🟩</span></summary>
   <div class="accordion-content">
-    <p></p>
+    <p>final, finally, finalize는 이름은 비슷하지만 역할과 쓰이는 위치가 완전히 다른 세 가지라고 이해하고 있습니다.</p>
+    <p>먼저 final은 키워드이고, 변수·메서드·클래스에 붙여서 변경을 제한할 때 사용합니다.</p>
+    <ul>
+      <li>final 변수는 한 번 초기화되면 다시 다른 값으로 재할당할 수 없고,</li>
+      <li>final 메서드는 상속받은 클래스에서 오버라이딩할 수 없으며,</li>
+      <li>final 클래스는 다른 클래스가 상속(extends)할 수 없습니다.</li>
+    </ul>
+    <p>즉, final은 “이건 더 이상 바뀌면 안 된다”는 수정 금지 의도를 명확히 하는 키워드라고 생각합니다.</p>
+    <p>finally는 예외 처리에서 사용하는 블록입니다. try-catch-finally 구조에서 finally 블록은 예외가 발생하든 안 하든, 그리고 예외를 잡았든 못 잡았든 거의 항상 실행되는 영역입니다. 주로 파일 닫기, 소켓 종료, DB 커넥션 반납 같은 자원 정리 코드를 넣는 용도로 사용합니다. (강제 종료 같은 특수한 경우를 제외하면 실행된다고 이해하고 있습니다.)</p>
+    <p>마지막으로 finalize()는 Object 클래스에 정의된 메서드로, 가비지 컬렉터가 객체를 실제로 회수하기 전에 한 번 호출될 수 있는 훅(hook)입니다. 다만 호출 시점이 언제, 실제로 호출될지조차 보장되지 않기 때문에 자원 정리 용도로 사용하는 것은 권장되지 않고, 최근 자바에서는 사실상 사용이 deprecated된 개념입니다. 실제 코드에서는 finalize() 대신 try-with-resources나 명시적인 close() 호출로 자원을 정리하는 것이 일반적입니다.</p>
+    <p>정리하면,</p>
+    <ul>
+      <li>final은 수정/확장을 막는 키워드,</li>
+      <li>finally는 예외 처리에서 항상 실행되는 정리용 블록,</li>
+      <li>finalize()는 GC 직전에 호출될 수 있는 메서드지만, 현재는 거의 사용하지 않는 방식이라고 정리할 수 있습니다.</li>
+    </ul>
+  </div>
+</details>
+
+<details>
+  <summary style="font-size:1rem;"><b>Q16. static 키워드의 특징과 사용 용도는?</b><span style="float:right;">✅🟩🟩🟩🟩</span></summary>
+  <div class="accordion-content">
+    <p>static 키워드는 “인스턴스가 아니라 클래스 자체에 속하는 멤버”를 정의할 때 사용하는 키워드라고 이해하고 있습니다. 즉, 객체를 여러 개 만들어도 각 객체가 따로 가지는 것이 아니라 클래스 차원에서 하나만 공유되는 멤버를 만들 때 사용합니다.</p>
+    <p>먼저 특징부터 말씀드리면,</p>
+    <ul>
+      <li>static으로 선언된 변수와 메서드는 클래스 로딩 시점에 함께 메모리에 올라가고, 인스턴스를 생성하지 않아도 클래스이름.변수, 클래스이름.메서드() 형태로 바로 접근할 수 있습니다.</li>
+      <li>모든 인스턴스가 하나의 static 변수 값을 공유하기 때문에, 공용 카운터나 설정 값처럼 객체들 사이에서 공통으로 사용하는 상태를 표현할 때 적합합니다.</li>
+      <li>반대로 인스턴스에 종속되지 않기 때문에, static 메서드 안에서는 인스턴스 필드나 인스턴스 메서드에 바로 접근할 수 없고, this 키워드도 사용할 수 없습니다.</li>
+    </ul>
+    <p>사용 용도로는 크게 세 가지 정도로 정리합니다. 첫째, 상수와 공용 변수입니다. 예를 들어 public static final로 선언된 상수처럼, 모든 곳에서 공유하며 변하지 않는 값을 정의할 때 사용합니다.</p>
+    <p>둘째, 유틸리티성 메서드입니다. 특정 객체 상태와 상관없이 입력만 주어지면 항상 같은 작업을 하는 함수들은 굳이 인스턴스를 만들 필요가 없기 때문에 static 메서드로 두는 편입니다. 대표적으로 Math.random(), Collections.sort() 같은 형태가 있습니다. 자바의 main 메서드도 프로그램 시작을 위해 인스턴스 없이 호출해야 해서 static으로 선언됩니다.</p>
+    <p>셋째, 클래스 단위의 공용 기능입니다. 예를 들어 생성된 인스턴스 개수를 세는 카운터나, 싱글톤에서 getInstance() 같은 메서드처럼 클래스 전체에서 하나만 관리해야 하는 데이터나 로직을 표현할 때 사용합니다.</p>
+    <p>정리하면, static은 “객체가 아니라 클래스 수준에서 하나만 존재해야 하는 값이나 메서드”를 정의할 때 사용하는 키워드이고, 인스턴스와 무관한 공용 상태나 공용 기능에 한정해서 사용하는 것이 바람직하다고 생각합니다.</p>
   </div>
 </details>
 
