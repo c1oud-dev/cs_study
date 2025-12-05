@@ -96,7 +96,7 @@ title: "Java Interview — 완벽 가이드"
 </details>
 
 <details>
-  <summary style="font-size:1rem;"><b>Q7. 추상 클래스(Abstract Class)와 인터페이스(Interface)의 차이점은?</b><span style="float:right;">🟩🟩🟩🟩🟩</span></summary>
+  <summary style="font-size:1rem;"><b>Q7. 추상 클래스(Abstract Class)와 인터페이스(Interface)의 차이점은?</b><span style="float:right;">✅🟩🟩🟩🟩</span></summary>
   <div class="accordion-content">
     <p>추상 클래스와 인터페이스는 둘 다 추상화를 위한 도구지만, 저는 보통 “공통 구현을 공유하느냐 / 순수한 규약이냐”를 기준으로 구분해서 이해하고 있습니다.</p>
     <p>먼저 추상 클래스(Abstract Class) 는 “공통된 상태와 기본 동작을 어느 정도 가지고 있는 상위 타입”에 가깝습니다. 필드, 생성자, 일반 메서드, 추상 메서드를 모두 가질 수 있고, 일반 메서드를 통해 공통 로직을 미리 구현해 두고 자식 클래스가 이를 상속 받아 재사용할 수 있습니다. 또 한 클래스만 extends 할 수 있기 때문에, 상속 계층에서 공통 기능을 묶는 용도로 많이 사용합니다.</p>
@@ -111,7 +111,7 @@ title: "Java Interview — 완벽 가이드"
 </details>
 
 <details>
-  <summary style="font-size:1rem;"><b>Q8. 컬렉션 프레임워크의 주요 인터페이스들을 설명해주세요.</b><span style="float:right;">🟩🟩🟩🟩🟩</span></summary>
+  <summary style="font-size:1rem;"><b>Q8. 컬렉션 프레임워크의 주요 인터페이스들을 설명해주세요.</b><span style="float:right;">✅🟩🟩🟩🟩</span></summary>
   <div class="accordion-content">
     <p>자바 컬렉션 프레임워크의 주요 인터페이스는 List, Set, Map, 그리고 그 상위 개념인 Collection 정도로 정리해서 이해하고 있습니다.</p>
     <p>먼저 가장 상위에는 Collection 인터페이스가 있고, 여기에서 add, remove, size 같은 공통적인 자료구조 동작을 정의합니다. List, Set, Queue 같은 인터페이스들이 이 Collection을 기반으로 특화된 형태로 확장됩니다. (참고로 Map은 구조가 달라서 Collection을 상속받지는 않습니다.)</p>
@@ -119,19 +119,12 @@ title: "Java Interview — 완벽 가이드"
     <p>Set 인터페이스는 중복을 허용하지 않는 집합 구조입니다. 요소의 유일성이 중요할 때 사용하고, 구현체에 따라 정렬 여부가 달라집니다. 예를 들어 HashSet은 순서를 보장하지 않고, LinkedHashSet은 입력 순서를, TreeSet은 정렬 순서를 유지합니다.</p>
     <p>Queue 인터페이스는 선입선출(FIFO) 구조를 표현하고, 주로 작업 대기열이나 버퍼처럼 순서대로 처리해야 하는 데이터에 사용됩니다. LinkedList, PriorityQueue 등이 대표적인 구현체입니다.</p>
     <p>마지막으로 Map 인터페이스는 키-값 쌍으로 데이터를 저장하는 구조입니다. 키는 중복될 수 없고, 값은 중복을 허용합니다. 키로 값을 빠르게 조회하는 것이 목적일 때 사용하고, HashMap, LinkedHashMap, TreeMap 같은 구현체가 있습니다.</p>
-    <p>정리하면,</p>
-    <ul>
-      <li>Collection은 공통 동작을 정의하는 상위 인터페이스,</li>
-      <li>List는 순서 O, 중복 O,</li>
-      <li>Set은 순서 X(구현체에 따라 다름), 중복 X,</li>
-      <li>Queue는 순서대로 처리하는 대기열,</li>
-      <li>Map은 키-값 쌍으로 빠른 조회가 필요한 경우에 사용하는 인터페이스라고 이해하고 있습니다.</li>
-    </ul>
+    <p>정리하면, Collection은 공통적인 자료구조 동작을 모아둔 상위 개념이고, 그 아래에서 List는 순서가 있고 중복을 허용하는 구조, Set은 중복을 허용하지 않는 집합 구조, Queue는 먼저 들어온 걸 먼저 처리하는 대기열 구조라고 이해하고 있습니다. 그리고 Map은 컬렉션 계열과는 조금 다르게, 키-값 쌍으로 데이터를 저장하면서 키로 빠르게 값을 조회할 때 사용하는 구조라고 정리해서 기억하고 있습니다.</p>
   </div>
 </details>
 
 <details>
-  <summary style="font-size:1rem;"><b>Q9. ArrayList와 LinkedList의 차이점은?</b><span style="float:right;">🟩🟩🟩🟩🟩</span></summary>
+  <summary style="font-size:1rem;"><b>Q9. ArrayList와 LinkedList의 차이점은?</b><span style="float:right;">✅🟩🟩🟩🟩</span></summary>
   <div class="accordion-content">
     <p>ArrayList와 LinkedList의 차이는 내부 자료구조와 그로 인한 성능 특성으로 구분해서 이해하고 있습니다.</p>
     <p>먼저 ArrayList는 배열 기반의 리스트입니다. 내부적으로 연속된 메모리 공간을 사용하기 때문에 인덱스로 접근할 때 O(1)에 가까운 시간에 아주 빠르게 접근할 수 있습니다. 그 대신 중간에 요소를 삽입하거나 삭제할 때는 뒤에 있는 요소들을 한 칸씩 밀거나 당겨야 해서 중간 삽입·삭제 비용이 상대적으로 큰 편입니다. 조회 위주이고, 주로 뒤에 추가하는 작업이 많을 때 적합해서 일반적인 상황에서 가장 많이 사용하는 리스트 구현체라고 생각합니다.</p>
@@ -141,7 +134,7 @@ title: "Java Interview — 완벽 가이드"
 </details>
 
 <details>
-  <summary style="font-size:1rem;"><b>Q10. HashMap과 TreeMap의 차이점은?</b><span style="float:right;">🟩🟩🟩🟩🟩</span></summary>
+  <summary style="font-size:1rem;"><b>Q10. HashMap과 TreeMap의 차이점은?</b><span style="float:right;">✅🟩🟩🟩🟩</span></summary>
   <div class="accordion-content">
     <p>HashMap과 TreeMap의 차이는 내부 자료구조, 정렬 여부, 성능 특성 관점에서 정리해서 설명할 수 있습니다.</p>
     <p>먼저 HashMap은 해시 테이블 기반의 Map입니다. 키의 hashCode()를 사용해서 버킷 위치를 계산하고, 그 위치에 값을 저장하는 방식이라서 평균적으로 put, get 연산이 O(1)에 가깝게 매우 빠릅니다. 다만 해시값을 기준으로 저장되기 때문에 키의 순서를 보장하지 않고, 순회할 때의 순서도 예측할 수 없습니다. 그리고 보통은 null 키 1개, null 값 여러 개를 허용합니다. 그래서 정렬이 필요 없고, 빠른 조회/삽입이 중요한 일반적인 케이스에서 가장 많이 사용하는 구현체라고 생각합니다.</p>
@@ -151,44 +144,66 @@ title: "Java Interview — 완벽 가이드"
 </details>
 
 <details>
-  <summary style="font-size:1rem;"><b>Q11. 예외 처리에서 Checked Exception과 Unchecked Exception의 차이점은?</b></summary>
+  <summary style="font-size:1rem;"><b>Q11. 예외 처리에서 Checked Exception과 Unchecked Exception의 차이점은?</b><span style="float:right;">✅🟩🟩🟩🟩</span></summary>
   <div class="accordion-content">
-    <b>Checked Exception</b>: 컴파일 시점에 예외 처리가 강제되는 예외입니다. IOException, SQLException 등이 대표적이며, 반드시 try-catch로 처리하거나 throws로 선언해야 합니다. <b>Unchecked Exception</b>: 런타임에 발생하는 예외로 처리가 강제되지 않습니다. RuntimeException을 상속받으며, NullPointerException, ArrayIndexOutOfBoundsException 등이 있습니다. 주로 프로그램의 논리적 오류로 인해 발생합니다.
+    <p>예외 처리에서 Checked Exception과 Unchecked Exception의 차이는 예외 처리가 컴파일 시점에 강제되느냐, 그리고 언제 주로 발견되느냐로 설명할 수 있습니다.</p>
+    <p>먼저 Checked Exception은 컴파일 시점에 “이 예외를 꼭 처리해라”라고 강제되는 예외입니다. IOException, SQLException 같은 것들이 대표적이고, 이런 메서드를 호출할 때는 반드시 try-catch로 잡거나, 메서드 선언부에 throws로 던진다고 명시해야 합니다. 보통 파일 접근, DB 접근처럼 외부 자원과의 통신 과정에서 충분히 예상 가능한 예외들을 Checked로 두고, 컴파일 단계에서부터 처리하도록 강제하는 개념입니다.</p>
+    <p>반면에 Unchecked Exception은 흔히 말하는 런타임 예외로, 처리가 강제되지는 않습니다. RuntimeException을 상속하는 예외들이고, NullPointerException, ArrayIndexOutOfBoundsException처럼 주로 프로그래머의 실수나 논리 오류에서 발생하는 것들입니다. 이런 예외들은 모든 곳에 일일이 try-catch를 강제하기보다는, 코드 자체를 수정해서 예방하거나, 필요한 경우에만 상위 레벨에서 한 번에 처리하는 방식으로 다룹니다.</p>
+    <p>정리해서 말하면, Checked Exception은 컴파일 시점에 예외 처리를 반드시 요구하는 예외이고, Unchecked Exception은 런타임에 발생하지만 개발자가 선택적으로 처리할 수 있는 예외라고 이해하고 있습니다.</p>
   </div>
 </details>
 
 <details>
-  <summary style="font-size:1rem;"><b>Q12. 가비지 컬렉션(Garbage Collection)이란 무엇인가요?</b></summary>
+  <summary style="font-size:1rem;"><b>Q12. 가비지 컬렉션(Garbage Collection)이란 무엇인가요?</b><span style="float:right;">🟩🟩🟩🟩🟩</span></summary>
   <div class="accordion-content">
-    <p>가비지 컬렉션은 JVM에서 더 이상 참조되지 않는 객체들을 자동으로 메모리에서 해제하는 과정입니다. 힙 영역을 Young Generation(Eden, Survivor), Old Generation으로 나누어 관리합니다. Minor GC는 Young Generation에서, Major GC는 Old Generation에서 발생하며, Full GC는 전체 힙을 대상으로 합니다. 개발자가 직접 메모리 관리를 하지 않아도 되는 장점이 있지만, GC 동작 시 일시적으로 애플리케이션이 중단될 수 있습니다.</p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
   </div>
 </details>
 
 <details>
-  <summary style="font-size:1rem;"><b>Q13. 스레드(Thread)와 프로세스(Process)의 차이점은?</b></summary>
+  <summary style="font-size:1rem;"><b>Q13. 스레드(Thread)와 프로세스(Process)의 차이점은?</b><span style="float:right;">🟩🟩🟩🟩🟩</span></summary>
   <div class="accordion-content">
-    <b>프로세스</b>: 실행 중인 프로그램으로 독립적인 메모리 공간을 가집니다. 다른 프로세스와 메모리를 공유하지 않으며, 프로세스 간 통신은 IPC를 통해 이루어집니다. <b>스레드</b>: 프로세스 내에서 실행되는 작업 단위로, 같은 프로세스의 스레드들은 힙과 메서드 영역을 공유하고 스택 영역만 개별적으로 가집니다. 생성 비용이 낮고 컨텍스트 스위칭이 빠르며, 데이터 공유가 쉽지만 동기화 문제를 고려해야 합니다.
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+</details>
+
+<details>
+  <summary style="font-size:1rem;"><b>Q14. synchronized 키워드의 역할과 사용법은?</b><span style="float:right;">🟩🟩🟩🟩🟩</span></summary>
+  <div class="accordion-content">
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
   </div>
 </details>
 
 <details>
-  <summary style="font-size:1rem;"><b>Q14. synchronized 키워드의 역할과 사용법은?</b></summary>
+  <summary style="font-size:1rem;"><b>Q15. final, finally, finalize의 차이점은?</b><span style="float:right;">🟩🟩🟩🟩🟩</span></summary>
   <div class="accordion-content">
-    <p>synchronized는 멀티스레드 환경에서 동기화를 제공하여 스레드 안전성을 보장하는 키워드입니다. &lt;b&gt;메서드 레벨&lt;/b&gt;: 메서드 전체를 동기화하며, 인스턴스 메서드는 객체의 락을, static 메서드는 클래스 락을 사용합니다. &lt;b&gt;블록 레벨&lt;/b&gt;: 특정 코드 블록만 동기화하며, 더 세밀한 제어가 가능합니다. synchronized 영역에는 한 번에 하나의 스레드만 진입할 수 있어 race condition을 방지할 수 있지만, 성능 저하가 발생할 수 있습니다.</p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
   </div>
 </details>
 
 <details>
-  <summary style="font-size:1rem;"><b>Q15. final, finally, finalize의 차이점은?</b></summary>
+  <summary style="font-size:1rem;"><b>Q16. static 키워드의 특징과 사용 용도는?</b><span style="float:right;">🟩🟩🟩🟩🟩</span></summary>
   <div class="accordion-content">
-    <b>final</b>: 변수에 사용하면 상수가 되어 값 변경이 불가능하고, 메서드에 사용하면 오버라이딩이 불가능하며, 클래스에 사용하면 상속이 불가능합니다. <b>finally</b>: try-catch문에서 예외 발생 여부와 관계없이 항상 실행되는 블록입니다. 주로 자원 정리 코드를 작성합니다. <b>finalize</b>: Object 클래스의 메서드로, 가비지 컬렉션이 객체를 수거하기 전에 호출됩니다. 하지만 호출 시점이 불확실하여 사용을 권장하지 않습니다.
-  </div>
-</details>
-
-<details>
-  <summary style="font-size:1rem;"><b>Q16. static 키워드의 특징과 사용 용도는?</b></summary>
-  <div class="accordion-content">
-    <p>static은 클래스 레벨에서 공유되는 멤버를 정의할 때 사용합니다. &lt;b&gt;static 변수&lt;/b&gt;: 클래스가 로딩될 때 생성되고 모든 인스턴스가 공유합니다. &lt;b&gt;static 메서드&lt;/b&gt;: 인스턴스 생성 없이 호출 가능하며, 인스턴스 변수에 접근할 수 없습니다. &lt;b&gt;static 블록&lt;/b&gt;: 클래스 로딩 시 한 번만 실행되어 static 변수 초기화에 사용됩니다. 메모리에 한 번만 할당되어 메모리를 절약할 수 있지만, 프로그램 종료까지 메모리에 남아있습니다.</p>
+    <p></p>
   </div>
 </details>
 
