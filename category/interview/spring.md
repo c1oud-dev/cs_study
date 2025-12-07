@@ -72,7 +72,7 @@ title: "Spring Interview — 완벽 가이드"
 </details>
 
 <details>
-    <summary style="font-size:1rem;"><b>Q5. ApplicationContext와 BeanFactory의 차이점은?</b></summary>
+    <summary style="font-size:1rem;"><b>Q5. ApplicationContext와 BeanFactory의 차이점은?</b><span style="float:right;">✅🟩🟩🟩🟩</span></summary>
     <div class="accordion-content">
     <p>스프링에서 BeanFactory와 ApplicationContext는 둘 다 IoC 컨테이너이고, ApplicationContext가 BeanFactory를 확장한 상위 개념입니다.</p>
     <p>먼저 BeanFactory는 가장 기본적인 컨테이너로, 빈 생성과 의존성 주입 같은 핵심 DI 기능만 제공합니다. 기본 전략은 필요해질 때까지 빈을 만들지 않는 지연 로딩(lazy loading)이고, 부가적인 애플리케이션 지원 기능은 거의 없습니다.</p>
@@ -90,17 +90,17 @@ title: "Spring Interview — 완벽 가이드"
 </details>
 
 <details>
-    <summary style="font-size:1rem;"><b>Q6. AOP(Aspect-Oriented Programming)란 무엇인가요?</b></summary>
+    <summary style="font-size:1rem;"><b>Q6. AOP(Aspect-Oriented Programming)란 무엇인가요?</b><span style="float:right;">✅🟩🟩🟩🟩</span></summary>
     <div class="accordion-content">
-    <p>AOP는 관점 지향 프로그래밍이라고 하고, 한마디로 말하면 비즈니스 로직과 공통으로 반복되는 부가 기능을 깔끔하게 분리해서 모듈화하는 방식입니다.</p>
-    <p>실제 서비스 코드를 짜다 보면, 메서드마다 로그 출력, 트랜잭션 처리, 보안 체크, 성능 측정 같은 코드가 계속 반복해서 들어가게 됩니다. 이런 것들을 AOP에서는 공통 관심사(cross-cutting concern)라고 부르고, 별도의 모듈인 Aspect로 분리해서 한 곳에 모아둔 다음, 필요한 지점에만 붙여서 사용합니다.</p>
-    <p>핵심 비즈니스 로직은 그대로 깔끔하게 유지하고, 공통 기능은 Aspect 쪽에서 관리하기 때문에 중복 코드가 줄어들고, 비즈니스 코드가 읽기 쉬워지고, 공통 기능을 변경할 때도 한 군데만 수정하면 된다는 장점이 있습니다.</p>
-    <p>스프링에서는 프록시 기반 AOP를 많이 쓰고, 예를 들어 @Transactional처럼 애노테이션만 붙이면 트랜잭션 시작·커밋·롤백 로직이 알아서 메서드 앞뒤에 적용되는데, 이게 대표적인 AOP 활용 사례라고 설명할 수 있습니다.</p>
+    <p>AOP는 <b>관점 지향 프로그래밍</b>이라고 하고, 한마디로 말하면 <b>비즈니스 로직과 공통으로 반복되는 부가 기능을 깔끔하게 분리해서 모듈화하는 방식</b>입니다.</p>
+    <p>실제 서비스 코드를 짜다 보면, 메서드마다 <b>로그 출력, 트랜잭션 처리, 보안 체크, 성능 측정</b> 같은 코드가 계속 반복해서 들어가게 됩니다. 이런 것들을 AOP에서는 <b>공통 관심사(cross-cutting concern)</b>라고 부르고, 별도의 모듈인 <b>Aspect</b>로 분리해서 한 곳에 모아둔 다음, <b>필요한 지점에만 붙여서 사용</b>합니다.</p>
+    <p>이렇게 하면 <b>핵심 비즈니스 로직은 그대로 깔끔하게 유지</b>하고, 공통 기능은 Aspect 쪽에서 관리하기 때문에 <b>중복 코드가 줄어들고, 비즈니스 코드가 읽기 쉬워지고, 공통 기능을 변경할 때도 한 군데만 수정하면 된다</b>는 장점이 있습니다.</p>
+    <p>그리고 스프링에서는 <b>프록시 기반 AOP</b>를 많이 쓰는데, 대표적인 예가 <b>@Transactional</b>입니다. 메서드에 이 애노테이션만 붙이면 <b>트랜잭션 시작·커밋·롤백 로직이 메서드 호출 앞뒤에 자동으로 적용</b>되기 때문에, 이 부분이 <b>AOP의 대표적인 활용 사례</b>라고 설명할 수 있습니다.</p>
     </div>
 </details> 
 
 <details>
-    <summary style="font-size:1rem;"><b>Q7. 스프링에서 트랜잭션 처리는 어떻게 하나요?</b></summary>
+    <summary style="font-size:1rem;"><b>Q7. 스프링에서 트랜잭션 처리는 어떻게 하나요?</b><span style="float:right;">✅🟩🟩🟩🟩</span></summary>
     <div class="accordion-content">
     <p>스프링에서는 보통 선언적 트랜잭션을 사용해서 트랜잭션을 관리합니다. 핵심은 @Transactional 애노테이션과 PlatformTransactionManager 조합입니다.</p>
     <p>실무에서는 주로 서비스 레이어 메서드에 @Transactional을 붙여서 하나의 비즈니스 로직 단위를 트랜잭션 경계로 잡습니다. 메서드가 시작될 때 스프링이 트랜잭션을 열어주고, 예외 없이 정상 종료되면 커밋, 런타임 예외(언체크 예외)가 발생하면 자동으로 롤백하는 방식입니다. 체크 예외는 기본적으로 롤백 대상이 아니고, 필요하면 rollbackFor 속성으로 조정합니다.</p>
@@ -111,7 +111,7 @@ title: "Spring Interview — 완벽 가이드"
 </details>
 
 <details>
-    <summary style="font-size:1rem;"><b>Q8. @Autowired 동작 원리와 주입 방법들을 설명해주세요.</b></summary>
+    <summary style="font-size:1rem;"><b>Q8. @Autowired 동작 원리와 주입 방법들을 설명해주세요.</b><span style="float:right;">✅🟩🟩🟩🟩</span></summary>
     <div class="accordion-content">
     <p>@Autowired는 스프링 컨테이너가 필요한 빈을 타입 기준으로 찾아서 자동으로 주입해 주는 애노테이션입니다.</p>
     <p>먼저 동작 원리를 간단히 말하면, 스프링이 컨테이너를 초기화할 때 @Autowired가 붙은 생성자/필드/메서드를 스캔하고, 그 타입과 맞는 빈을 컨테이너에서 찾아서 넣어 줍니다. 같은 타입의 빈이 여러 개면 @Qualifier, 빈 이름, @Primary 같은 정보들을 보고 최종 후보 하나를 결정하고요. 이 과정은 내부적으로 BeanPostProcessor가 담당해서, 개발자가 new로 객체를 만들 필요가 없게 됩니다.</p>
@@ -139,7 +139,7 @@ title: "Spring Interview — 완벽 가이드"
 </details>
 
 <details>
-    <summary style="font-size:1rem;"><b>Q9. 스프링 MVC의 구조와 동작 과정을 설명해주세요.</b></summary>
+    <summary style="font-size:1rem;"><b>Q9. 스프링 MVC의 구조와 동작 과정을 설명해주세요.</b><span style="float:right;">✅🟩🟩🟩🟩</span></summary>
     <div class="accordion-content">
     <p>스프링 MVC는 프론트 컨트롤러 패턴을 쓰는 웹 MVC 프레임워크이고, 중심에는 DispatcherServlet이 있습니다. 구조를 간단히 말하면, DispatcherServlet – HandlerMapping – Controller – ViewResolver – View 이 흐름으로 이어집니다.</p>
     <p>동작 과정은 이렇게 설명할 수 있습니다.</p>
@@ -155,7 +155,7 @@ title: "Spring Interview — 완벽 가이드"
 </details>
 
 <details>
-    <summary style="font-size:1rem;"><b>Q10. @RequestMapping과 관련 어노테이션들을 설명해주세요.</b></summary>
+    <summary style="font-size:1rem;"><b>Q10. @RequestMapping과 관련 어노테이션들을 설명해주세요.</b><span style="float:right;">✅🟩🟩🟩🟩</span></summary>
     <div class="accordion-content">
     <p>@RequestMapping은 한마디로, 어떤 URL에 어떤 HTTP 요청이 들어왔을 때, 어느 컨트롤러 메서드가 처리할지를 연결해 주는 애노테이션입니다.</p>
     <p>보통 컨트롤러 클래스 위에 한 번 붙여서 공통 경로를 잡아주고, 메서드마다 이 메서드는 /users 중에서도 /list를 처리한다, 이 메서드는 /users 중에서도 /detail을 처리한다 이런 식으로 더 구체적인 경로와 HTTP 메서드(GET, POST 등)를 지정해 줍니다. 이렇게 해서 스프링이 “이 URL + 이 메서드 조합이면 이 컨트롤러 메서드를 호출해야겠구나” 하고 매핑할 수 있게 됩니다.</p>
