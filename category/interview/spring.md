@@ -166,11 +166,11 @@ title: "Spring Interview — 완벽 가이드"
 </details>
 
 <details>
-    <summary style="font-size:1rem;"><b>Q11. @ModelAttribute와 @RequestParam의 차이점은?</b></summary>
+    <summary style="font-size:1rem;"><b>Q11. @ModelAttribute와 @RequestParam의 차이점은?</b><span style="float:right;">✅🟩🟩🟩🟩</span></summary>
     <div class="accordion-content">
     <p>스프링 MVC에서 @ModelAttribute랑 @RequestParam은 둘 다 요청 값을 컨트롤러 매개변수에 바인딩할 때 쓰는데, 쓰임새가 조금 다릅니다.</p>
     <p>먼저 @RequestParam은 말 그대로 “요청 파라미터 하나를 그대로 받겠다”는 의미에 가깝습니다. 쿼리 스트링이나 폼 데이터에서 단일 값을 가져올 때 주로 쓰이고, 예를 들면 페이지 번호, 검색어, 정렬 기준처럼 간단한 값들을 받을 때 사용합니다. 이 애노테이션을 쓰면 해당 파라미터가 필수인지 선택인지, 기본값은 무엇인지 이런 것들을 세밀하게 설정할 수 있습니다.</p>
-    <p>반대로 **@ModelAttribute**는 요청에 들어 있는 여러 파라미터를 한 번에 모아서 객체(모델)에 바인딩하고 싶을 때 사용합니다. 회원 가입 폼처럼 이름, 이메일, 비밀번호, 나이처럼 필드가 많은 경우, 각각을 @RequestParam으로 하나씩 받기보다는, 도메인 객체나 DTO 하나를 매개변수로 두고 @ModelAttribute로 한 번에 묶어서 받는 식입니다.</p>
+    <p>반대로 @ModelAttribute는 요청에 들어 있는 여러 파라미터를 한 번에 모아서 객체(모델)에 바인딩하고 싶을 때 사용합니다. 회원 가입 폼처럼 이름, 이메일, 비밀번호, 나이처럼 필드가 많은 경우, 각각을 @RequestParam으로 하나씩 받기보다는, 도메인 객체나 DTO 하나를 매개변수로 두고 @ModelAttribute로 한 번에 묶어서 받는 식입니다.</p>
     <p>또 한 가지 차이는, @ModelAttribute로 바인딩된 객체는 자동으로 뷰에서 사용할 수 있는 모델에도 같이 실린다는 점입니다. 그래서 화면 렌더링할 때 폼 값 다시 뿌려주거나, 검증 에러와 함께 다시 보여줄 때 유용합니다.</p>
     <p>정리해서 말하면,</p>
     <ul>
@@ -182,7 +182,7 @@ title: "Spring Interview — 완벽 가이드"
 </details>
 
 <details>
-    <summary style="font-size:1rem;"><b>Q12. 스프링 부트(Spring Boot)의 특징과 장점은?</b></summary>
+    <summary style="font-size:1rem;"><b>Q12. 스프링 부트(Spring Boot)의 특징과 장점은?</b><span style="float:right;">✅🟩🟩🟩🟩</span></summary>
     <div class="accordion-content">
     <p>스프링 부트는 한마디로 스프링 애플리케이션을 빠르고 쉽게 만들 수 있게 도와주는 스프링 기반 프레임워크입니다.</p>
     <p>먼저 가장 큰 특징은 자동 설정입니다. <br>
@@ -198,7 +198,7 @@ title: "Spring Interview — 완벽 가이드"
 </details>
 
 <details>
-    <summary style="font-size:1rem;"><b>Q13. @Configuration과 @Bean의 역할에 대해서 설명해주세요.</b></summary>
+    <summary style="font-size:1rem;"><b>Q13. @Configuration과 @Bean의 역할에 대해서 설명해주세요.</b><span style="float:right;">✅🟩🟩🟩🟩</span></summary>
     <div class="accordion-content">
     <p>@Configuration이랑 @Bean은 둘 다 스프링 설정을 자바 코드로 정의할 때 쓰는 애노테이션인데, 역할이 조금 다릅니다.</p>
     <p>먼저 @Configuration은 “이 클래스는 스프링 설정 클래스이고, 안에 있는 메서드들로 빈을 등록할 거야”라고 컨테이너에 알려주는 역할을 합니다. 그래서 @Configuration이 붙은 클래스는 예전 XML 설정 파일을 자바 코드로 옮겨 놓은 것처럼, 애플리케이션에서 사용할 빈들을 모아 두는 설정용 클래스라고 보면 됩니다. 이 클래스 자체도 하나의 빈으로 관리됩니다.</p>
@@ -209,22 +209,21 @@ title: "Spring Interview — 완벽 가이드"
 </details>
 
 <details>
-    <summary style="font-size:1rem;"><b>Q14. 스프링의 예외 처리 방법들을 설명해주세요.</b></summary>
+    <summary style="font-size:1rem;"><b>Q14. 스프링의 예외 처리 방법들을 설명해주세요.</b><span style="float:right;">✅🟩🟩🟩🟩</span></summary>
     <div class="accordion-content">
-    <p>스프링에서 예외 처리는 크게 컨트롤러 단위 처리와 전역 공통 처리 두 가지 축으로 나눠서 설명할 수 있습니다.</p>
-    <p>먼저 간단한 방법으로는, 서비스나 컨트롤러에서 직접 try-catch로 처리하는 방식이 있습니다. 다만 이렇게 하면 예외 처리 코드가 여기저기 흩어지고, 공통 에러 응답 형식을 맞추기도 어려워서 보통은 스프링이 제공하는 예외 처리 메커니즘을 같이 사용합니다.</p>
-    <p>가장 많이 쓰는 건 @ExceptionHandler입니다. 컨트롤러 안에 특정 예외 타입을 받는 메서드를 하나 정의하고 @ExceptionHandler를 붙여 주면, 그 컨트롤러에서 해당 예외가 발생했을 때 그 메서드가 호출돼서 에러 응답을 만들어 줍니다. 이렇게 하면 비즈니스 로직과 예외 처리 로직을 어느 정도 분리할 수 있습니다.</p>
-    <p>여기에 한 단계 더 나가서, 예외 처리를 전역으로 모으고 싶을 때는 @ControllerAdvice나 @RestControllerAdvice를 사용합니다. 별도의 클래스를 하나 만들고 그 안에 @ExceptionHandler 메서드들을 모아 두면, 애플리케이션 전체 컨트롤러에서 던지는 예외를 한 곳에서 받아서 공통 에러 형식으로 응답을 내려줄 수 있습니다. 실무에서는 주로 이 방식으로 에러 코드, 메시지, 타임스탬프 같은 공통 포맷을 맞춥니다.</p>
-    <p>또 HTTP 상태 코드를 조절하는 방법으로는, 예외 클래스나 핸들러 메서드에 @ResponseStatus를 붙여서 특정 예외가 발생하면 자동으로 400, 404, 500 같은 상태 코드를 내려가게 만들 수도 있고, 필요하면 코드 안에서 ResponseStatusException을 던져서 상태 코드와 메시지를 명시적으로 지정하기도 합니다.</p>
-    <p>좀 더 낮은 레벨로 들어가면, 스프링 MVC에는 HandlerExceptionResolver라는 확장 포인트가 있어서, 프레임워크 수준에서 예외를 가로채서 로깅이나 공통 처리 로직을 넣도록 커스터마이징할 수도 있습니다. 스프링 부트에서는 이런 것들을 기본 값으로 어느 정도 설정해 줘서, 별도 설정을 안 해도 기본 에러 페이지나 JSON 에러 응답이 동작합니다.</p>
-    <p>정리해서 말하면, 스프링의 예외 처리는 @ExceptionHandler로 컨트롤러 단위 처리, @ControllerAdvice·@RestControllerAdvice로 전역 공통 처리, @ResponseStatus나 ResponseStatusException으로 HTTP 상태 코드 제어, 그리고 필요 시 HandlerExceptionResolver로 더 낮은 수준 커스터마이징까지 할 수 있는 구조라고 설명할 수 있습니다.</p>
+    <p>스프링의 예외 처리는 크게 컨트롤러 단 처리, 전역 공통 처리, HTTP 상태 코드·응답 제어 이 세 가지 관점으로 정리할 수 있습니다.</p>
+    <p>먼저 컨트롤러 단에서는 기본적으로 try-catch로 바로 처리할 수도 있지만, 보통은 컨트롤러 안에 예외 타입별 메서드를 두고 @ExceptionHandler를 사용합니다. 이렇게 하면 비즈니스 로직 메서드는 예외만 던지고, 예외를 어떻게 응답으로 바꿀지는 별도의 메서드에서 담당하게 되어 역할을 분리할 수 있습니다.</p>
+    <p>두 번째로, 예외 처리를 애플리케이션 전역에서 통일하고 싶을 때는 @ControllerAdvice나 @RestControllerAdvice를 사용합니다. 별도의 클래스를 하나 두고 공통 @ExceptionHandler 메서드들을 모아 두면, 모든 컨트롤러에서 발생한 예외를 한 곳에서 받아서 처리할 수 있고, 에러 코드, 메시지, 타임스탬프 같은 공통 에러 응답 포맷도 여기서 일관되게 관리할 수 있습니다. 실무에서는 주로 이 방식으로 전역 예외 처리 레이어를 만듭니다.</p>
+    <p>세 번째로, HTTP 상태 코드와 응답 제어입니다. 예외 클래스나 핸들러에 @ResponseStatus를 붙여 특정 예외에 대해 400, 404, 500 같은 상태 코드를 매핑할 수 있고, 필요할 때는 ResponseStatusException을 던져 상태 코드와 메시지를 명시적으로 지정하기도 합니다. 전역 예외 처리 메서드에서 응답을 ResponseEntity로 감싸서 바디와 상태 코드를 함께 제어하는 방식도 자주 사용됩니다.</p>
+    <p>마지막으로, 더 낮은 수준에서는 HandlerExceptionResolver라는 확장 포인트를 통해 프레임워크 레벨에서 예외를 가로채어 로깅이나 특수한 처리 로직을 추가할 수 있는 구조를 제공합니다.</p>
+    <p>요약하면, 스프링은 @ExceptionHandler와 @ControllerAdvice 계층을 중심으로 예외를 처리하고, @ResponseStatus나 ResponseStatusException을 통해 HTTP 상태 코드와 응답 형식을 유연하게 제어할 수 있도록 설계되어 있습니다.</p>
     </div>
 </details>
 
 <details>
-    <summary style="font-size:1rem;"><b>Q15. 스프링 시큐리티의 기본 개념과 인증/인가 과정을 설명해주세요.</b></summary>
+    <summary style="font-size:1rem;"><b>Q15. 스프링 시큐리티의 기본 개념과 인증/인가 과정을 설명해주세요.</b><span style="float:right;">✅🟩🟩🟩🟩</span></summary>
     <div class="accordion-content">
-    <p>스프링 시큐리티는 한마디로 스프링 기반 애플리케이션에서 인증과 인가를 담당하는 보안 프레임워크입니다. 사용자가 “누구인지” 확인하는 게 인증, 그 사용자가 “무엇까지 할 수 있는지”를 확인하는 게 인가라고 보면 됩니다.</p>
+    <p>스프링 시큐리티는 한마디로 스프링 기반 애플리케이션에서 인증과 인가를 담당하는 보안 프레임워크입니다. 사용자가 “누구인지” 확인하는 게 인증, 그 사용자가 “무엇까지 할 수 있는지”를 확인하는 게 인가라고 할 수 있습니다.</p>
     <p>먼저 인증 과정부터 말해 보겠습니다.<br> 사용자가 로그인을 하거나, 토큰을 가지고 API를 호출하면 그 요청이 먼저 스프링 시큐리티의 필터 체인을 지나갑니다. 여기서 아이디·비밀번호나 토큰 같은 자격 증명을 꺼내서, 내부의 인증 매니저에게 넘깁니다.<br> 인증 매니저는 등록된 인증 프로바이더들을 통해 사용자 정보를 조회하고, 비밀번호가 맞는지, 토큰이 유효한지 등을 검사합니다.<br> 검증에 성공하면 사용자 정보와 권한이 들어 있는 Authentication 객체를 만들고, 이를 SecurityContext라는 곳에 저장합니다. 세션 기반이면 세션에도 연결되고, 토큰 기반이면 이후 요청마다 토큰에서 다시 복원해서 사용하게 됩니다.</p>
     <p>그 다음은 인가 과정입니다.<br> 인증이 끝난 뒤, 사용자가 어떤 URL에 접근하거나 컨트롤러 메서드를 호출하려고 하면, 시큐리티가 먼저 SecurityContext에 있는 Authentication을 보고 “이 사용자가 가진 권한이 이 리소스에 접근할 수 있는 수준인가?”를 검사합니다. 여기서 미리 설정해 둔 URL별 권한 규칙이나, 메서드 단위 권한 애노테이션에 정의한 규칙과 비교를 해서, 권한이 충분하면 요청을 계속 진행시키고, 아니면 403 같은 접근 거부 응답을 돌려줍니다.</p>
     <p>정리해서 말하면, 스프링 시큐리티는 필터 체인을 통해 요청 초입에서 공통 보안 로직을 처리하고, 인증 단계에서 사용자 정보를 확정한 뒤, 인가 단계에서 권한 규칙을 적용해서 접근을 제어하는 구조라서, 비즈니스 로직과 보안 로직을 깔끔하게 분리할 수 있다는 점이 핵심입니다.</p>
@@ -232,13 +231,12 @@ title: "Spring Interview — 완벽 가이드"
 </details>
 
 <details>
-    <summary style="font-size:1rem;"><b>Q16. 스프링에서 프로파일(Profile)과 프로퍼티(Properties) 관리는?</b></summary>
+    <summary style="font-size:1rem;"><b>Q16. 스프링에서 프로파일(Profile)과 프로퍼티(Properties) 관리는?</b><span style="float:right;">✅🟩🟩🟩🟩</span></summary>
     <div class="accordion-content">
-    <p></p>
-    <p></p>
-    <p></p>
-    <p></p>
-    <p></p>
+    <p>스프링에서 프로파일은 환경별 빈 구성 세트를 나누는 기능이고, 프로퍼티 관리는 그 환경별 설정 값들을 외부에서 관리하는 메커니즘입니다.</p>
+    <p>프로파일은 보통 dev, test, prod처럼 나누어 사용하며, 개발에선 H2, 운영에선 RDS처럼 환경마다 다른 빈과 설정을 선택적으로 활성화할 때 사용합니다. 특정 설정 클래스나 빈에 프로파일을 걸어 두면, 활성화된 프로파일에 따라서 로딩되는 빈 구성이 달라집니다.</p>
+    <p>프로퍼티는 이렇게 나뉜 환경에서 필요한 값을 application 기본 설정과 application-dev, application-prod 같은 프로파일별 설정 파일에 분리해 두고, 공통 값은 기본 파일에, 환경에 따라 달라지는 값은 프로파일별 파일이나 환경 변수로 오버라이드하는 방식으로 관리합니다. 이때 DB URL, 계정, API 키처럼 민감한 값은 코드나 Git이 아니라 환경 변수나 외부 설정 서버를 통해 주입하는 것이 일반적입니다.</p>
+    <p>정리하면, 프로파일로 “어떤 설정 묶음을 쓸지”를 고르고, 프로퍼티로 그 안의 구체적인 값을 환경별로 외부화해 관리한다라고 설명할 수 있습니다.</p>
     </div>
 </details>
 
