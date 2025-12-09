@@ -169,6 +169,78 @@
       .search-input { width: 100%; }
     }
 
+    /* ========== 반응형: 녹색 박스 & 답변 폰트 ========== */
+    /* 녹색 박스(🟩) 기본 스타일 */
+    summary span[style*="float:right"],
+    summary span[style*="float: right"] {
+      font-size: 0.85rem;
+      letter-spacing: -1px;
+    }
+
+    /* 태블릿 (768px 이하) */
+    @media screen and (max-width: 768px) {
+      /* 녹색 박스 크기 축소 */
+      summary span[style*="float:right"],
+      summary span[style*="float: right"] {
+        font-size: 0.7rem;
+        letter-spacing: -2px;
+      }
+      /* 답변 폰트 사이즈 */
+      .accordion-content p,
+      .accordion-content li {
+        font-size: 0.95rem;
+        line-height: 1.65;
+      }
+    }
+
+    /* 모바일 (480px 이하) */
+    @media screen and (max-width: 480px) {
+      /* 녹색 박스: 줄바꿈 허용 & 더 작게 */
+      summary {
+        flex-wrap: wrap;
+        gap: 0.3rem;
+      }
+      summary span[style*="float:right"],
+      summary span[style*="float: right"] {
+        float: none !important;
+        display: block;
+        font-size: 0.6rem;
+        letter-spacing: -2px;
+        margin-top: 0.25rem;
+      }
+      /* 질문 제목 폰트 */
+      summary b {
+        font-size: 0.9rem;
+      }
+      /* 답변 폰트 사이즈 축소 */
+      .accordion-content p,
+      .accordion-content li {
+        font-size: 0.88rem;
+        line-height: 1.6;
+      }
+      .accordion-content ul,
+      .accordion-content ol {
+        padding-left: 1.2rem;
+      }
+    }
+
+    /* 아주 작은 화면 (360px 이하) */
+    @media screen and (max-width: 360px) {
+      summary span[style*="float:right"],
+      summary span[style*="float: right"] {
+        font-size: 0.55rem;
+        letter-spacing: -3px;
+      }
+      summary b {
+        font-size: 0.85rem;
+      }
+      .accordion-content p,
+      .accordion-content li {
+        font-size: 0.82rem;
+        line-height: 1.55;
+      }
+    }
+
     /* === tighten h4 and following paragraph spacing === */
     h4 { margin-bottom: 0; }
     h4 + p { margin-top: 4px; } /* 필요에 따라 0~8px로 조정 */
