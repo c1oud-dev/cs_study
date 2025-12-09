@@ -123,6 +123,101 @@
     .accordion-title { font-weight: 700; color: #0366d6; }
     summary:hover .accordion-title { color: #0255a5; }
 
+    /* ========== 노션 스타일 리스트 ========== */
+    .accordion-content ul,
+    .accordion-content ol {
+      margin: 0.75rem 0;
+      padding-left: 0;
+      list-style: none;
+    }
+
+    .accordion-content ul li,
+    .accordion-content ol li {
+      position: relative;
+      padding: 0.4rem 0 0.4rem 1.75rem;
+      margin-bottom: 0.25rem;
+      font-size: 0.95rem;
+      line-height: 1.7;
+      color: #37352f;
+      border-radius: 4px;
+      transition: background 0.15s ease;
+    }
+
+    .accordion-content ul li:hover,
+    .accordion-content ol li:hover {
+      background: rgba(55, 53, 47, 0.04);
+    }
+
+    /* 순서 없는 리스트 bullet */
+    .accordion-content ul li::before {
+      content: "";
+      position: absolute;
+      left: 0.5rem;
+      top: 0.85rem;
+      width: 6px;
+      height: 6px;
+      background: #37352f;
+      border-radius: 50%;
+    }
+
+    /* 순서 있는 리스트 번호 */
+    .accordion-content ol {
+      counter-reset: list-counter;
+    }
+
+    .accordion-content ol li::before {
+      counter-increment: list-counter;
+      content: counter(list-counter) ".";
+      position: absolute;
+      left: 0.25rem;
+      top: 0.4rem;
+      font-weight: 500;
+      color: #37352f;
+      font-size: 0.9rem;
+    }
+
+    /* 중첩 리스트 */
+    .accordion-content ul ul,
+    .accordion-content ol ol,
+    .accordion-content ul ol,
+    .accordion-content ol ul {
+      margin: 0.25rem 0 0.25rem 0.5rem;
+      padding-left: 0;
+    }
+
+    /* 중첩 bullet 스타일 변경 (속이 빈 원) */
+    .accordion-content ul ul li::before {
+      background: transparent;
+      border: 1.5px solid #37352f;
+    }
+
+    /* 중첩 중첩 (대시) */
+    .accordion-content ul ul ul li::before {
+      width: 8px;
+      height: 2px;
+      border-radius: 0;
+      border: none;
+      background: #37352f;
+      top: 1rem;
+    }
+
+    /* 리스트 내 강조 텍스트 */
+    .accordion-content li b,
+    .accordion-content li strong {
+      color: #1a1a1a;
+      font-weight: 600;
+    }
+
+    /* 리스트 내 코드 */
+    .accordion-content li code {
+      background: rgba(135, 131, 120, 0.15);
+      padding: 0.15rem 0.4rem;
+      border-radius: 4px;
+      font-size: 0.85em;
+      color: #eb5757;
+      font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+    }
+
     /* ========== Nested details (들여쓰기) ========== */
     .nested-details {
       margin-left: 20px;
@@ -218,9 +313,19 @@
         font-size: 0.88rem;
         line-height: 1.6;
       }
-      .accordion-content ul,
-      .accordion-content ol {
-        padding-left: 1.2rem;
+      /* 리스트 간격 조정 */
+      .accordion-content ul li,
+      .accordion-content ol li {
+        padding: 0.35rem 0 0.35rem 1.5rem;
+      }
+      .accordion-content ul li::before {
+        left: 0.35rem;
+        width: 5px;
+        height: 5px;
+      }
+      .accordion-content ol li::before {
+        left: 0.15rem;
+        font-size: 0.85rem;
       }
     }
 
