@@ -4,159 +4,342 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{{ page.title }}</title>
-    <style>
-    /* ========== Base ========== */
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* ========== Reset & Base ========== */
+    * {
+      box-sizing: border-box;
+    }
     body {
       margin: 0;
-      font-family: sans-serif;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
       line-height: 1.6;
-      background: #f9f9f9;
-      color: #333;
+      background: #f8f9fa;
+      color: #1a1a2e;
     }
     a { text-decoration: none; color: inherit; }
 
-    /* Header */
+    /* ========== Header ========== */
     header {
-      padding: 1rem 1rem;
+      padding: 1rem 1.5rem;
       background: #fff;
-      border-bottom: 1px solid #ddd;
+      border-bottom: 1px solid #e9ecef;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+      position: sticky;
+      top: 0;
+      z-index: 100;
     }
-    .logo { font-size: 1.5rem; font-weight: bold; color: #0366d6; }
+    .logo { 
+      font-size: 1.25rem; 
+      font-weight: 700; 
+      color: #ff6b35;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .logo::before {
+      content: "◢";
+      font-size: 1.5rem;
+    }
 
-    /* ========== Container & Main ========== */
-    /* 기본은 일반 블록 레이아웃(홈 등) */
+    /* ========== Container & Layout ========== */
     .container {
-      display: block;                 /* ← flex 제거 */
-      max-width: 1280px;
+      display: block;
+      max-width: 1400px;
       margin: 0 auto;
-      padding: 0 1rem;
+      padding: 1.5rem;
     }
     .container > main {
       width: 100%;
       max-width: 1100px;
       box-sizing: border-box;
       padding: 0;
-      margin: 0 auto;                 /* 기본은 가운데 정렬 */
+      margin: 0 auto;
     }
 
-    /* 사이드바 있는 페이지 전용 그리드 */
+    /* 사이드바 있는 페이지 */
     .has-sidebar .container {
-      display: grid !important;       /* 충돌 방지용 */
-      grid-template-columns: 260px 1fr;
+      display: grid !important;
+      grid-template-columns: 280px 1fr;
       gap: 2rem;
-      max-width: 1280px;
+      max-width: 1400px;
       margin: 0 auto;
-      padding: 0 1rem;
+      padding: 1.5rem;
     }
     .has-sidebar .container > main {
       grid-column: 2;
-      max-width: none;                /* 고정폭 해제 → 칼럼 가득 */
+      max-width: none;
       width: 100%;
-      margin: 0;                      /* 가운데 정렬 해제 */
-      padding-left: .25rem;
-      padding-right: .25rem;
+      margin: 0;
+      padding: 0;
     }
 
     /* ========== Sidebar ========== */
     .sidebar {
       grid-column: 1;
       position: sticky;
-      top: 56px;                      /* 헤더 높이에 맞게 조절 가능 */
+      top: 80px;
       align-self: start;
-      background: #f7f7f7;
-      border-right: 1px solid #e5e5e5;
-      padding: 1rem;
-      border-radius: 8px;
-      height: auto;                   /* 내부 스크롤 제거 → 페이지 하나만 스크롤 */
-      overflow: visible;
-    }
-    .sidebar ul { list-style: none; padding: 0; margin: 0; }
-    .sidebar li { margin-bottom: 0.5rem; }
-    .sidebar a { display: block; padding: 0.35rem 0.4rem 0.35rem 0.6rem; color: #2b6cb0; border-radius: 6px; }
-    .sidebar a:hover { background: #e9eef9; }
-    .sidebar a.active {
-      background: #e2e8ff;
-      color: #1e40af;
-      font-weight: 700;
-      border-left: 3px solid #6a5af9;
-    }
-    .sidebar summary {
-      font-weight: 700;
-      cursor: pointer;
-      padding: 0.4rem 0;
-      color: #333;
-      list-style: none;
-    }
-    .sidebar details > ul { list-style: none; margin: 0.25rem 0 0.5rem 0; padding: 0; }
-    .sidebar nav { margin-top: 0.5rem; }
-    .sidebar .nav-search { margin-bottom: 0.75rem; }
-    .sidebar .nav-search input {
-      width: 100%;
-      height: 36px;
-      padding: 0.4rem 0.6rem;
-      border: 1px solid #d0d0d0;
-      border-radius: 6px;
-      font-size: 0.95rem;
       background: #fff;
+      border: 1px solid #e9ecef;
+      padding: 1.25rem;
+      border-radius: 16px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      height: fit-content;
+      max-height: calc(100vh - 100px);
+      overflow-y: auto;
     }
 
-    /* ========== Accordion (공통) ========== */
+    /* 사이드바 스크롤바 스타일 */
+    .sidebar::-webkit-scrollbar {
+      width: 6px;
+    }
+    .sidebar::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    .sidebar::-webkit-scrollbar-thumb {
+      background: #ddd;
+      border-radius: 3px;
+    }
+
+    .sidebar ul { 
+      list-style: none; 
+      padding: 0; 
+      margin: 0; 
+    }
+    .sidebar li { 
+      margin-bottom: 0.25rem; 
+    }
+    .sidebar a { 
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.7rem 1rem;
+      color: #495057;
+      border-radius: 10px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+    .sidebar a::before {
+      content: "—";
+      color: #adb5bd;
+      font-weight: 400;
+    }
+    .sidebar a:hover { 
+      background: #f8f9fa;
+      color: #1a1a2e;
+    }
+    .sidebar a.active {
+      background: #fff4f0;
+      color: #ff6b35;
+      font-weight: 600;
+    }
+    .sidebar a.active::before {
+      color: #ff6b35;
+    }
+
+    /* 사이드바 그룹 */
+    .sidebar details {
+      border: none;
+      margin-bottom: 1rem;
+      background: transparent;
+      border-radius: 0;
+      box-shadow: none;
+    }
+    .sidebar summary {
+      font-weight: 600;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #868e96;
+      padding: 0.75rem 0.5rem;
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: transparent;
+    }
+    .sidebar summary:hover {
+      background: transparent;
+    }
+    .sidebar summary::before {
+      content: "▸";
+      font-size: 0.7rem;
+      transition: transform 0.2s;
+    }
+    .sidebar details[open] summary::before {
+      transform: rotate(90deg);
+    }
+    .sidebar details > ul { 
+      margin: 0.5rem 0 0 0;
+      padding: 0;
+    }
+    .sidebar nav { margin-top: 0; }
+
+    /* 사이드바 검색 */
+    .sidebar .nav-search { 
+      margin-bottom: 1.25rem;
+    }
+    .sidebar .nav-search input {
+      width: 100%;
+      height: 42px;
+      padding: 0 1rem;
+      border: 1px solid #e9ecef;
+      border-radius: 10px;
+      font-size: 0.9rem;
+      background: #f8f9fa;
+      transition: all 0.2s;
+    }
+    .sidebar .nav-search input:focus {
+      outline: none;
+      border-color: #ff6b35;
+      background: #fff;
+      box-shadow: 0 0 0 3px rgba(255,107,53,0.1);
+    }
+    .sidebar .nav-search input::placeholder {
+      color: #adb5bd;
+    }
+
+    /* ========== 메인 아코디언 (섹션) ========== */
     details {
-      border: 1px solid #ddd;
-      border-radius: 6px;
+      border: 1px solid #e9ecef;
+      border-radius: 16px;
       margin-bottom: 1.5rem;
       background: #fff;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      overflow: hidden;
     }
     summary {
       cursor: pointer;
-      padding: 0.75rem 1rem;
+      padding: 1.25rem 1.5rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      font-size: 1.25rem;
+      font-size: 1rem;
       list-style: none;
       outline: none;
+      background: #fff;
+      transition: background 0.2s;
     }
-    .indicator { font-size: 0.875rem; color: #0366d6; }
-    .accordion-content { padding: 0 1rem 1rem; }
-    .accordion-content li { font-size: 0.9rem; line-height: 1.6; }
-    .accordion-title { font-weight: 700; color: #0366d6; }
-    summary:hover .accordion-title { color: #0255a5; }
+    summary:hover {
+      background: #fafafa;
+    }
+    .indicator { 
+      font-size: 0.8rem; 
+      color: #868e96;
+      background: #f1f3f4;
+      padding: 0.3rem 0.75rem;
+      border-radius: 20px;
+      font-weight: 500;
+    }
+    .accordion-content { 
+      padding: 0 1.5rem 1.5rem;
+    }
+    .accordion-title { 
+      font-weight: 600; 
+      color: #1a1a2e;
+      font-size: 1.1rem;
+    }
+
+    /* ========== Q&A 카드 스타일 ========== */
+    .accordion-content > details {
+      border: 1px solid #e9ecef;
+      border-radius: 12px;
+      margin-bottom: 0.75rem;
+      background: #fff;
+      box-shadow: none;
+      transition: all 0.2s ease;
+    }
+    .accordion-content > details:hover {
+      border-color: #dee2e6;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    }
+    .accordion-content > details > summary {
+      padding: 1rem 1.25rem;
+      background: #fff;
+      border-radius: 12px;
+      font-size: 0.95rem;
+    }
+    .accordion-content > details[open] > summary {
+      border-bottom: 1px solid #f1f3f4;
+      border-radius: 12px 12px 0 0;
+    }
+    .accordion-content > details > summary b {
+      font-weight: 600;
+      color: #1a1a2e;
+      flex: 1;
+      line-height: 1.5;
+    }
+
+    /* 녹색 박스 → 태그 스타일 */
+    .accordion-content > details > summary span[style*="float:right"],
+    .accordion-content > details > summary span[style*="float: right"] {
+      float: none !important;
+      font-size: 0.7rem;
+      letter-spacing: 0px;
+      background: linear-gradient(135deg, #51cf66, #40c057);
+      padding: 0.25rem 0.5rem;
+      border-radius: 6px;
+      margin-left: 0.75rem;
+      flex-shrink: 0;
+    }
+
+    /* 답변 영역 */
+    .accordion-content > details > .accordion-content {
+      padding: 1.25rem 1.25rem 1rem;
+      background: #fafbfc;
+      border-radius: 0 0 12px 12px;
+    }
+    .accordion-content > details > .accordion-content p {
+      margin: 0 0 1rem 0;
+      color: #495057;
+      font-size: 0.92rem;
+      line-height: 1.75;
+    }
+    .accordion-content > details > .accordion-content p:last-child {
+      margin-bottom: 0;
+    }
 
     /* ========== 노션 스타일 리스트 ========== */
     .accordion-content ul,
     .accordion-content ol {
-      margin: 0.75rem 0;
-      padding-left: 0;
+      margin: 1rem 0;
+      padding: 0;
       list-style: none;
     }
 
     .accordion-content ul li,
     .accordion-content ol li {
       position: relative;
-      padding: 0.4rem 0 0.4rem 1.75rem;
-      margin-bottom: 0.25rem;
-      font-size: 0.95rem;
+      padding: 0.6rem 0.75rem 0.6rem 2rem;
+      margin-bottom: 0.4rem;
+      font-size: 0.92rem;
       line-height: 1.7;
-      color: #37352f;
-      border-radius: 4px;
-      transition: background 0.15s ease;
+      color: #495057;
+      background: #fff;
+      border: 1px solid #e9ecef;
+      border-radius: 10px;
+      transition: all 0.15s ease;
     }
 
     .accordion-content ul li:hover,
     .accordion-content ol li:hover {
-      background: rgba(55, 53, 47, 0.04);
+      background: #fff;
+      border-color: #dee2e6;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
     }
 
     /* 순서 없는 리스트 bullet */
     .accordion-content ul li::before {
       content: "";
       position: absolute;
-      left: 0.5rem;
-      top: 0.85rem;
+      left: 0.75rem;
+      top: 1rem;
       width: 6px;
       height: 6px;
-      background: #37352f;
+      background: #ff6b35;
       border-radius: 50%;
     }
 
@@ -164,16 +347,22 @@
     .accordion-content ol {
       counter-reset: list-counter;
     }
-
     .accordion-content ol li::before {
       counter-increment: list-counter;
-      content: counter(list-counter) ".";
+      content: counter(list-counter);
       position: absolute;
-      left: 0.25rem;
-      top: 0.4rem;
-      font-weight: 500;
-      color: #37352f;
-      font-size: 0.9rem;
+      left: 0.6rem;
+      top: 0.55rem;
+      font-weight: 600;
+      color: #fff;
+      font-size: 0.7rem;
+      background: #ff6b35;
+      width: 1.25rem;
+      height: 1.25rem;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     /* 중첩 리스트 */
@@ -181,52 +370,210 @@
     .accordion-content ol ol,
     .accordion-content ul ol,
     .accordion-content ol ul {
-      margin: 0.25rem 0 0.25rem 0.5rem;
-      padding-left: 0;
+      margin: 0.5rem 0 0.25rem 0;
     }
-
-    /* 중첩 bullet 스타일 변경 (속이 빈 원) */
+    .accordion-content ul ul li,
+    .accordion-content ol ol li {
+      background: #f8f9fa;
+      border-color: #e9ecef;
+    }
     .accordion-content ul ul li::before {
       background: transparent;
-      border: 1.5px solid #37352f;
-    }
-
-    /* 중첩 중첩 (대시) */
-    .accordion-content ul ul ul li::before {
-      width: 8px;
-      height: 2px;
-      border-radius: 0;
-      border: none;
-      background: #37352f;
-      top: 1rem;
+      border: 2px solid #ff6b35;
     }
 
     /* 리스트 내 강조 텍스트 */
     .accordion-content li b,
     .accordion-content li strong {
-      color: #1a1a1a;
+      color: #1a1a2e;
       font-weight: 600;
     }
 
     /* 리스트 내 코드 */
-    .accordion-content li code {
-      background: rgba(135, 131, 120, 0.15);
-      padding: 0.15rem 0.4rem;
-      border-radius: 4px;
+    .accordion-content li code,
+    .accordion-content p code {
+      background: #fff4f0;
+      padding: 0.2rem 0.5rem;
+      border-radius: 6px;
       font-size: 0.85em;
-      color: #eb5757;
-      font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+      color: #ff6b35;
+      font-family: 'SF Mono', Consolas, monospace;
+      border: 1px solid #ffe0d3;
     }
 
-    /* ========== Nested details (들여쓰기) ========== */
-    .nested-details {
-      margin-left: 20px;
-      border-left: 3px solid #ddd;
-      padding-left: 10px;
-      margin-top: 0.75rem;
+    /* ========== 코드 블록 ========== */
+    pre {
+      background: #1a1a2e;
+      border-radius: 12px;
+      padding: 1.25rem;
+      overflow-x: auto;
+      margin: 1rem 0;
+    }
+    pre code {
+      background: none;
+      border: none;
+      color: #e9ecef;
+      font-size: 0.85rem;
+      padding: 0;
     }
 
-    /* ========== Home 전용(있어도 무해) ========== */
+    /* ========== 테이블 ========== */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+      font-size: 0.9rem;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid #e9ecef;
+    }
+    thead {
+      background: #f8f9fa;
+    }
+    th, td {
+      padding: 0.875rem 1rem;
+      text-align: left;
+      border-bottom: 1px solid #e9ecef;
+    }
+    th {
+      font-weight: 600;
+      color: #495057;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+    tbody tr:hover {
+      background: #fafbfc;
+    }
+    tbody tr:last-child td {
+      border-bottom: none;
+    }
+
+    /* ========== Breadcrumb ========== */
+    .breadcrumb {
+      font-size: 0.85rem;
+      color: #868e96;
+      margin-bottom: 1.5rem;
+    }
+    .breadcrumb a {
+      color: #ff6b35;
+      font-weight: 500;
+    }
+    .breadcrumb a:hover {
+      text-decoration: underline;
+    }
+
+    /* ========== Section Title ========== */
+    section h2 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: #1a1a2e;
+      margin: 0 0 0.5rem 0;
+    }
+    section p {
+      color: #868e96;
+      margin: 0 0 2rem 0;
+    }
+
+    /* ========== Responsive ========== */
+    @media screen and (max-width: 1024px) {
+      .has-sidebar .container {
+        display: block !important;
+        padding: 1rem;
+      }
+      .sidebar {
+        position: static;
+        max-height: none;
+        margin: 0 0 1.5rem 0;
+      }
+      .container > main {
+        max-width: 100%;
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      header {
+        padding: 0.875rem 1rem;
+      }
+      .container {
+        padding: 1rem;
+      }
+      details {
+        border-radius: 12px;
+        margin-bottom: 1rem;
+      }
+      summary {
+        padding: 1rem 1.25rem;
+      }
+      .accordion-content {
+        padding: 0 1.25rem 1.25rem;
+      }
+      .accordion-content > details > summary {
+        padding: 0.875rem 1rem;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+      .accordion-content > details > summary b {
+        font-size: 0.9rem;
+      }
+      .accordion-content > details > summary span[style*="float:right"],
+      .accordion-content > details > summary span[style*="float: right"] {
+        font-size: 0.6rem;
+        padding: 0.2rem 0.4rem;
+      }
+      .accordion-content ul li,
+      .accordion-content ol li {
+        padding: 0.5rem 0.6rem 0.5rem 1.75rem;
+        font-size: 0.88rem;
+      }
+      .accordion-content ul li::before {
+        left: 0.6rem;
+        width: 5px;
+        height: 5px;
+        top: 0.9rem;
+      }
+      .accordion-content ol li::before {
+        left: 0.5rem;
+        width: 1.1rem;
+        height: 1.1rem;
+        font-size: 0.65rem;
+      }
+    }
+
+    @media screen and (max-width: 480px) {
+      .logo {
+        font-size: 1.1rem;
+      }
+      section h2 {
+        font-size: 1.35rem;
+      }
+      .accordion-title {
+        font-size: 1rem;
+      }
+      .accordion-content > details > .accordion-content p {
+        font-size: 0.88rem;
+      }
+      .sidebar a {
+        padding: 0.6rem 0.75rem;
+        font-size: 0.85rem;
+      }
+    }
+
+    @media screen and (max-width: 360px) {
+      .accordion-content > details > summary span[style*="float:right"],
+      .accordion-content > details > summary span[style*="float: right"] {
+        font-size: 0.55rem;
+      }
+      .accordion-content > details > summary b {
+        font-size: 0.85rem;
+      }
+    }
+
+    /* ========== Misc ========== */
+    h4 { margin-bottom: 0.5rem; }
+    h4 + p { margin-top: 0; font-size: 0.95rem; }
+
+    /* Home 페이지용 */
     .hero { padding: 3rem 2rem; background: #fff; text-align: center; }
     .hero h1 { font-size: 2.5rem; margin-bottom: 1rem; }
     .hero p { font-size: 1.125rem; color: #555; margin-bottom: 1.5rem; }
@@ -238,197 +585,64 @@
       border-radius: 4px;
       font-size: 1rem;
     }
-
-    /* ========== Responsive ========== */
-    /* 1024px 이하: 사이드바 위/본문 아래 (단일 컬럼) */
-    @media screen and (max-width: 1024px) {
-      .has-sidebar .container {
-        display: block !important;
-        padding: 0 0.75rem;
-      }
-      .sidebar {
-        position: static;
-        height: auto;
-        margin: 0.75rem 0 0;
-        border-right: none;
-      }
-      .container > main {
-        max-width: 1100px;
-        margin: 0 auto;
-      }
-    }
-
-    /* 600px 이하: 아코디언/검색 등 자잘한 보정 */
-    @media screen and (max-width: 600px) {
-      .hero { padding: 2rem 1rem; }
-      .search-input { width: 100%; }
-    }
-
-    /* ========== 반응형: 녹색 박스 & 답변 폰트 ========== */
-    /* 녹색 박스(🟩) 기본 스타일 */
-    summary span[style*="float:right"],
-    summary span[style*="float: right"] {
-      font-size: 0.85rem;
-      letter-spacing: 1px;
-    }
-
-    /* 태블릿 (768px 이하) */
-    @media screen and (max-width: 768px) {
-      /* 녹색 박스 크기 축소 */
-      summary span[style*="float:right"],
-      summary span[style*="float: right"] {
-        font-size: 0.65rem;
-        letter-spacing: 0.5px;
-      }
-      /* 답변 폰트 사이즈 */
-      .accordion-content p,
-      .accordion-content li {
-        font-size: 0.95rem;
-        line-height: 1.65;
-      }
-    }
-
-    /* 모바일 (480px 이하) */
-    @media screen and (max-width: 480px) {
-      /* 녹색 박스: 줄바꿈 허용 & 더 작게 */
-      summary {
-        flex-wrap: wrap;
-        gap: 0.3rem;
-      }
-      summary span[style*="float:right"],
-      summary span[style*="float: right"] {
-        float: none !important;
-        display: block;
-        font-size: 0.55rem;
-        letter-spacing: 0px;
-        margin-top: 0.25rem;
-      }
-      /* 질문 제목 폰트 */
-      summary b {
-        font-size: 0.9rem;
-      }
-      /* 답변 폰트 사이즈 축소 */
-      .accordion-content p,
-      .accordion-content li {
-        font-size: 0.88rem;
-        line-height: 1.6;
-      }
-      /* 리스트 간격 조정 */
-      .accordion-content ul li,
-      .accordion-content ol li {
-        padding: 0.35rem 0 0.35rem 1.5rem;
-      }
-      .accordion-content ul li::before {
-        left: 0.35rem;
-        width: 5px;
-        height: 5px;
-      }
-      .accordion-content ol li::before {
-        left: 0.15rem;
-        font-size: 0.85rem;
-      }
-    }
-
-    /* 아주 작은 화면 (360px 이하) */
-    @media screen and (max-width: 360px) {
-      summary span[style*="float:right"],
-      summary span[style*="float: right"] {
-        font-size: 0.5rem;
-        letter-spacing: 0px;
-      }
-      summary b {
-        font-size: 0.85rem;
-      }
-      .accordion-content p,
-      .accordion-content li {
-        font-size: 0.82rem;
-        line-height: 1.55;
-      }
-    }
-
-    /* === tighten h4 and following paragraph spacing === */
-    h4 { margin-bottom: 0; }
-    h4 + p { margin-top: 4px; } /* 필요에 따라 0~8px로 조정 */
-    /* h4 바로 다음 p의 글자 크기를 h4보다 살짝 작게 */
-    h4 + p { font-size: 0.95rem; } /* 필요시 0.9rem~1rem로 조절 */
   </style>
   
-<style id="sidebar-hotfix">
-/* === 레이아웃 강제 오버라이드 === */
+  <style id="sidebar-hotfix">
+    /* === 레이아웃 강제 오버라이드 === */
+    .no-sidebar .container {
+      display: block !important;
+      max-width: 1400px !important;
+      margin: 0 auto !important;
+      padding: 1.5rem !important;
+    }
+    .no-sidebar .container > main {
+      max-width: 1100px !important;
+      margin: 0 auto !important;
+      padding: 0 !important;
+    }
 
-/* 홈/기본(사이드바 없음) */
-.no-sidebar .container{
-  display:block !important;
-  max-width:1280px !important;
-  margin:0 auto !important;
-  padding:0 1rem !important;
-}
-.no-sidebar .container>main{
-  max-width:1100px !important;
-  margin:0 auto !important;
-  padding:0 .75rem !important;
-}
+    .has-sidebar .container {
+      display: grid !important;
+      grid-template-columns: 280px 1fr !important;
+      gap: 2rem !important;
+      max-width: 1400px !important;
+      margin: 0 auto !important;
+      padding: 1.5rem !important;
+    }
+    .has-sidebar .container > main {
+      grid-column: 2 !important;
+      grid-row: 1 !important;
+      max-width: none !important;
+      width: 100% !important;
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+    .has-sidebar .sidebar {
+      grid-column: 1 !important;
+      grid-row: 1 !important;
+    }
 
-/* 사이드바 있는 페이지: 좌측 사이드바 + 우측 본문 그리드 강제 */
-.has-sidebar .container{
-  display:grid !important;
-  grid-template-columns:260px 1fr !important;
-  gap:2rem !important;
-  max-width:1280px !important;
-  margin:0 auto !important;
-  padding:0 1rem !important;
-}
-/* 칼럼 위치 고정(HTML 순서와 무관) */
-.has-sidebar .container>main{
-  grid-column:2 !important;
-  grid-row:1 !important;
-  max-width:none !important;
-  width:100% !important;
-  margin:0 !important;
-  padding-left:.25rem !important;
-  padding-right:.25rem !important;
-}
-.has-sidebar .sidebar{
-  grid-column:1 !important;
-  grid-row:1 !important;
-  position:sticky !important;
-  top:56px !important;          /* 헤더 높이에 맞춰 필요시 56~72px 조절 */
-  align-self:start !important;
-  background:#f7f7f7 !important;
-  border-right:1px solid #e5e5e5 !important;
-  padding:1rem !important;
-  border-radius:8px !important;
-  height:auto !important;       /* 내부 스크롤 제거 → 페이지 하나만 스크롤 */
-  overflow:visible !important;
-}
-
-/* 링크/하이라이트(있으면 보기 좋음) */
-.has-sidebar .sidebar a{
-  display:block; padding:.35rem .4rem .35rem .6rem;
-  color:#2b6cb0; border-radius:6px;
-}
-.has-sidebar .sidebar a:hover{ background:#e9eef9; }
-.has-sidebar .sidebar a.active{
-  background:#e2e8ff; color:#1e40af; font-weight:700;
-  border-left:3px solid #6a5af9;
-}
-
-/* 1024px 이하: 단일 컬럼으로 전환 */
-@media (max-width:1024px){
-  .has-sidebar .container{ display:block !important; padding:0 .75rem !important; }
-  .has-sidebar .sidebar{
-    position:static !important; height:auto !important;
-    margin:.75rem 0 0 !important; border-right:none !important;
-  }
-  .has-sidebar .container>main{ max-width:1100px !important; margin:0 auto !important; }
-}
-</style>
-
+    @media (max-width: 1024px) {
+      .has-sidebar .container { 
+        display: block !important; 
+        padding: 1rem !important; 
+      }
+      .has-sidebar .sidebar {
+        position: static !important;
+        max-height: none !important;
+        margin: 0 0 1.5rem 0 !important;
+      }
+      .has-sidebar .container > main { 
+        max-width: 100% !important; 
+        margin: 0 !important; 
+      }
+    }
+  </style>
 </head>
   
 <body class="{% if page.sidebar == false %}no-sidebar{% else %}has-sidebar{% endif %}">
   <header>
-    <a href="/cs_study/home.html" class="logo">CS 정리</a>
+    <a href="/cs_study/home.html" class="logo">CS STUDY</a>
   </header>
 
   <div class="container">
@@ -447,10 +661,13 @@
     // Accordion toggle indicator update
     document.querySelectorAll('details').forEach(detail => {
       const indicator = detail.querySelector('.indicator');
-      detail.addEventListener('toggle', () => {
-        indicator.textContent = detail.open ? '접기' : '펼치기';
-      });
+      if (indicator) {
+        detail.addEventListener('toggle', () => {
+          indicator.textContent = detail.open ? '접기' : '펼치기';
+        });
+      }
     });
+
     // Home category search filter
     const searchInput = document.querySelector('.search-input');
     if (searchInput) {
@@ -463,44 +680,39 @@
       });
     }
 
-    // --- Sidebar: 현재 페이지 링크 하이라이트 추가 ---
-  (function() {
-    const here = location.pathname.replace(/\/+$/, ""); // 끝 '/' 제거
-    document.querySelectorAll(".sidebar a").forEach(a => {
-      const href = a.getAttribute("href");
-      if (!href) return;
-      const clean = href.replace(/\/+$/, "");
-      // 정확히 같거나, 현재 경로가 해당 링크로 끝나는 경우 활성화
-      if (here === clean || (clean !== "/" && here.endsWith(clean))) {
-        a.classList.add("active");
-      }
-    });
-  })();
-
-  // --- Sidebar: 검색 필터 추가 ---
-  (function() {
-    const input = document.getElementById("nav-filter");
-    if (!input) return;
-
-    input.addEventListener("input", (e) => {
-      const q = e.target.value.trim().toLowerCase();
-
-      // 링크 텍스트 기준 필터
-      const links = document.querySelectorAll(".sidebar nav a");
-      links.forEach(a => {
-        const show = a.textContent.toLowerCase().includes(q);
-        a.style.display = show ? "block" : "none";
+    // Sidebar: 현재 페이지 링크 하이라이트
+    (function() {
+      const here = location.pathname.replace(/\/+$/, "");
+      document.querySelectorAll(".sidebar a").forEach(a => {
+        const href = a.getAttribute("href");
+        if (!href) return;
+        const clean = href.replace(/\/+$/, "");
+        if (here === clean || (clean !== "/" && here.endsWith(clean))) {
+          a.classList.add("active");
+        }
       });
+    })();
 
-      // details 그룹: 내부에 보이는 링크가 있으면 펼치고, 없으면 숨김
-      document.querySelectorAll(".sidebar nav details").forEach(d => {
-        const anyVisible = Array.from(d.querySelectorAll("a")).some(a => a.style.display !== "none");
-        d.open = anyVisible || q !== "";
-        d.style.display = anyVisible || q === "" ? "block" : "none";
+    // Sidebar: 검색 필터
+    (function() {
+      const input = document.getElementById("nav-filter");
+      if (!input) return;
+
+      input.addEventListener("input", (e) => {
+        const q = e.target.value.trim().toLowerCase();
+        const links = document.querySelectorAll(".sidebar nav a");
+        links.forEach(a => {
+          const show = a.textContent.toLowerCase().includes(q);
+          a.style.display = show ? "flex" : "none";
+        });
+
+        document.querySelectorAll(".sidebar nav details").forEach(d => {
+          const anyVisible = Array.from(d.querySelectorAll("a")).some(a => a.style.display !== "none");
+          d.open = anyVisible || q !== "";
+          d.style.display = anyVisible || q === "" ? "block" : "none";
+        });
       });
-    });
-  })();
-    
+    })();
   </script>
 </body>
 </html>
