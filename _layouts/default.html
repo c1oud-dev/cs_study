@@ -273,17 +273,10 @@
       line-height: 1.5;
     }
 
-    /* 녹색 박스 → 태그 스타일 */
+    /* 녹색 박스 → 숨김 처리 */
     .accordion-content > details > summary span[style*="float:right"],
     .accordion-content > details > summary span[style*="float: right"] {
-      float: none !important;
-      font-size: 0.7rem;
-      letter-spacing: 0px;
-      background: linear-gradient(135deg, #51cf66, #40c057);
-      padding: 0.25rem 0.5rem;
-      border-radius: 6px;
-      margin-left: 0.75rem;
-      flex-shrink: 0;
+      display: none !important;
     }
 
     /* 답변 영역 */
@@ -516,11 +509,6 @@
       .accordion-content > details > summary b {
         font-size: 0.9rem;
       }
-      .accordion-content > details > summary span[style*="float:right"],
-      .accordion-content > details > summary span[style*="float: right"] {
-        font-size: 0.6rem;
-        padding: 0.2rem 0.4rem;
-      }
       .accordion-content ul li,
       .accordion-content ol li {
         padding: 0.5rem 0.6rem 0.5rem 1.75rem;
@@ -560,10 +548,6 @@
     }
 
     @media screen and (max-width: 360px) {
-      .accordion-content > details > summary span[style*="float:right"],
-      .accordion-content > details > summary span[style*="float: right"] {
-        font-size: 0.55rem;
-      }
       .accordion-content > details > summary b {
         font-size: 0.85rem;
       }
