@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "CS 정리 – 홈"
+title: "CS Note"
 sidebar: false
 ---
 
