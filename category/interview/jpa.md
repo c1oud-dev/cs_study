@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "JPA Interview — 완벽 가이드"
+title: "JPA Interview"
 ---
 
 <p class="breadcrumb"><a href="/cs_study/home.html">🏠 홈으로</a></p>
@@ -14,7 +14,7 @@ title: "JPA Interview — 완벽 가이드"
   <summary><span class="accordion-title">📋 기본 면접 Q&A</span> <span class="indicator">펼치기</span></summary><div class="accordion-content">
 
   <details>
-    <summary style="font-size:1rem;"><b>Q1. JPA란 무엇이며 사용하는 이유는 무엇인가요?</b><span style="float:right;">🟩🟩🟩🟩🟩</span></summary>
+    <summary style="font-size:1rem;"><b>Q1. JPA란 무엇이며 사용하는 이유는 무엇인가요?</b><span style="float:right;">✅🟩🟩🟩🟩</span></summary>
     <div class="accordion-content">
     <p>JPA는 <b>자바 진영에서 ORM 표준을 정의한 기술</b>이고, <b>객체 지향적인 방식으로 데이터베이스를 다루기 위해 사용하는 것</b>입니다.</p>
     <p>먼저, JPA 자체는 라이브러리가 아니라 <b>규격(인터페이스 표준)</b>이고, 실제로는 Hibernate 같은 구현체를 통해 사용합니다. 핵심은 객체와 테이블을 매핑해서, 자바 객체를 다루면 내부에서 알아서 SQL을 만들어 주고 실행해 준다는 점입니다. 그래서 개발자는 비즈니스 로직에 더 집중하고, SQL과 JDBC 코드를 일일이 작성하는 양을 크게 줄일 수 있습니다.</p>
@@ -28,7 +28,7 @@ title: "JPA Interview — 완벽 가이드"
   </details>
 
   <details>
-    <summary style="font-size:1rem;"><b>Q2. JPA, Hibernate, Spring Data JPA의 차이점을 설명해주세요.</b><span style="float:right;">🟩🟩🟩🟩🟩</span></summary>
+    <summary style="font-size:1rem;"><b>Q2. JPA, Hibernate, Spring Data JPA의 차이점을 설명해주세요.</b><span style="float:right;">✅🟩🟩🟩🟩</span></summary>
     <div class="accordion-content">
     <p>JPA, Hibernate, Spring Data JPA는 <b>표준 – 구현체 – 스프링 통합 모듈</b> 이렇게 세 층으로 나뉜다고 정리할 수 있습니다</p>
     <p>먼저 <b>JPA는 자바 진영의 ORM 표준 명세</b>입니다. 인터페이스와 어노테이션 같은 규칙만 정의해 두고, “엔티티를 이렇게 매핑해라, 영속성 컨텍스트는 이렇게 동작해야 한다” 같은 계약만 정해 둡니다. 그래서 JPA 자체는 동작하는 라이브러리가 아니라, 여러 구현체들이 따라야 하는 공통 약속에 가깝습니다.</p>
@@ -39,7 +39,7 @@ title: "JPA Interview — 완벽 가이드"
   </details>
 
   <details>
-    <summary style="font-size:1rem;"><b>Q3. 영속성 컨텍스트(Persistence Context)란 무엇인가요?</b><span style="float:right;">🟩🟩🟩🟩🟩</span></summary>
+    <summary style="font-size:1rem;"><b>Q3. 영속성 컨텍스트(Persistence Context)란 무엇인가요?</b><span style="float:right;">✅🟩🟩🟩🟩</span></summary>
     <div class="accordion-content">
     <p>영속성 컨텍스트는 <b>JPA에서 엔티티를 저장하고 관리하는 1차 캐시이자, 엔티티의 생명주기를 관리하는 가상의 저장소</b>라고 말씀드리겠습니다. 보통 하나의 트랜잭션 안에서 EntityManager가 들고 있는 엔티티 저장소를 영속성 컨텍스트라고 부릅니다.</p>
     <p>조금 풀어서 말씀드리면, 영속성 컨텍스트는 DB에 바로 접근하는 것이 아니라, <b>메모리 상에 엔티티를 먼저 올려 두고 그 상태를 추적</b>하는 역할을 합니다. 그래서 한 번 조회한 엔티티는 같은 트랜잭션 안에서 다시 조회해도 DB에 재조회하기보다, 1차 캐시에 있는 동일한 객체를 반환합니다. 이 덕분에 동일한 PK에 대해 항상 같은 인스턴스를 보장하고, 불필요한 쿼리도 줄일 수 있습니다.</p>
@@ -50,7 +50,7 @@ title: "JPA Interview — 완벽 가이드"
   </details>
 
   <details>
-    <summary style="font-size:1rem;"><b>Q4. 엔티티의 생명주기(Entity Lifecycle)를 설명해주세요.</b><span style="float:right;">🟩🟩🟩🟩🟩</span></summary>
+    <summary style="font-size:1rem;"><b>Q4. 엔티티의 생명주기(Entity Lifecycle)를 설명해주세요.</b><span style="float:right;">✅🟩🟩🟩🟩</span></summary>
     <div class="accordion-content">
     <p>엔티티의 생명주기는 <b>엔티티가 생성된 순간부터 영속성 컨텍스트에서 관리되고, 분리되고, 삭제되기까지의 상태 변화</b>를 말합니다. 보통 네 가지 상태로 나눠서 설명할 수 있습니다.</p>
     <p>먼저 <b>비영속(Transient) 상태</b>입니다.<br>
@@ -66,7 +66,7 @@ title: "JPA Interview — 완벽 가이드"
   </details>
 
   <details>
-    <summary style="font-size:1rem;"><b>Q5. 엔티티 매핑 어노테이션들(@Entity, @Table, @Id, @Column 등)을 설명해주세요.</b><span style="float:right;">🟩🟩🟩🟩🟩</span></summary>
+    <summary style="font-size:1rem;"><b>Q5. 엔티티 매핑 어노테이션들(@Entity, @Table, @Id, @Column 등)을 설명해주세요.</b><span style="float:right;">✅🟩🟩🟩🟩</span></summary>
     <div class="accordion-content">
     <p>엔티티 매핑 어노테이션은 <b>자바 클래스와 필드를 데이터베이스 테이블과 컬럼에 연결해 주는 설정</b>이라고 보면 됩니다. 그중에서 보통 @Entity, @Table, @Id, @Column 네 가지가 기본 축입니다.</p>
     <p>먼저 <b>@Entity</b>는 “이 클래스는 JPA가 관리하는 엔티티다”라고 표시하는 어노테이션입니다. 이렇게 표시된 클래스만 영속성 컨텍스트에 올라가서 조회·저장·수정 같은 JPA 기능의 대상이 됩니다.</p>
@@ -78,7 +78,7 @@ title: "JPA Interview — 완벽 가이드"
   </details>
 
   <details>
-    <summary style="font-size:1rem;"><b>Q6. 기본 키(Primary Key) 생성 전략들을 비교해주세요.</b><span style="float:right;">🟩🟩🟩🟩🟩</span></summary>
+    <summary style="font-size:1rem;"><b>Q6. 기본 키(Primary Key) 생성 전략들을 비교해주세요.</b><span style="float:right;">✅🟩🟩🟩🟩</span></summary>
     <div class="accordion-content">
     <p><b>기본 키 생성 전략은 JPA가 엔티티의 PK 값을 언제, 어디서 생성하느냐를 결정하는 방식</b>이라고 정리할 수 있고, 대표적으로 <b>AUTO, IDENTITY, SEQUENCE, TABLE</b> 네 가지가 있습니다.</p>
     <p>먼저 <b>AUTO 전략</b>은 JPA가 사용하는 데이터베이스에 맞춰 적절한 전략을 자동으로 선택하는 방식입니다. 개발자가 깊이 신경 쓰지 않아도 되어서 간단하지만, DB를 바꾸거나 세밀하게 튜닝하고 싶을 때는 명시적인 전략 지정이 더 선호됩니다.</p>
@@ -90,7 +90,7 @@ title: "JPA Interview — 완벽 가이드"
   </details>
 
   <details>
-    <summary style="font-size:1rem;"><b>Q7. 연관관계 매핑의 종류들을 설명해주세요. (1:1, 1:N, N:1, N:M)</b><span style="float:right;">🟩🟩🟩🟩🟩</span></summary>
+    <summary style="font-size:1rem;"><b>Q7. 연관관계 매핑의 종류들을 설명해주세요. (1:1, 1:N, N:1, N:M)</b><span style="float:right;">✅🟩🟩🟩🟩</span></summary>
     <div class="accordion-content">
     <p>연관관계 매핑은 <b>엔티티 사이의 관계를 객체와 테이블에서 일관되게 표현하는 것이고, 보통 1:1, 1:N, N:1, N:M</b> 네 가지로 나눕니다.</p>
     <p>먼저 <b>1:1 관계</b>는 한 엔티티가 다른 하나와만 연결되는 경우입니다. 예를 들어 회원과 회원 상세 정보처럼 “있어도 하나, 없어도 그만”인 관계에 많이 쓰이고, 실제 테이블에서는 둘 중 한쪽에 <b>외래 키</b>를 두거나, 아예 PK를 공유하는 방식으로 구현할 수 있습니다.</p>
@@ -102,7 +102,7 @@ title: "JPA Interview — 완벽 가이드"
   </details>
 
   <details>
-    <summary style="font-size:1rem;"><b>Q8. 양방향 연관관계와 연관관계의 주인(Owner)에 대해 설명해주세요.</b><span style="float:right;">🟩🟩🟩🟩🟩</span></summary>
+    <summary style="font-size:1rem;"><b>Q8. 양방향 연관관계와 연관관계의 주인(Owner)에 대해 설명해주세요.</b><span style="float:right;">✅🟩🟩🟩🟩</span></summary>
     <div class="accordion-content">
     <p>양방향 연관관계와 연관관계의 주인은 <b>객체 입장에서의 방향과 데이터베이스 외래 키를 누가 관리하느냐</b>를 구분하는 개념입니다. 먼저 이 둘을 분리해서 보는 게 중요합니다.</p>
     <p>먼저 <b>양방향 연관관계</b>부터 말씀드리면, 객체 세계에서는 A가 B를 알고, B도 A를 아는 식으로 <b>서로를 참조하는 두 개의 단방향 연관관계</b>가 합쳐진 형태입니다. 예를 들어 회원이 주문 목록을 갖고 있고, 주문이 다시 회원을 참조하는 구조처럼, 코드에서는 양쪽에서 편하게 탐색할 수 있다는 장점이 있습니다. 하지만 데이터베이스 입장에서는 결국 <b>외래 키는 한 테이블에만 존재</b>하기 때문에, 실제 관계는 한쪽 방향으로만 관리됩니다.</p>
@@ -115,7 +115,7 @@ title: "JPA Interview — 완벽 가이드"
   </details>
 
   <details>
-    <summary style="font-size:1rem;"><b>Q9. 지연 로딩(Lazy Loading)과 즉시 로딩(Eager Loading)의 차이점은?</b><span style="float:right;">🟩🟩🟩🟩🟩</span></summary>
+    <summary style="font-size:1rem;"><b>Q9. 지연 로딩(Lazy Loading)과 즉시 로딩(Eager Loading)의 차이점은?</b><span style="float:right;">✅🟩🟩🟩🟩</span></summary>
     <div class="accordion-content">
     <p>지연 로딩과 즉시 로딩은 <b>연관된 엔티티를 언제 DB에서 가져올지 결정하는 조회 전략</b>입니다.</p>
     <p>먼저 <b>지연 로딩(Lazy Loading)</b>은 <b>“필요할 때까지 연관 엔티티를 조회하지 않고 미뤄 두는 방식”</b>입니다.<br>
@@ -127,7 +127,7 @@ title: "JPA Interview — 완벽 가이드"
   </details>
 
   <details>
-    <summary style="font-size:1rem;"><b>Q10. N+1 문제란 무엇이며 해결 방법은?</b><span style="float:right;">🟩🟩🟩🟩🟩</span></summary>
+    <summary style="font-size:1rem;"><b>Q10. N+1 문제란 무엇이며 해결 방법은?</b><span style="float:right;">✅🟩🟩🟩🟩</span></summary>
     <div class="accordion-content">
     <p><b>N+1 문제는 한 번에 가져올 수 있는 연관 데이터를 잘못 설계해서, 쿼리가 1번이 아니라 1 + N번으로 쪼개져 나가면서 성능이 급격히 나빠지는 문제</b>입니다.</p>
     <p>조금 구체적으로 말하면, 예를 들어 <b>부모 엔티티 목록을 한 번 조회하는 1개의 쿼리</b>가 먼저 나가고, 그 후에 목록에 포함된 각 엔티티마다 <b>연관 엔티티를 조회하는 쿼리가 N번</b> 더 나가는 상황입니다. 겉으로는 리스트 한 번 돌았을 뿐인데, 실제 DB에는 10개면 11번, 100개면 101번 쿼리가 나가서 <b>네트워크 왕복과 쿼리 비용이 기하급수적으로 증가</b>하게 됩니다. JPA에서는 지연 로딩 설정이 많을 때 컬렉션을 순회하면서 연관 엔티티에 접근할 때 이런 문제가 자주 생깁니다.</p>
@@ -140,7 +140,7 @@ title: "JPA Interview — 완벽 가이드"
   </details>
 
   <details>
-    <summary style="font-size:1rem;"><b>Q11. 영속성 전이(Cascade)와 고아 객체(Orphan Removal)를 설명해주세요.</b><span style="float:right;">🟩🟩🟩🟩🟩</span></summary>
+    <summary style="font-size:1rem;"><b>Q11. 영속성 전이(Cascade)와 고아 객체(Orphan Removal)를 설명해주세요.</b><span style="float:right;">✅🟩🟩🟩🟩</span></summary>
     <div class="accordion-content">
     <p>영속성 전이와 고아 객체는 <b>부모–자식처럼 강하게 묶인 연관관계에서 엔티티의 생명주기를 함께 관리하기 위한 기능</b>입니다. 둘 다 연관 엔티티를 자동으로 처리해 준다는 공통점이 있지만, 초점이 조금 다릅니다.</p>
     <p>먼저 <b>영속성 전이(Cascade)</b>는<br>
