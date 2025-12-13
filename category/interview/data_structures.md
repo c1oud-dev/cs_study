@@ -16,7 +16,7 @@ title: "자료구조 면접 대비 — 완전 정리"
   <div class="accordion-content">
 
   <details>
-    <summary style="font-size:1rem;"><b>Q1. 자료구조란 무엇인가요?</b></summary>
+    <summary style="font-size:1rem;"><b>Q1. 자료구조란 무엇인가요?</b><span style="float:right;">🟩🟩🟩🟩🟩</span></summary>
     <div class="accordion-content">
       <p><b>A:</b> 자료구조는 컴퓨터에서 데이터를 효율적으로 저장하고 조작할 수 있도록 조직화하는 방법입니다. 데이터의 삽입, 삭제, 검색 등의 연산을 효율적으로 수행하기 위해 데이터들 간의 관계를 정의한 것이라고 할 수 있습니다. 좋은 자료구조를 선택하면 알고리즘의 효율성을 크게 향상시킬 수 있습니다.</p>
     </div>
