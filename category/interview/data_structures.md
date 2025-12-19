@@ -23,21 +23,21 @@ title: "자료구조 면접 대비 — 완전 정리"
   </details>
 
   <details>
-    <summary style="font-size:1rem;"><b>Q2. 배열(Array)의 특징과 시간복잡도를 설명해주세요.</b></summary>
+    <summary style="font-size:1rem;"><b>Q2. 배열(Array)의 특징과 시간복잡도를 설명해주세요.</b><span style="float:right;">🟩🟩🟩🟩🟩</span></summary>
     <div class="accordion-content">
       <p><b>A:</b> 배열은 같은 타입의 데이터를 연속된 메모리 공간에 저장하는 선형 자료구조입니다. 인덱스를 통해 직접 접근이 가능하여 검색의 시간복잡도가 O(1)입니다. 하지만 중간에 원소를 삽입하거나 삭제할 때는 다른 원소들을 이동시켜야 하므로 O(n)의 시간이 걸립니다. 크기가 고정되어 있어 메모리를 효율적으로 사용할 수 있지만, 동적으로 크기를 변경하기 어렵다는 단점이 있습니다.</p>
     </div>
   </details>
 
   <details>
-    <summary style="font-size:1rem;"><b>Q3. 연결리스트(Linked List)와 배열의 차이점은 무엇인가요?</b></summary>
+    <summary style="font-size:1rem;"><b>Q3. 연결리스트(Linked List)와 배열의 차이점은 무엇인가요?</b><span style="float:right;">🟩🟩🟩🟩🟩</span></summary>
     <div class="accordion-content">
       <p><b>A:</b> 연결리스트는 노드들이 포인터로 연결된 동적 자료구조입니다. 배열과 달리 메모리상에서 연속적으로 저장되지 않으며, 각 노드가 데이터와 다음 노드의 주소를 가지고 있습니다. 삽입과 삭제는 O(1)로 배열보다 빠르지만, 특정 위치에 접근하려면 처음부터 순차적으로 탐색해야 하므로 검색은 O(n)입니다. 동적으로 크기를 조절할 수 있어 메모리를 유연하게 사용할 수 있습니다.</p>
     </div>
   </details>
 
   <details>
-    <summary style="font-size:1rem;"><b>Q4. 스택(Stack)과 큐(Queue)의 차이점을 설명해주세요.</b></summary>
+    <summary style="font-size:1rem;"><b>Q4. 스택(Stack)과 큐(Queue)의 차이점을 설명해주세요.</b><span style="float:right;">🟩🟩🟩🟩🟩</span></summary>
     <div class="accordion-content">
       <p><b>A:</b> 스택은 LIFO(Last In First Out) 구조로 마지막에 들어간 데이터가 먼저 나오는 자료구조입니다. push와 pop 연산을 통해 데이터를 추가하고 제거하며, 함수 호출이나 재귀 알고리즘에 주로 사용됩니다. 큐는 FIFO(First In First Out) 구조로 먼저 들어간 데이터가 먼저 나오는 자료구조입니다. enqueue와 dequeue 연산을 사용하며, BFS나 작업 스케줄링에 활용됩니다.
 </p>
@@ -45,28 +45,28 @@ title: "자료구조 면접 대비 — 완전 정리"
   </details>
 
   <details>
-    <summary style="font-size:1rem;"><b>Q5. 해시 테이블(Hash Table)의 동작 원리를 설명해주세요.</b></summary>
+    <summary style="font-size:1rem;"><b>Q5. 해시 테이블(Hash Table)의 동작 원리를 설명해주세요.</b><span style="float:right;">🟩🟩🟩🟩🟩</span></summary>
     <div class="accordion-content">
       <p><b>A:</b> 해시 테이블은 해시 함수를 사용하여 키를 배열의 인덱스로 변환하고, 해당 위치에 값을 저장하는 자료구조입니다. 이상적인 경우 삽입, 삭제, 검색이 모두 O(1)의 시간복잡도를 가집니다. 하지만 서로 다른 키가 같은 해시값을 가지는 충돌이 발생할 수 있어, 체이닝이나 오픈 어드레싱 같은 충돌 해결 방법이 필요합니다.</p>
     </div>
   </details>
 
   <details>
-    <summary style="font-size:1rem;"><b>Q6. 이진 트리(Binary Tree)란 무엇인가요?</b></summary>
+    <summary style="font-size:1rem;"><b>Q6. 이진 트리(Binary Tree)란 무엇인가요?</b><span style="float:right;">🟩🟩🟩🟩🟩</span></summary>
     <div class="accordion-content">
       <p><b>A:</b> 이진 트리는 각 노드가 최대 2개의 자식 노드를 가질 수 있는 트리 구조입니다. 왼쪽 자식과 오른쪽 자식으로 구분되며, 계층적 데이터를 표현하는 데 적합합니다. 루트 노드부터 시작해서 레벨별로 데이터를 저장하며, 트리 순회 방법으로는 전위, 중위, 후위 순회가 있습니다.</p>
     </div>
   </details>
 
   <details>
-    <summary style="font-size:1rem;"><b>Q7. 이진 탐색 트리(BST)의 특징은 무엇인가요?</b></summary>
+    <summary style="font-size:1rem;"><b>Q7. 이진 탐색 트리(BST)의 특징은 무엇인가요?</b><span style="float:right;">🟩🟩🟩🟩🟩</span></summary>
     <div class="accordion-content">
       <p><b>A:</b> 이진 탐색 트리는 왼쪽 서브트리의 모든 노드 값이 루트보다 작고, 오른쪽 서브트리의 모든 노드 값이 루트보다 큰 성질을 만족하는 이진 트리입니다. 이 성질 덕분에 검색, 삽입, 삭제 연산을 평균적으로 O(log n)에 수행할 수 있습니다. 하지만 트리가 한쪽으로 치우친 경우 최악의 경우 O(n)이 될 수 있습니다.</p>
     </div>
   </details>
 
   <details>
-    <summary style="font-size:1rem;"><b>Q8. 힙(Heap)의 종류와 용도를 설명해주세요.</b></summary>
+    <summary style="font-size:1rem;"><b>Q8. 힙(Heap)의 종류와 용도를 설명해주세요.</b><span style="float:right;">🟩🟩🟩🟩🟩</span></summary>
     <div class="accordion-content">
       <p><b>A:</b> 힙은 완전 이진 트리의 형태를 가진 자료구조로, 최대 힙과 최소 힙으로 나뉩니다. 최대 힙은 부모 노드가 자식 노드보다 큰 값을 가지며, 최소 힙은 그 반대입니다. 우선순위 큐를 구현하는 데 주로 사용되며, 힙 정렬 알고리즘의 기반이 됩니다. 삽입과 삭제 연산이 O(log n)의 시간복잡도를 가집니다.</p>
     </div>
