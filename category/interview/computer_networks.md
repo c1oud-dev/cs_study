@@ -16,7 +16,7 @@ title: "네트워크 면접 대비 — 완전 정리"
   <div class="accordion-content">
 
   <details>
-    <summary style="font-size:1rem;"><b>Q1. OSI 7계층 모델을 설명하고 각 계층의 역할을 말해주세요.</b></summary>
+    <summary style="font-size:1rem;"><b>Q1. OSI 7계층 모델을 설명하고 각 계층의 역할을 말해주세요.</b><span style="float:right;">🟩🟩🟩🟩🟩</span></summary>
     <div class="accordion-content">
       <p>OSI 7계층은 네트워크 통신을 7개의 논리적 계층으로 나눈 참조 모델입니다. 물리 계층은 실제 전기적 신호 전송을 담당하고, 데이터 링크 계층은 인접한 노드 간 신뢰성 있는 전송을 보장합니다. 네트워크 계층은 IP 주소를 이용한 라우팅을 수행하고, 전송 계층은 TCP/UDP를 통해 종단 간 연결을 관리합니다. 세션 계층은 대화 관리, 표현 계층은 데이터 암호화와 압축, 응용 계층은 사용자에게 네트워크 서비스를 제공합니다. 각 계층은 독립적으로 동작하며 하위 계층의 서비스를 이용합니다.</p>
       <hr>
