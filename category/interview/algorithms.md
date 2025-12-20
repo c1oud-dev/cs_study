@@ -16,14 +16,14 @@ title: "알고리즘 면접 대비 — 완전 정리"
   <div class="accordion-content">
 
   <details>
-    <summary style="font-size:1rem;"><b>Q1. 알고리즘이란 무엇이고, 좋은 알고리즘의 조건은 무엇인가요?</b></summary>
+    <summary style="font-size:1rem;"><b>Q1. 알고리즘이란 무엇이고, 좋은 알고리즘의 조건은 무엇인가요?</b><span style="float:right;">✅🟩🟩🟩🟩</span></summary>
     <div class="accordion-content">
       <p>알고리즘은 문제를 해결하기 위한 명확하고 체계적인 절차나 방법을 의미합니다. 입력을 받아서 원하는 출력을 생성하는 일련의 단계들로 구성됩니다. 좋은 알고리즘의 조건으로는 정확성, 효율성, 명확성, 유한성, 그리고 일반성이 있습니다. 특히 시간 복잡도와 공간 복잡도가 낮을수록, 그리고 다양한 입력 크기에 대해 안정적으로 동작할수록 좋은 알고리즘이라고 할 수 있습니다.</p>
     </div>
   </details>
 
   <details>
-    <summary style="font-size:1rem;"><b>Q2. 시간 복잡도와 공간 복잡도를 설명하고, Big O 표기법의 의미는 무엇인가요?</b></summary>
+    <summary style="font-size:1rem;"><b>Q2. 시간 복잡도와 공간 복잡도를 설명하고, Big O 표기법의 의미는 무엇인가요?</b><span style="float:right;">✅🟩🟩🟩🟩</span></summary>
     <div class="accordion-content">
       <p>시간 복잡도는 알고리즘이 실행되는 데 걸리는 시간을 입력 크기에 대한 함수로 나타낸 것이고, 공간 복잡도는 알고리즘이 사용하는 메모리 공간을 나타낸 것입니다. Big O 표기법은 알고리즘의 성능을 최악의 경우를 기준으로 상한선을 표현하는 방법입니다. 입력 크기가 커질 때의 성장률에 초점을 맞춰서, 상수나 낮은 차수의 항들을 무시하고 가장 큰 차수의 항만 고려합니다.</p>
     </div>
