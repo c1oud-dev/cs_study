@@ -30,21 +30,21 @@ title: "알고리즘 면접 대비 — 완전 정리"
   </details>
 
   <details>
-    <summary style="font-size:1rem;"><b>Q3. 버블 정렬과 퀵 정렬의 차이점을 설명해주세요.</b></summary>
+    <summary style="font-size:1rem;"><b>Q3. 버블 정렬과 퀵 정렬의 차이점을 설명해주세요.</b><span style="float:right;">✅🟩🟩🟩🟩</span></summary>
     <div class="accordion-content">
       <p>버블 정렬은 인접한 두 원소를 비교하여 큰 값을 뒤로 보내는 과정을 반복하는 알고리즘입니다. 구현이 간단하지만 시간 복잡도가 항상 O(n²)로 비효율적입니다. 퀵 정렬은 분할 정복 방식으로 피벗을 선택해서 작은 값들과 큰값들을 나누어 재귀적으로 정렬하는 알고리즘입니다. 평균적으로 O(n log n)의 우수한 성능을 보이지만, 최악의 경우 O(n²)가 될 수 있습니다. 실제로는 퀵 정렬이 캐시 효율성과 상수 인수 때문에 더 빠른 경우가 많습니다.</p>
     </div>
   </details>
 
   <details>
-    <summary style="font-size:1rem;"><b>Q4. 병합 정렬(Merge Sort)의 동작 원리와 특징을 설명해주세요.</b></summary>
+    <summary style="font-size:1rem;"><b>Q4. 병합 정렬(Merge Sort)의 동작 원리와 특징을 설명해주세요.</b><span style="float:right;">✅🟩🟩🟩🟩</span></summary>
     <div class="accordion-content">
       <p>병합 정렬은 분할 정복 기법을 사용하여 배열을 반으로 나누고, 각각을 재귀적으로 정렬한 후 병합하는 알고리즘입니다. 시간 복잡도가 항상 O(n log n)으로 안정적이며, 안정 정렬이라는 장점이 있습니다. 하지만 추가적인 메모리 공간이 O(n) 필요하다는 단점이 있습니다. 큰 데이터셋이나 안정성이 중요한 경우, 그리고 최악의 경우 성능이 보장되어야 하는 시스템에서 자주 사용됩니다.</p>
     </div>
   </details>
 
   <details>
-    <summary style="font-size:1rem;"><b>Q5. 이진 탐색(Binary Search)의 조건과 시간 복잡도를 설명해주세요.</b></summary>
+    <summary style="font-size:1rem;"><b>Q5. 이진 탐색(Binary Search)의 조건과 시간 복잡도를 설명해주세요.</b><span style="float:right;">✅🟩🟩🟩🟩</span></summary>
     <div class="accordion-content">
       <p>이진 탐색은 정렬된 배열에서 특정 값을 찾는 알고리즘입니다. 배열의 중간 원소와 찾는 값을 비교하여 탐색 범위를 절반씩 줄여나갑니다. 반드시 정렬된 상태에서만 사용할 수 있다는 전제 조건이 있습니다. 시간 복잡도는 O(log n)으로 매우 효율적이며, 공간 복잡도는 반복문으로 구현하면 O(1), 재귀로 구현하면 O(log n)입니다. 대용량 데이터에서 검색 성능이 중요한 시스템에 널리 활용됩니다.</p>
     </div>
