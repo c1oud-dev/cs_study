@@ -244,18 +244,19 @@ sidebar: false
 <section class="category-section">
   <h2>면접 대비</h2>
   <div class="category-grid small" id="cs-basic-grid">
+    <a href="/cs_study/category/interview/resume_question.html" class="category-card">자소서 기반</a>
     <a href="/cs_study/category/interview/java.html" class="category-card">자바(Java)</a>
-   <a href="/cs_study/category/interview/spring.html" class="category-card">스프링(Spring)</a>
-   <a href="/cs_study/category/interview/jpa.html" class="category-card">JPA</a>
+    <a href="/cs_study/category/interview/spring.html" class="category-card">스프링(Spring)</a>
+    <a href="/cs_study/category/interview/jpa.html" class="category-card">JPA</a>
     <a href="/cs_study/category/interview/data_structures.html" class="category-card">자료구조 (Data Structures)</a>
     <a href="/cs_study/category/interview/algorithms.html" class="category-card">알고리즘 (Algorithms)</a>
     <a href="/cs_study/category/interview/operating_systems.html" class="category-card">운영체제 (Operating Systems)</a>
     <a href="/cs_study/category/interview/computer_networks.html" class="category-card">네트워크 (Computer Networks)</a>
-   <a href="/cs_study/category/interview/database.html" class="category-card">데이터베이스 (Database)</a>
-   <a href="/cs_study/category/interview/sw_and_architecture.html" class="category-card">소프트웨어 공학 & 아키텍처</a>
-   <a href="/cs_study/category/interview/security.html" class="category-card">보안 (Security)</a>
-   <a href="/cs_study/category/interview/cloud_and_distributed_systems.html" class="category-card">클라우드 & 분산 시스템</a>
-   <a href="/cs_study/category/interview/other.html" class="category-card">DevOps</a>
+    <a href="/cs_study/category/interview/database.html" class="category-card">데이터베이스 (Database)</a>
+    <a href="/cs_study/category/interview/sw_and_architecture.html" class="category-card">소프트웨어 공학 & 아키텍처</a>
+    <a href="/cs_study/category/interview/security.html" class="category-card">보안 (Security)</a>
+    <a href="/cs_study/category/interview/cloud_and_distributed_systems.html" class="category-card">클라우드 & 분산 시스템</a>
+    <a href="/cs_study/category/interview/other.html" class="category-card">DevOps</a>
   </div>
 </section>
 
