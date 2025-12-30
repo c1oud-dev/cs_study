@@ -36,7 +36,7 @@ title: "자료구조 면접 대비"
   </details>
 
   <details>
-    <summary style="font-size:1rem;"><b>Q3. ArrayList와 LinkedList의 차이점과 각각 언제 사용하는 것이 좋은가요?</b><span style="float:right;">🟩🟩🟩🟩🟩</span></summary>
+    <summary style="font-size:1rem;"><b>Q3. ArrayList와 LinkedList의 차이점과 각각 언제 사용하는 것이 좋은가요?</b><span style="float:right;">✅🟩🟩🟩🟩</span></summary>
     <div class="accordion-content">
       <p><b>ArrayList와 LinkedList는 둘 다 List 인터페이스의 구현체이지만, 내부 구조가 다릅니다</b>. ArrayList는 내부적으로 배열을 사용하고, LinkedList는 이중 연결 리스트로 구현되어 있습니다.</p>
       <p>이 구조 차이로 인해 <b>성능 특성이 다릅니다</b>. ArrayList는 인덱스를 통한 조회가 O(1)로 빠르지만, 중간에 삽입이나 삭제가 발생하면 요소들을 이동시켜야 해서 O(n)이 걸립니다. 또한 배열이 가득 차면 더 큰 배열을 새로 만들어 복사하는 과정이 필요합니다.</p>
@@ -46,7 +46,7 @@ title: "자료구조 면접 대비"
   </details>
 
   <details>
-    <summary style="font-size:1rem;"><b>Q4. 스택(Stack)과 큐(Queue)의 특징과 차이점을 설명해주세요.</b></summary>
+    <summary style="font-size:1rem;"><b>Q4. 스택(Stack)과 큐(Queue)의 특징과 차이점을 설명해주세요.</b><span style="float:right;">✅🟩🟩🟩🟩</span></summary>
     <div class="accordion-content">
       <p><b>스택과 큐의 가장 큰 차이는 데이터를 꺼내는 순서</b>입니다. 스택은 후입선출, 즉 나중에 들어온 데이터가 먼저 나가고, 큐는 선입선출, 즉 먼저 들어온 데이터가 먼저 나갑니다.</p>
       <p><b>스택은 LIFO 구조</b>로, 접시를 쌓는 것처럼 가장 위에 있는 데이터만 접근할 수 있습니다. 대표적인 활용 사례로는 함수 호출 시 사용되는 콜 스택, 브라우저의 뒤로가기 기능, 그리고 실행 취소 기능이 있습니다.</p>
@@ -56,7 +56,7 @@ title: "자료구조 면접 대비"
   </details>
 
   <details>
-    <summary style="font-size:1rem;"><b>Q5. 스택과 큐는 각각 어떤 상황에서 사용되나요?</b></summary>
+    <summary style="font-size:1rem;"><b>Q5. 스택과 큐는 각각 어떤 상황에서 사용되나요?</b><span style="float:right;">✅🟩🟩🟩🟩</span></summary>
     <div class="accordion-content">
       <p><b>스택은 가장 최근 작업을 우선 처리해야 할 때</b>, <b>큐는 들어온 순서대로 처리해야 할 때</b> 사용됩니다.</p>
       <p>스택의 대표적인 활용 상황으로는 먼저 <b>함수 호출 관리</b>가 있습니다. 프로그램이 함수를 호출하면 콜 스택에 쌓이고, 가장 마지막에 호출된 함수부터 실행이 완료되어 빠져나갑니다. 또한 <b>브라우저의 뒤로가기</b>도 스택으로 구현되는데, 방문한 페이지를 스택에 쌓아두고 뒤로가기를 누르면 가장 최근 페이지부터 꺼내는 방식입니다. 그 외에도 실행 취소 기능, 괄호 짝 검사, 깊이 우선 탐색인 DFS에 활용됩니다.</p>
@@ -66,7 +66,7 @@ title: "자료구조 면접 대비"
   </details>
 
   <details>
-    <summary style="font-size:1rem;"><b>Q6. 해시 테이블(Hash Table)이란 무엇이며 동작 원리를 설명해주세요.</b></summary>
+    <summary style="font-size:1rem;"><b>Q6. 해시 테이블(Hash Table)이란 무엇이며 동작 원리를 설명해주세요.</b><span style="float:right;">✅🟩🟩🟩🟩</span></summary>
     <div class="accordion-content">
       <p><b>해시 테이블은 키와 값의 쌍으로 데이터를 저장하며, 평균 O(1)의 시간 복잡도로 빠른 검색이 가능한 자료구조</b>입니다.</p>
       <p>동작 원리는 다음과 같습니다. 먼저 <b>해시 함수</b>를 통해 키를 특정 숫자로 변환합니다. 이 숫자를 배열의 인덱스로 사용해서 해당 위치에 값을 저장합니다. 조회할 때도 같은 해시 함수를 적용하면 바로 해당 인덱스로 접근할 수 있어서 검색 속도가 매우 빠릅니다.</p>
