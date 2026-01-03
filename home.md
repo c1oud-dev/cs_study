@@ -235,7 +235,7 @@ sidebar: false
   <h2>추천 학습</h2>
   <div class="recommended-grid">
     <a href="/cs_study/category/data_structures_algorithms.html" class="recommended-card">📘 자료구조와 알고리즘</a>
-    <a href="/cs_study/category/web_security/index.html" class="recommended-card">🔒 Web Security</a>
+    <a href="/cs_study/category/interview/resume_question.html" class="recommended-card">자소서 기반</a>
     <a href="/cs_study/category/databases/index.html" class="recommended-card">🗄️ Databases</a>
   </div>
 </section>
@@ -245,6 +245,7 @@ sidebar: false
   <h2>면접 대비</h2>
   <div class="category-grid small" id="cs-basic-grid">
     <a href="/cs_study/category/interview/resume_question.html" class="category-card">자소서 기반</a>
+    <a href="/cs_study/category/interview/exc.html" class="category-card">CS 외의 개념</a>
     <a href="/cs_study/category/interview/java.html" class="category-card">자바(Java)</a>
     <a href="/cs_study/category/interview/spring.html" class="category-card">스프링(Spring)</a>
     <a href="/cs_study/category/interview/jpa.html" class="category-card">JPA</a>
