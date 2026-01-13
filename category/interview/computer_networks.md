@@ -31,7 +31,7 @@ title: "네트워크 면접 대비 — 완전 정리"
   </details>
 
   <details>
-    <summary style="font-size:1rem;"><b>Q2. TCP와 UDP의 차이점을 상세히 설명해주세요.</b></summary>
+    <summary style="font-size:1rem;"><b>Q2. TCP와 UDP의 차이점을 상세히 설명해주세요.</b><span style="float:right;">🟩🟩🟩🟩🟩</span></summary>
     <div class="accordion-content">
       <p>TCP는 연결 지향 프로토콜로 3-way handshake를 통해 연결을 설정하고, 신뢰성 있는 데이터 전송을 보장합니다. 순서 보장, 오류 검출 및 재전송, 흐름 제어, 혼잡 제어 기능을 제공하여 데이터 손실 없이 정확한 전송이 가능하지만 오버헤드가 큽니다. UDP는 비연결형 프로토콜로 연결 설정 과정 없이 바로 데이터를 전송합니다. 빠르고 간단하지만 신뢰성을 보장하지 않으며, 순서가 바뀌거나 데이터가 손실될 수 있습니다. 실시간 스트리밍이나 DNS 조회 같은 빠른 응답이 중요한 서비스에 적합합니다.</p>
     <hr>
