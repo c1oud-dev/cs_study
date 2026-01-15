@@ -255,3 +255,33 @@ title: "CS 외의 개념"
 
   </div>
 </details>
+
+
+<!-- chapter -->
+<details>
+  <summary><span class="accordion-title">5️⃣ 아키텍처 구조</span> <span class="indicator">펼치기</span></summary><div class="accordion-content">
+
+  <details>
+    <summary style="font-size:1rem;"><b>REST API</b></summary>
+    <div class="accordion-content">
+      <p><b>REST(Representational State Transfer)라는 아키텍처 스타일의 원칙을 따라,HTTP로 "리소스"를 주고받도록 설계한 API</b>를 말합니다.</p>
+      <p>REST API에서 흔히 강조하는 핵심 개념은 이 정도입니다.</p>
+      <ul>
+        <li><b>리소스 중심:</b> 사용자, 게시글 같은 대상을 <b>URI로 식별</b>하고(예: /users, /posts/{id}), 그 리소소의 <b>표현(보통 JSON)</b>을 주고받습니다.</li>
+        <li><b>표준 HTTP 메서드 사용:</b> GET/POST/PUT/PATCH/DELETE처럼 HTTP 메서드로 “조회/생성/수정/삭제” 의도를 표현합니다(균일한 인터페이스).</li>
+        <li><b>무상태(Stateless):</b> 요청 하나하나가 필요한 정보를 포함하고, 서버는 클라이언트의 상태를 세션처럼 계속 들고 있지 않는 것을 원칙으로 합니다.</li>
+      </ul>
+      <h4>💡 누가 설계하나? 백 vs 프론트</h4>
+      <p>REST API는 <b>클라이언트(프론트)가 호출해서 서버가 처리해 주는 "서버 인터페이스(계약)"</b>라서, 보통 <b>백엔드가 최종 설계·구현 책임</b>을 집니다. 서버는 요청을 받아 처리하고 HTTP 응답을 돌려주는 주체이기 때문입니다.</p>
+      <p>다만 실무에서는 “백엔드만” 또는 “프론트만”이 단독으로 정하기보다, <b>프론트·백이 함께 API 계약을 맞추는 방식(Contract / Design-First)</b>이 일반적입니다.</p>
+      <ul>
+        <li><b>프론트가 주로 결정에 기여하는 부분:</b> 어떤 화면/기능에 어떤 데이터가 필요한지, 요청/응답 바디 형태가 사용하기 편한지(소비자 관점).</li>
+        <li><b>백엔드가 주로 결정에 기여하는 부분:</b> 리소스 모델링, 인증/인가, 트랜잭션/정합성, 성능/페이징, 에러 규격, 버전 전략 등(제공자 관점).</li>
+        <li>그래서 <b>API 계약(OpenAPI 같은 명세)을 먼저 합의</b>해두면 프론트와 백이 병렬로 개발하기가 쉬워집니다.</li>
+      </ul>
+      <p>정리하면, <b>“누가 설계하나?”의 답은 ‘백엔드가 책임을 지되, 프론트와 계약을 함께 맞춘다’</b>가 가장 정확합니다.</p>
+    </div>
+  </details>
+
+  </div>
+</details>
