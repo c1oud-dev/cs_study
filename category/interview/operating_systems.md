@@ -43,7 +43,7 @@ title: "운영체제 면접 대비"
   </details>
 
   <!--꼬리 질문-->
-  <details>
+  <details class="tail-question">
     <summary style="font-size:1rem;"><b>💡 예상 꼬리질문</b></summary>
     <div class="accordion-content">
       <details>
