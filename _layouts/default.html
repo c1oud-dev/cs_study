@@ -366,21 +366,63 @@
       justify-content: center;
     }
 
-    /* 중첩 리스트 */
+   /* ========== 중첩 리스트 (2단계) ========== */
     .accordion-content ul ul,
     .accordion-content ol ol,
     .accordion-content ul ol,
     .accordion-content ol ul {
-      margin: 0.5rem 0 0.25rem 0;
+      margin: 0.75rem 0 0.25rem 0.5rem;
+      padding-left: 0.75rem;
+      border-left: 2px solid #e9ecef;
     }
     .accordion-content ul ul li,
-    .accordion-content ol ol li {
+    .accordion-content ol ul li {
       background: #f8f9fa;
-      border-color: #e9ecef;
+      border-color: #e0e3e6;
     }
     .accordion-content ul ul li::before {
       background: transparent;
       border: 2px solid #ff6b35;
+      width: 6px;
+      height: 6px;
+    }
+    
+    /* 중첩 리스트 (3단계) */
+    .accordion-content ul ul ul,
+    .accordion-content ol ol ol {
+      border-left-color: #d1d5db;
+    }
+    .accordion-content ul ul ul li,
+    .accordion-content ol ol ol li {
+      background: #f1f3f5;
+    }
+    .accordion-content ul ul ul li::before {
+      content: "—";
+      background: none;
+      border: none;
+      color: #ff6b35;
+      font-size: 0.7rem;
+      font-weight: bold;
+      width: auto;
+      height: auto;
+      top: 0.65rem;
+    }
+    
+    /* ========== 꼬리질문 스타일 ========== */
+    .accordion-content > details.tail-question {
+      background: #fffbeb;
+      border: 1px solid #fcd34d;
+      border-left: 4px solid #f59e0b;
+    }
+    .accordion-content > details.tail-question > summary {
+      background: #fffbeb;
+    }
+    .accordion-content > details.tail-question[open] > summary {
+      border-bottom: 1px solid #fcd34d;
+      border-radius: 12px 12px 0 0;
+    }
+    .accordion-content > details.tail-question > .accordion-content {
+      background: #fffdf7;
     }
 
     /* 리스트 내 강조 텍스트 */
