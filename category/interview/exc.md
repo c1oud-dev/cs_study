@@ -10,7 +10,7 @@ title: "CS 외의 개념"
 </section>
 
 <!-- chapter -->
-<details open>
+<details open class="section-box">
   <summary><span class="accordion-title">1️⃣ 백엔드 개발 환경</span> <span class="indicator">펼치기</span></summary><div class="accordion-content">
 
   <details open>
@@ -45,7 +45,7 @@ title: "CS 외의 개념"
     <summary style="font-size:1rem;"><b>Spring Data JPA(Hibernate)</b></summary>
     <div class="accordion-content">
         <p>Spring Data JPA는 <b>JPA 기반 데이터 접근을 "Repository" 추상화로 제공해서, CRUD 같은 반복 코드를 크게 줄여주는 스프링 모듈</b>입니다.</p>
-        <h4>괄호 안에 Hibernate라고 적는 이유는?</h4>
+        <h4>💡 괄호 안에 Hibernate라고 적는 이유는?</h4>
         <p><b>Spring Data JPA는 "JPA 기반 Repository 추상화"</b>이고, 실제로 DB에 붙어서 SQL 생성·실행 같은 ORM 동작을 하는 <b>JPA 구현체(Provider)가 Hibernate인 경우가 많기 때문</b>입니다.</p>
         <p>특히 <b>Spring Boot에서는 JPA를 쓸 때 기본 JPA Provider로 Hibernate가 자동 설정되는 흐름</b>이 일반적이라, "우리는 Spring Data JPA를 쓰고, 그 아래 엔진은 Hibernate다"를 한 줄로 명확히 보여주려고 괄호에 Hibernate를 붙입니다.</p>
     </div>
@@ -79,12 +79,12 @@ title: "CS 외의 개념"
         <p>서버 사이드 렌더링은 <b>브라우저가 화면을 만들기 전에, 서버가 먼저 페이지의 HTML을 완성해서 내려주는 방식</b>입니다. 즉, 사용자가 URL로 들어오면 서버가 데이터까지 반영한 "완성된 HTML"을 만들어 응답하고, 브라우저는 그 HTML을 바로 그려서 화면을 보여줍니다.</p>
         <p>반대로 클라이언트 사이드 렌더링은 브라우저가 자바스크립트로 화면을 조립하는 방식이라, 초기에는 비교적 "빈 HTML + JS"를 받고 브라우저에서 렌더링이 진행됩니다.</p>
         <p>Spring MVC에서 <b>Thymeleaf 같은 템플릿 엔진으로 서버가 HTML을 만들어 내려주는 구조</b>가 대표적인 SSR 사례라고 보면 됩니다.</p>
-        <h4>SSR이 유리한 경우</h4>
+        <h4>💡 SSR이 유리한 경우</h4>
         <ul>
             <li><b>첫 화면이 빨리 보여야 할 때:</b> 서버가 HTML을 완성해서 보내므로, 사용자는 초기 화면을 더 빨리 “보는 느낌”을 받을 수 있습니다.</li>
             <li><b>SEO/공유 미리보기 같은 ‘문서 기반’ 노출이 중요할 때:</b> 처음부터 콘텐츠가 포함된 HTML을 받는 구조가 유리합니다.</li>
         </ul>
-        <h4>CSR이 유리한 경우</h4>
+        <h4>💡 CSR이 유리한 경우</h4>
         <ul>
             <li><b>대시보드/툴처럼 상호작용이 많은 앱:</b> 페이지 전환을 매번 서버에서 HTML로 만들 필요 없이, 브라우저에서 화면 일부만 갱신하므로 앱처럼 부드러운 UX를 만들기 좋습니다.</li>
             <li><b>로그인 후 사용자 개인 데이터 중심 화면:</b> 검색 노출보다 “빠른 화면 갱신, 풍부한 인터랙션”이 핵심이면 CSR이 맞는 경우가 많습니다.</li>
@@ -97,7 +97,7 @@ title: "CS 외의 개념"
   <summary style="font-size:1rem;"><b>헬스체크(health check)</b></summary>
   <div class="accordion-content">
       <p>애플리케이션이 "지금 정상 동작 중인지", 그리고 "트래픽을 받을 준비가 됐는지"를 외부에서 기계적으로 확인할 수 있게 해주는 점검 방식입니다. 보통은 아주 가벼운 HTTP 엔드포인트로 제공하고, 결과를 보고 장애를 감지하거나(모니터링), 트래픽을 차단하거나(로드밸런서), 필요하면 재시작(오케스트레이터) 같은 자동 조치를 하게 됩니다.</p>
-      <h4>헬스체크를 하는 이유</h4>
+      <h4>💡 헬스체크를 하는 이유</h4>
       <ul>
           <li><b>장애를 빨리 감지</b>해서 운영/배포 자동화가 판단할 근거를 만들기 위해서입니다.(정상/비정상 신호)</li>
           <li><b>트래픽 제어</b>를 위해서입니다. 예를 들어 "서버는 떠 있지만 DB 연결이 안 된다"면, 사용자 요청은 받지 않게 막는게 낫습니다.(ready가 아님)</li>
@@ -109,12 +109,12 @@ title: "CS 외의 개념"
   <details>
     <summary style="font-size:1rem;"><b>Spring Actuator(헬스체크와의 관계)</b></summary>
     <div class="accordion-content">
-        <p>Spring Boot Actuator는 <b>운영(Production) 환경에서 애플리케이션을 모니터링·관리하기 위한 기능들을 엔드포인트 형태로 제공하는 Spring Boot 모듈</b>입니다. HTTP 또는 JMX로 상태/지표를 노출할 수 있고, 기본 제공 엔드포인트도 여러 개 있습니다.</p>
-        <ul>
-            <li>대표적으로 <b>/actuator/health</b>가 헬스체크 엔드포인트이고, 전체 상태(status)와 구성요소별 상태(components)를 내려줄 수 있습니다.</li>
-            <li>또한 Actuator는 <b>metrics 같은 지표 엔드포인트</b>를 제공하고, 내부적으로 <b>Micrometer 자동 설정</b>을 통해 Prometheus, Datadog 등 다양한 모니터링 시스템으로 내보낼 수 있게 연결해 줍니다.</li>
-        </ul>
-        <p>즉, "모니터링/헬스체크"는 <b>서비스가 살아있는 확인(health) + 관측 지표 제공(metrics 등)</b>을 한 패키지로 맡는 기술이 Actuator이다.</p>
+      <p>Spring Boot Actuator는 <b>운영(Production) 환경에서 애플리케이션을 모니터링·관리하기 위한 기능들을 엔드포인트 형태로 제공하는 Spring Boot 모듈</b>입니다. HTTP 또는 JMX로 상태/지표를 노출할 수 있고, 기본 제공 엔드포인트도 여러 개 있습니다.</p>
+      <ul>
+        <li>대표적으로 <b>/actuator/health</b>가 헬스체크 엔드포인트이고, 전체 상태(status)와 구성요소별 상태(components)를 내려줄 수 있습니다.</li>
+        <li>또한 Actuator는 <b>metrics 같은 지표 엔드포인트</b>를 제공하고, 내부적으로 <b>Micrometer 자동 설정</b>을 통해 Prometheus, Datadog 등 다양한 모니터링 시스템으로 내보낼 수 있게 연결해 줍니다.</li>
+      </ul>
+      <p>즉, "모니터링/헬스체크"는 <b>서비스가 살아있는 확인(health) + 관측 지표 제공(metrics 등)</b>을 한 패키지로 맡는 기술이 Actuator이다.</p>
     </div>
   </details>
 
@@ -123,22 +123,22 @@ title: "CS 외의 개념"
 
 
 <!-- chapter -->
-<details>
+<details class="section-box">
   <summary><span class="accordion-title">2️⃣ 프론트 개발 환경</span> <span class="indicator">펼치기</span></summary><div class="accordion-content">
 
   <details>
     <summary style="font-size:1rem;"><b>React 개념과 용도</b></summary>
     <div class="accordion-content">
       <p>React는 <b>웹(그리고 React Native 같은 환경)에서 UI를 컴포넌트 단위로 만들고 렌더링하는 자바스크립트 라이브러리</b>입니다.</p>
-      <p>라이브러리이지만 구분이 프레임워크인 이유는?</p>
+      <h4>💡 라이브러리이지만 구분이 프레임워크인 이유는?</h4>
       <ol>
-          <li><b>React는 공식적으로 “라이브러리”</b>라서 용도를 UI 라이브러리로 쓰는 게 맞습니다.</li>
-          <li>다만 실무에서 React로 앱을 만들 때 라우팅, 상태관리, 빌드/폴더 구조 같은 것까지 함께 묶어서 쓰다 보니, 스택 표의 “구분”을 크게 잡을 때 <b>관용적으로 프레임워크 칸에 넣는 경우</b>가 많습니다(분류 칸이 단순해서요).</li>
+        <li><b>React는 공식적으로 “라이브러리”</b>라서 용도를 UI 라이브러리로 쓰는 게 맞습니다.</li>
+        <li>다만 실무에서 React로 앱을 만들 때 라우팅, 상태관리, 빌드/폴더 구조 같은 것까지 함께 묶어서 쓰다 보니, 스택 표의 “구분”을 크게 잡을 때 <b>관용적으로 프레임워크 칸에 넣는 경우</b>가 많습니다(분류 칸이 단순해서요).</li>
       </ol>
       <p>프레임워크와 라이브러리의 핵심 차이는 보통 <b>제어 흐름의 주도권(IOC, Inversion of Control)</b>입니다.</p>
       <ul>
-          <li><b>라이브러리:</b> 내가 필요할 때 라이브러리 함수를 호출하고, 호출이 끝나면 제어가 다시 내 코드로 돌아옵니다.</li>
-          <li><b>프레임워크:</b> 큰 실행 흐름을 프레임워크가 쥐고 있고, 내 코드는 정해진 지점에 “끼워 넣는” 형태로 <b>프레임워크가 내 코드를 호출</b>합니다.</li>
+        <li><b>라이브러리:</b> 내가 필요할 때 라이브러리 함수를 호출하고, 호출이 끝나면 제어가 다시 내 코드로 돌아옵니다.</li>
+        <li><b>프레임워크:</b> 큰 실행 흐름을 프레임워크가 쥐고 있고, 내 코드는 정해진 지점에 “끼워 넣는” 형태로 <b>프레임워크가 내 코드를 호출</b>합니다.</li>
       </ul>
     </div>
   </details>
@@ -147,7 +147,7 @@ title: "CS 외의 개념"
     <summary style="font-size:1rem;"><b>TypeScript 개념과 용도</b></summary>
     <div class="accordion-content">
       <p>TypeScript는 <b>자바스크립트에 “타입 문법”을 추가한 언어(자바스크립트의 상위집합)</b>이고, 최종적으로는 <b>일반 JavaScript로 컴파일(변환)되어 실행</b>됩니다.</p>
-      <p>TypeScript의 용도는 타입 안정성이다. 이유는?</p>
+      <h4>💡 TypeScript의 용도는 타입 안정성이다. 이유는?</h4>
       <p>용도가 <b>타입 안전성</b>인 이유는, TypeScript의 핵심 목표가 <b>코드가 실행되기 전에 정적 타입 검사로 타입 오류를 잡아주는 것</b>이라서입니다. 예를 들어 잘못된 프로퍼티 접근이나 함수 인자 타입 실수 같은 문제를 <b>개발 단계에서 미리 발견</b>하게 해 주고, 그 결과 자동완성·리팩토링 같은 도구 지원도 더 정확해집니다.</p>
       <p>정리하면, <b>“JavaScript로도 구현은 가능하지만, TypeScript는 타입을 통해 실행 전에 오류를 잡아 주고 자동완성·리팩토링 같은 도구 지원이 좋아서 유지보수성이 올라갑니다.”</b></p>
     </div>
@@ -157,21 +157,21 @@ title: "CS 외의 개념"
     <summary style="font-size:1rem;"><b>프론트 기술 스택에 라우팅이 있는 이유</b></summary>
     <div class="accordion-content">
       <p>사용자 입장에서 "URL이 바뀌면 다른 화면이 보이는" 내비게이션을 프론트에서 관리해야 하기 때문입니다. 특히 SPA에서는 페이지를 새로 받아오지 않으니, URL ↔ 화면(컴포넌트) 매핑을 해주는 라우터가 필요합니다.</p>
-      <p><b>1. React Router DOM</b></p>
+      <h4>💡 1. React Router DOM</h4>
       <p>React 웹 앱에서 라우팅을 구현하는 라이브러리로, URL 경로에 따라 어떤 컴포넌트를 보여줄지 정하고, 브라우저의 뒤로가기/앞으로가기 같은 탐색도 자연스럽게 동작하도록 도와줍니다.</p>
-      <p><b>2. React Router DOM을 사용한 이유</b></p>
+      <h4>💡 2. React Router DOM을 사용한 이유</h4>
       <p>React Router DOM을 선택하는 가장 흔한 이유는 “React에서 가장 표준적으로 쓰이는 라우팅 솔루션이고, 운영·유지보수 관점에서 리스크가 낮기 때문”입니다. 구체적으로는 보통 아래 이유가 큽니다.</p>
       <ul>
-          <li>채택률/생태계가 압도적이라 레퍼런스가 많음</li>
-          <li>React에 “자연스럽게” 붙는 설계(선언적 라우팅, 컴포넌트 기반)</li>
-          <li>실전에서 필요한 기능이 기본으로 탄탄함</li>
-          <li>데이터 라우팅(Loader/Action 등) 같은 확장 기능까지 커버</li>
-          <li>유지보수/신뢰도(메인테이너·히스토리)</li>
+        <li>채택률/생태계가 압도적이라 레퍼런스가 많음</li>
+        <li>React에 “자연스럽게” 붙는 설계(선언적 라우팅, 컴포넌트 기반)</li>
+        <li>실전에서 필요한 기능이 기본으로 탄탄함</li>
+        <li>데이터 라우팅(Loader/Action 등) 같은 확장 기능까지 커버</li>
+        <li>유지보수/신뢰도(메인테이너·히스토리)</li>
       </ul>
       <p>참고로 “다른 걸” 선택하는 경우도 분명 있습니다. 예를 들어 타입 안전한 라우팅을 아주 강하게 가져가고 싶으면 TanStack Router가 매력적인 대안이 될 수 있고, 반대로 Next.js를 쓰면 라우팅이 프레임워크에 내장돼서 React Router DOM을 따로 둘 필요가 없기도 합니다.</p>
-      <p><b>3. 용도가 SPA 라우팅인 이유</b></p>
+      <h4>💡 3. 용도가 SPA 라우팅인 이유</h4>
       <p>용도가 “SPA 라우팅”인 이유는, React Router DOM이 서버에 새 HTML을 요청해서 페이지를 바꾸는 방식이 아니라 클라이언트에서 URL만 바꾸고 화면을 교체하는 “클라이언트 사이드 라우팅”을 제공하기 때문입니다.</p>
-      <p><b>4. SPA 라우팅의 개념</b></p>
+      <h4>💡 4. SPA 라우팅의 개념</h4>
       <p>페이지 새로고침 없이 URL 변경(pushState/replaceState 등)과 화면 렌더링을 클라이언트에서 처리하는 방식입니다.</p>
     </div>
   </details>
@@ -199,7 +199,7 @@ title: "CS 외의 개념"
     <summary style="font-size:1rem;"><b>Node.js 개념</b></summary>
     <div class="accordion-content">
       <p>Node.js는 <b>브라우저 밖에서 JavaScript를 실행할 수 있게 해주는 런타임 환경</b>입니다. Chrome의 V8 엔진을 기반으로 하고, 서버 개발에 필요한 파일 시스템, 네트워크 같은 기능을 제공합니다.</p>
-      <p>TypeScript로 만든 React 프로젝트에서 Node.js가 자주 같이 언급되는 이유</p>
+      <h4>💡 TypeScript로 만든 React 프로젝트에서 Node.js가 자주 같이 언급되는 이유</h4>
       <ol>
           <li><b>Axios가 “브라우저 + Node.js” 모두에서 동작하는(isomorphic) HTTP 클라이언트</b>라서요.<br> Axios 문서 자체가 “node.js와 브라우저용”이라고 설명하고, 브라우저에서는 XHR을 쓰고 서버(Node.js)에서는 Node의 http 모듈을 쓴다고 명시합니다.<br> 즉, React 프론트에서는 보통 브라우저에서 Axios를 쓰지만, Axios가 원래 양쪽 환경을 지원하다 보니 Node.js가 설명에 같이 나옵니다.</li>
           <li>프론트엔드 개발 과정에서 <b>빌드/개발 서버/패키지 설치 같은 “도구”가 Node.js 위에서 돌아가서</b>입니다.<br>
@@ -214,7 +214,7 @@ title: "CS 외의 개념"
     <summary style="font-size:1rem;"><b>Tailwind CSS + 유틸리티 기반 스타일링이란?</b></summary>
     <div class="accordion-content">
       <p>Tailwind CSS는 <b>utility-first(유틸리티 우선) CSS 프레임워크</b>로, 미리 준비된 작은 스타일 클래스들을 <b>마크업에 조합해서</b> 원하는 디자인을 만드는 방식입니다. “필요한 스타일을 HTML/JSX 안에서 클래스 조합으로 만든다”가 핵심입니다.</p>
-      <p>유틸리티 기반 스타일링이란?</p>
+      <h4>💡 유틸리티 기반 스타일링이란?</h4>
       <p><b>한 클래스가 하나의 역할(예: 여백, 색, 정렬 등)을 담당하는 ‘단일 목적’ 클래스(utility class)</b>를 여러 개 붙여서 최종 UI를 만드는 방식입니다. 그래서 별도 CSS를 많이 작성하지 않고도, 클래스 조합만으로 화면을 빠르게 구성할 수 있습니다.</p>
     </div>
   </details>
@@ -224,16 +224,16 @@ title: "CS 외의 개념"
 
 
 <!-- chapter -->
-<details>
+<details class="section-box">
   <summary><span class="accordion-title">3️⃣ 데이터베이스 개발 환경</span> <span class="indicator">펼치기</span></summary><div class="accordion-content">
 
   <details>
     <summary style="font-size:1rem;"><b>H2 Database와 용도</b></summary>
     <div class="accordion-content">
       <p>H2는 <b>자바로 만들어진 경량 SQL 관계형 데이터베이스</b>로, 애플리케이션에 <b>내장(embedded)</b> 해서 쓰거나 서버 모드로도 사용할 수 있고 <b>메모리(in-memory) 또는 디스크(파일) 저장</b>을 지원합니다.</p>
-      <p>"파일 기반" 용도의 의미</p>
+      <h4>💡 "파일 기반" 용도의 의미</h4>
       <p>“파일 기반”은 DB 데이터를 <b>메모리가 아니라 디스크의 파일로 저장</b>한다는 뜻입니다. 그래서 애플리케이션을 껐다 켜도 <b>데이터가 파일에 남아 유지(영속)</b> 됩니다. 반대로 <b>in-memory 방식</b>은 실행 중 메모리에만 올라가서, 종료하면 데이터가 사라지는 형태입니다.</p>
-      <p>파일 기반 (./data/booktine) 의미</p>
+      <h4>💡 파일 기반 (./data/booktine) 의미</h4>
       <p>./data/booktine 같은 표기는 <b>DB 파일을 저장할 위치(상대 경로)</b>를 의미합니다. 즉, 프로젝트(또는 실행 디렉터리) 기준으로 data 폴더 아래에 booktine 이름으로 DB 파일들이 만들어지고, 그 파일을 통해 데이터가 유지되는 구조라고 보시면 됩니다.</p>
     </div>
   </details>
@@ -243,7 +243,7 @@ title: "CS 외의 개념"
 
 
 <!-- chapter -->
-<details>
+<details class="section-box">
   <summary><span class="accordion-title">4️⃣ DevOps & 배포 개발 환경</span> <span class="indicator">펼치기</span></summary><div class="accordion-content">
 
   <details>
@@ -256,9 +256,8 @@ title: "CS 외의 개념"
   </div>
 </details>
 
-
 <!-- chapter -->
-<details>
+<details class="section-box">
   <summary><span class="accordion-title">5️⃣ 아키텍처 구조</span> <span class="indicator">펼치기</span></summary><div class="accordion-content">
 
   <details>
