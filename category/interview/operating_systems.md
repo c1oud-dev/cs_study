@@ -222,21 +222,72 @@ title: "운영체제 면접 대비"
   <details>
     <summary style="font-size:1rem;"><b>Q1. CPU 스케줄링이 필요한 이유는 무엇인가요?</b></summary>
     <div class="accordion-content">
-      <p></p>
+      <p>CPU는 한 번에 하나의 프로세스만 실행할 수 있기 때문입니다. 여러 프로세스가 효율적으로 CPU를 사용하려면 어떤 순서로, 얼마나 오래 실행할지 결정하는 스케줄링이 필요합니다.</p>
     </div>
   </details>
 
   <details>
     <summary style="font-size:1rem;"><b>Q2. 선점형 스케줄링과 비선점형 스케줄링의 차이점을 설명해주세요.</b></summary>
     <div class="accordion-content">
-      <p></p>
+      <table>
+      <thead>
+        <tr>
+          <th>구분</th>
+          <th>선점형 (Preemptive)</th>
+          <th>비선점형 (Non-preemptive)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>CPU 강제 회수</td>
+          <td>가능</td>
+          <td>불가능</td>
+        </tr>
+        <tr>
+          <td>전환 시점</td>
+          <td>언제든지</td>
+          <td>프로세스가 스스로 반납할 때</td>
+        </tr>
+        <tr>
+          <td>응답성</td>
+          <td>빠름</td>
+          <td>느림</td>
+        </tr>
+        <tr>
+          <td>오버헤드</td>
+          <td>상대적으로 높음</td>
+          <td>낮음</td>
+        </tr>
+      </tbody>
+      </table>
+      <h4>선점형 스케줄링</h4>
+      <p>운영체제가 실행 중인 프로세스로부터 CPU를 <b>강제로 회수</b>할 수 있습니다.</p>
+      <ul>
+        <li>예시: Round Robin, Priority Scheduling (선점형), SRTF</li>
+        <li>장점: 응답 시간이 빠름, 한 프로세스가 CPU 독점 방지</li>
+        <li>단점: 컨텍스트 스위칭 오버헤드 증가</li>
+      </ul>
+      <h4>비선점형 스케줄링</h4>
+      <p>프로세스가 <b>자발적으로 CPU를 반납</b>(종료 또는 I/O 대기)할 때까지 기다립니다.</p>
+      <ul>
+        <li>예시: FCFS, SJF (비선점형)</li>
+        <li>장점: 컨텍스트 스위칭 적음, 구현 단순</li>
+        <li>단점: 긴 프로세스가 CPU 독점 가능 (Convoy Effect)</li>
+      </ul>
     </div>
   </details>
 
   <details>
     <summary style="font-size:1rem;"><b>Q3. 알고 있는 CPU 스케줄링 알고리즘을 설명해주세요.</b></summary>
     <div class="accordion-content">
-      <p></p>
+      <h4>FCFS (First Come First Served)</h4>
+      <p>가장 먼저 도착한 프로세스부터 실행합니다. 구현이 간단하지만, 긴 프로세스가 앞에 있으면 뒤의 짧은 프로세스들이 오래 기다리는 <b>Convoy Effect</b>가 발생합니다.</p>
+      <h4>SJF (Shortest Job First)</h4>
+      <p>실행 시간이 가장 짧은 프로세스를 먼저 실행합니다. 평균 대기 시간이 최소지만, 실행 시간을 미리 알기 어렵고 긴 프로세스는 <b>기아 상태</b>에 빠질 수 있습니다.</p>
+      <h4>Round Robin</h4>
+      <p>각 프로세스에 동일한 시간 할당량(Time Quantum)을 주고 돌아가며 실행합니다. 응답 시간이 빠르고 공정하며, 대화형 시스템에 적합합니다.</p>
+      <h4>Priority Scheduling</h4>
+      <p>우선순위가 높은 프로세스를 먼저 실행합니다. 낮은 우선순위 프로세스의 기아 문제를 <b>에이징(Aging) 기법</b>으로 해결할 수 있습니다.</p>
     </div>
   </details>
 
