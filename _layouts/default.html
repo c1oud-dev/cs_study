@@ -479,7 +479,7 @@
       padding: 0;
     }
 
-    /* ========== 테이블 ========== */
+     /* ========== 테이블 ========== */
     table {
       width: 100%;
       border-collapse: collapse;
@@ -487,10 +487,11 @@
       font-size: 0.9rem;
       border-radius: 12px;
       overflow: hidden;
-      border: 1px solid #e9ecef;
+      border: 1px solid #d1d5db;           /* 테두리 더 진하게 */
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);  /* 그림자 추가 */
     }
     thead {
-      background: #f8f9fa;
+      background: #4b5563;                 /* 진한 회색 헤더 */
     }
     th, td {
       padding: 0.875rem 1rem;
@@ -499,13 +500,13 @@
     }
     th {
       font-weight: 600;
-      color: #495057;
+      color: #fff;                         /* 흰색 글자 */
       font-size: 0.8rem;
       text-transform: uppercase;
       letter-spacing: 0.3px;
     }
     tbody tr:hover {
-      background: #fafbfc;
+      background: #f8f9fa;
     }
     tbody tr:last-child td {
       border-bottom: none;
