@@ -299,7 +299,19 @@ title: "운영체제 면접 대비"
       <details>
         <summary style="font-size:1rem;"><b>Q1. Round Robin 스케줄링에서 Time Quantum이 너무 크거나 작으면 어떤 문제가 발생하나요?</b></summary>
         <div class="accordion-content">
-          <p></p>
+          <h4>Time Quantum이 너무 클 때</h4>
+          <ul>
+            <li>FCFS와 동일하게 동작합니다.</li>
+            <li>긴 프로세스가 CPU를 오래 점유하게 됩니다.</li>
+            <li>응답 시간이 길어져 대화형 시스템에 부적합합니다.</li>
+          <h4>Time Quantum이 너무 작을 때</h4>
+          <ul>
+            <li>컨텍스트 스위칭이 너무 자주 발생합니다.</li>
+            <li>스위칭 오버헤드가 증가하여 실제 작업 시간보다 전환 시간이 더 많아질 수 있습니다.</li>
+            <li>전체 처리량(Throughput)이 감소합니다.</li>
+          </ul>
+          <p>적절한 Time Quantum<br>
+          일반적으로 10~100ms 정도가 적당하며, 컨텍스트 스위칭 시간보다 충분히 커야 합니다. 대부분의 프로세스가 한 번의 Time Quantum 내에 CPU를 반납하는 크기가 이상적입니다.</p>
         </div>
       </details>
     <!--구분-->
@@ -307,7 +319,18 @@ title: "운영체제 면접 대비"
       <details>
         <summary style="font-size:1rem;"><b>Q2. Starvation(기아 현상)이란 무엇이며, 어떻게 해결할 수 있나요?</b></summary>
         <div class="accordion-content">
-          <p></p>
+          <p>특정 프로세스가 자원을 할당받지 못하고 무한히 대기하는 상태입니다. 우선순위가 낮은 프로세스가 계속 밀려서 실행되지 못하는 경우에 발생합니다.</p>
+          <h4>발생 원인</h4>
+          <ul>
+            <li>우선순위 스케줄링에서 높은 우선순위 프로세스가 계속 들어올 때</li>
+            <li>SJF에서 긴 프로세스가 짧은 프로세스에게 계속 밀릴 때</li>
+            <li>자원 할당이 불공정할 때</li>
+          </ul>
+          <h4>해결 방법</h4>
+          <p><b>1. 에이징 (Aging)</b><br>
+          대기 시간이 길어질수록 우선순위를 점차 높여주는 방식입니다. 오래 기다린 프로세스도 결국 실행될 수 있습니다.</p>
+          <p><b>2. Round Robin 사용</b><br>모든 프로세스에게 공평하게 CPU 시간을 할당합니다.</p>
+          <p><b>3. FCFS 결합</b><br>같은 우선순위 내에서는 도착 순서대로 처리합니다.</p>
         </div>
       </details>
     <!--구분-->
@@ -315,7 +338,33 @@ title: "운영체제 면접 대비"
       <details>
         <summary style="font-size:1rem;"><b>Q3. Priority Scheduling의 단점은 무엇인가요?</b></summary>
         <div class="accordion-content">
-          <p></p>
+          <p><b>1. 기아 현상 (Starvation)</b><br>
+          우선순위가 낮은 프로세스가 계속 밀려 무한히 대기할 수 있습니다. 높은 우선순위 프로세스가 계속 들어오면 낮은 프로세스는 영원히 실행되지 못합니다.</p>
+          <p><b>2. 우선순위 역전 (Priority Inversion)</b><br>
+          낮은 우선순위 프로세스가 자원을 점유한 상태에서, 높은 우선순위 프로세스가 해당 자원을 기다리는 상황이 발생할 수 있습니다.</p>
+          <p><b>3. 우선순위 결정의 어려움</b><br>
+          어떤 기준으로 우선순위를 정할지 판단하기 어렵고, 잘못 설정하면 시스템 효율이 떨어집니다.</p>
+          <h4>해결 방법</h4>
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>문제</th>
+                  <th>해결책</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>기아 현상</td>
+                  <td>에이징(Aging) - 대기 시간에 따라 우선순위 상승</td>
+                </tr>
+                <tr>
+                  <td>우선순위 역전</td>
+                  <td>우선순위 상속(Priority Inheritance)</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
       </details>
     <!--구분-->
@@ -323,7 +372,76 @@ title: "운영체제 면접 대비"
       <details>
         <summary style="font-size:1rem;"><b>Q4. FCFS, SJF, Round Robin 각각의 장단점을 비교해주세요.</b></summary>
         <div class="accordion-content">
-          <p></p>
+          <h4>해결 방법</h4>
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>알고리즘</th>
+                  <th>장점</th>
+                  <th>단점</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>FCFS</td>
+                  <td>구현 간단, 공정함(도착 순서)</td>
+                  <td>Convoy Effect, 평균 대기 시간 김</td>
+                </tr>
+                <tr>
+                  <td>SJF</td>
+                  <td>평균 대기 시간 최소</td>
+                  <td>기아 현상, 실행 시간 예측 어려움</td>
+                </tr>
+                <tr>
+                  <td>Round Robin</td>
+                  <td>응답 시간 빠름, 공정함</td>
+                  <td>컨텍스트 스위칭 오버헤드</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <h4>각 알고리즘 상세</h4>
+          <p><b>FCFS (First Come First Served)</b></p>
+          <ul>
+            <li>장점: 구현이 가장 단순하고, 먼저 온 순서대로 처리하므로 직관적입니다.</li>
+            <li>단점: 긴 프로세스가 앞에 있으면 뒤의 짧은 프로세스들이 오래 기다리는 <b>Convoy Effect</b>가 발생합니다.</li>
+          </ul>
+          <p><b>SJF (Shortest Job First)</b></p>
+          <ul>
+            <li>장점: 이론적으로 <b>평균 대기 시간이 가장 짧습니다.</b></li>
+            <li>단점: 실행 시간을 미리 알기 어렵고, 긴 프로세스는 <b>기아 상태</b>에 빠질 수 있습니다.</li>
+          </ul>
+          <p><b>Round Robin</b></p>
+          <ul>
+            <li>장점: 모든 프로세스가 공평하게 CPU를 사용하며, <b>대화형 시스템에 적합</b>합니다.</li>
+            <li>단점: Time Quantum 설정이 중요하며, 잦은 <b>컨텍스트 스위칭 오버헤드</b>가 발생합니다.</li>
+          </ul>
+          <h4>적합한 상황</h4>
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>상황</th>
+                  <th>적합한 알고리즘</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>단순한 배치 시스템</td>
+                  <td>FCFS</td>
+                </tr>
+                <tr>
+                  <td>실행 시간 예측 가능한 경우</td>
+                  <td>SJF</td>
+                </tr>
+                <tr>
+                  <td>대화형/시분할 시스템</td>
+                  <td>Round Robin</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
       </details>
     <!--구분-->
