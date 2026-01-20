@@ -77,19 +77,21 @@ title: "운영체제 면접 대비"
     <summary style="font-size:1rem;"><b>Q4. 컨텍스트 스위칭(Context Switching)이란 무엇인가요?</b></summary>
     <div class="accordion-content">
       <p>CPU가 현재 실행 중인 프로세스(또는 스레드)를 멈추고, 다른 프로세스로 전환하는 작업입니다.</p>
-      <h4>동작 과정</h4>
+      <h3>동작 과정</h3>
       <ol>
         <li>현재 프로세스의 상태(레지스터, PC 등)를 PCB에 저장</li>
         <li>다음 실행할 프로세스의 상태를 PCB에서 불러옴</li>
         <li>CPU가 새로운 프로세스를 실행</li>
       </ol>
-      <h4>발생 시점</h4>
+      <br>
+      <h3>발생 시점</h3>
       <ul>
         <li>타임 슬라이스(할당 시간) 만료</li>
         <li>I/O 요청 등으로 프로세스가 대기 상태로 전환될 때</li>
         <li>인터럽트 발생 시</li>
       </ul>
-      <h4>특징</h4>
+      <br>
+      <h3>특징</h3>
       <p>컨텍스트 스위칭 중에는 CPU가 실제 작업을 수행하지 못하므로 오버헤드가 발생합니다. 따라서 너무 자주 발생하면 시스템 성능이 저하됩니다.</p>
     </div>
   </details>
@@ -98,7 +100,8 @@ title: "운영체제 면접 대비"
     <summary style="font-size:1rem;"><b>Q5. PCB(Process Control Block)란 무엇이며, 어떤 정보를 담고 있나요?</b></summary>
     <div class="accordion-content">
       <p>PCB는 운영체제가 각 프로세스를 관리하기 위해 해당 프로세스의 정보를 저장하는 자료구조입니다. 프로세스가 생성될 때 만들어지고, 종료되면 삭제됩니다.</p>
-      <h4>담고 있는 정보</h4>
+      <br>
+      <h3>담고 있는 정보</h3>
       <ul>
         <li><b>프로세스 ID(PID):</b> 프로세스 고유 식별 번호</li>
         <li><b>프로세스 상태:</b> 실행, 준비, 대기 등 현재 상태</li>
@@ -108,7 +111,8 @@ title: "운영체제 면접 대비"
         <li><b>메모리 관리 정보:</b> 페이지 테이블, 세그먼트 테이블 등</li>
         <li><b>입출력 상태 정보:</b> 할당된 I/O 장치, 열린 파일 목록</li>
       </ul>
-      <h4>핵심 포인트</h4>
+      <br>
+      <h3>핵심 포인트</h3>
       <p>PCB는 컨텍스트 스위칭의 핵심입니다. CPU가 다른 프로세스로 전환될 때, 현재 프로세스 상태를 PCB에 저장하고, 다음 프로세스의 PCB에서 정보를 불러와서 실행을 이어갑니다.</p>
     </div>
   </details>
@@ -122,14 +126,16 @@ title: "운영체제 면접 대비"
         <summary style="font-size:1rem;"><b>Q1. 스레드가 프로세스보다 컨텍스트 스위칭 비용이 적은 이유는 무엇인가요?</b></summary>
         <div class="accordion-content">
           <p>스레드는 같은 프로세스 내에서 코드, 데이터, 힙 영역을 공유하기 때문입니다. 전환 시 스택과 레지스터 값만 교체하면 되므로 비용이 적습니다.</p>
-          <h4>프로세스 전환 시 필요한 작업</h4>
+          <br>
+          <h3>프로세스 전환 시 필요한 작업</h3>
           <ul>
             <li>메모리 주소 공간 전체 교체</li>
             <li>페이지 테이블 교체</li>
             <li>TLB(Translation Lookaside Buffer) 비우기</li>
             <li>캐시 무효화 발생 가능</li>
           </ul>
-          <h4>스레드 전환 시 필요한 작업</h4>
+          <br>
+          <h3>스레드 전환 시 필요한 작업</h3>
           <ul>
             <li>스택 포인터 교체</li>
             <li>레지스터 값 교체</li>
@@ -147,7 +153,8 @@ title: "운영체제 면접 대비"
           <p><b>2. 데드락 (Deadlock)</b> - 두 개 이상의 스레드가 서로가 가진 자원을 기다리며 무한히 대기하는 상태입니다.</p>
           <p><b>3. 기아 상태 (Starvation)</b> - 특정 스레드가 계속 자원을 할당받지 못하고 무한히 대기하는 상태입니다.</p>
           <p><b>4. 동기화 오버헤드</b> - 공유 자원 보호를 위해 락(Lock)을 사용하면 성능 저하가 발생할 수 있습니다.</p>
-          <h4>해결 방법 (간단히)</h4>
+          <br>
+          <h3>해결 방법 (간단히)</h3>
           <ul>
             <li>뮤텍스, 세마포어로 임계 영역 보호</li>
             <li>락 획득 순서 통일로 데드락 방지</li>
@@ -172,7 +179,7 @@ title: "운영체제 면접 대비"
       <details>
         <summary style="font-size:1rem;"><b>Q4. 스레드는 어떤 자원을 공유하고, 어떤 자원을 독립적으로 가지나요?</b></summary>
         <div class="accordion-content">
-        <h4>공유하는 자원</h4>
+        <h3>공유하는 자원</h3>
           <ul>
             <li><b>코드 영역:</b> 실행할 프로그램 코드</li>
             <li><b>데이터 영역:</b> 전역 변수, static 변수</li>
@@ -180,7 +187,8 @@ title: "운영체제 면접 대비"
             <li><b>파일 디스크립터:</b> 열린 파일 목록</li>
             <li><b>프로세스 ID:</b> 같은 프로세스에 속함</li>
           </ul>
-          <h4>독립적으로 가지는 자원</h4>
+          <br>
+          <h3>독립적으로 가지는 자원</h4>
           <ul>
             <li><b>스택 영역:</b> 지역 변수, 함수 호출 정보</li>
             <li><b>프로그램 카운터(PC):</b> 다음 실행할 명령어 주소</li>
@@ -260,14 +268,16 @@ title: "운영체제 면접 대비"
         </tr>
       </tbody>
       </table>
-      <h4>선점형 스케줄링</h4>
+      <br>
+      <h3>선점형 스케줄링</h3>
       <p>운영체제가 실행 중인 프로세스로부터 CPU를 <b>강제로 회수</b>할 수 있습니다.</p>
       <ul>
         <li>예시: Round Robin, Priority Scheduling (선점형), SRTF</li>
         <li>장점: 응답 시간이 빠름, 한 프로세스가 CPU 독점 방지</li>
         <li>단점: 컨텍스트 스위칭 오버헤드 증가</li>
       </ul>
-      <h4>비선점형 스케줄링</h4>
+      <br>
+      <h3>비선점형 스케줄링</h4>
       <p>프로세스가 <b>자발적으로 CPU를 반납</b>(종료 또는 I/O 대기)할 때까지 기다립니다.</p>
       <ul>
         <li>예시: FCFS, SJF (비선점형)</li>
@@ -305,14 +315,16 @@ title: "운영체제 면접 대비"
             <li>긴 프로세스가 CPU를 오래 점유하게 됩니다.</li>
             <li>응답 시간이 길어져 대화형 시스템에 부적합합니다.</li>
           </ul>
-          <h4>Time Quantum이 너무 작을 때</h4>
+          <br>
+          <h3>Time Quantum이 너무 작을 때</h4>
           <ul>
             <li>컨텍스트 스위칭이 너무 자주 발생합니다.</li>
             <li>스위칭 오버헤드가 증가하여 실제 작업 시간보다 전환 시간이 더 많아질 수 있습니다.</li>
             <li>전체 처리량(Throughput)이 감소합니다.</li>
           </ul>
-          <p>적절한 Time Quantum<br>
-          일반적으로 10~100ms 정도가 적당하며, 컨텍스트 스위칭 시간보다 충분히 커야 합니다. 대부분의 프로세스가 한 번의 Time Quantum 내에 CPU를 반납하는 크기가 이상적입니다.</p>
+          <br>
+          <h3>적절한 Time Quantum</h3>
+          <p>일반적으로 10~100ms 정도가 적당하며, 컨텍스트 스위칭 시간보다 충분히 커야 합니다. 대부분의 프로세스가 한 번의 Time Quantum 내에 CPU를 반납하는 크기가 이상적입니다.</p>
         </div>
       </details>
     <!--구분-->
@@ -321,13 +333,14 @@ title: "운영체제 면접 대비"
         <summary style="font-size:1rem;"><b>Q2. Starvation(기아 현상)이란 무엇이며, 어떻게 해결할 수 있나요?</b></summary>
         <div class="accordion-content">
           <p>특정 프로세스가 자원을 할당받지 못하고 무한히 대기하는 상태입니다. 우선순위가 낮은 프로세스가 계속 밀려서 실행되지 못하는 경우에 발생합니다.</p>
-          <h4>발생 원인</h4>
+          <h3>발생 원인</h3>
           <ul>
             <li>우선순위 스케줄링에서 높은 우선순위 프로세스가 계속 들어올 때</li>
             <li>SJF에서 긴 프로세스가 짧은 프로세스에게 계속 밀릴 때</li>
             <li>자원 할당이 불공정할 때</li>
           </ul>
-          <h4>해결 방법</h4>
+          <br>
+          <h3>해결 방법</h3>
           <p><b>1. 에이징 (Aging)</b><br>
           대기 시간이 길어질수록 우선순위를 점차 높여주는 방식입니다. 오래 기다린 프로세스도 결국 실행될 수 있습니다.</p>
           <p><b>2. Round Robin 사용</b><br>모든 프로세스에게 공평하게 CPU 시간을 할당합니다.</p>
@@ -345,27 +358,26 @@ title: "운영체제 면접 대비"
           낮은 우선순위 프로세스가 자원을 점유한 상태에서, 높은 우선순위 프로세스가 해당 자원을 기다리는 상황이 발생할 수 있습니다.</p>
           <p><b>3. 우선순위 결정의 어려움</b><br>
           어떤 기준으로 우선순위를 정할지 판단하기 어렵고, 잘못 설정하면 시스템 효율이 떨어집니다.</p>
-          <h4>해결 방법</h4>
-          <div class="table-wrapper">
-            <table>
-              <thead>
-                <tr>
-                  <th>문제</th>
-                  <th>해결책</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>기아 현상</td>
-                  <td>에이징(Aging) - 대기 시간에 따라 우선순위 상승</td>
-                </tr>
-                <tr>
-                  <td>우선순위 역전</td>
-                  <td>우선순위 상속(Priority Inheritance)</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+          <br>
+          <h3>해결 방법</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>문제</th>
+                <th>해결책</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>기아 현상</td>
+                <td>에이징(Aging) - 대기 시간에 따라 우선순위 상승</td>
+              </tr>
+              <tr>
+                <td>우선순위 역전</td>
+                <td>우선순위 상속(Priority Inheritance)</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </details>
     <!--구분-->
@@ -373,36 +385,35 @@ title: "운영체제 면접 대비"
       <details>
         <summary style="font-size:1rem;"><b>Q4. FCFS, SJF, Round Robin 각각의 장단점을 비교해주세요.</b></summary>
         <div class="accordion-content">
-          <h4>해결 방법</h4>
-          <div class="table-wrapper">
-            <table>
-              <thead>
-                <tr>
-                  <th>알고리즘</th>
-                  <th>장점</th>
-                  <th>단점</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>FCFS</td>
-                  <td>구현 간단, 공정함(도착 순서)</td>
-                  <td>Convoy Effect, 평균 대기 시간 김</td>
-                </tr>
-                <tr>
-                  <td>SJF</td>
-                  <td>평균 대기 시간 최소</td>
-                  <td>기아 현상, 실행 시간 예측 어려움</td>
-                </tr>
-                <tr>
-                  <td>Round Robin</td>
-                  <td>응답 시간 빠름, 공정함</td>
-                  <td>컨텍스트 스위칭 오버헤드</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <h4>각 알고리즘 상세</h4>
+          <h3>해결 방법</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>알고리즘</th>
+                <th>장점</th>
+                <th>단점</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>FCFS</td>
+                <td>구현 간단, 공정함(도착 순서)</td>
+                <td>Convoy Effect, 평균 대기 시간 김</td>
+              </tr>
+              <tr>
+                <td>SJF</td>
+                <td>평균 대기 시간 최소</td>
+                <td>기아 현상, 실행 시간 예측 어려움</td>
+              </tr>
+              <tr>
+                <td>Round Robin</td>
+                <td>응답 시간 빠름, 공정함</td>
+                <td>컨텍스트 스위칭 오버헤드</td>
+              </tr>
+            </tbody>
+          </table>
+          <br>
+          <h3>각 알고리즘 상세</h3>
           <p><b>FCFS (First Come First Served)</b></p>
           <ul>
             <li>장점: 구현이 가장 단순하고, 먼저 온 순서대로 처리하므로 직관적입니다.</li>
@@ -418,31 +429,30 @@ title: "운영체제 면접 대비"
             <li>장점: 모든 프로세스가 공평하게 CPU를 사용하며, <b>대화형 시스템에 적합</b>합니다.</li>
             <li>단점: Time Quantum 설정이 중요하며, 잦은 <b>컨텍스트 스위칭 오버헤드</b>가 발생합니다.</li>
           </ul>
-          <h4>적합한 상황</h4>
-          <div class="table-wrapper">
-            <table>
-              <thead>
-                <tr>
-                  <th>상황</th>
-                  <th>적합한 알고리즘</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>단순한 배치 시스템</td>
-                  <td>FCFS</td>
-                </tr>
-                <tr>
-                  <td>실행 시간 예측 가능한 경우</td>
-                  <td>SJF</td>
-                </tr>
-                <tr>
-                  <td>대화형/시분할 시스템</td>
-                  <td>Round Robin</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+          <br>
+          <h3>적합한 상황</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>상황</th>
+                <th>적합한 알고리즘</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>단순한 배치 시스템</td>
+                <td>FCFS</td>
+              </tr>
+              <tr>
+                <td>실행 시간 예측 가능한 경우</td>
+                <td>SJF</td>
+              </tr>
+              <tr>
+                <td>대화형/시분할 시스템</td>
+                <td>Round Robin</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </details>
     <!--구분-->
