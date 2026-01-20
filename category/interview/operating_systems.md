@@ -277,7 +277,7 @@ title: "운영체제 면접 대비"
         <li>단점: 컨텍스트 스위칭 오버헤드 증가</li>
       </ul>
       <br>
-      <h3>비선점형 스케줄링</h4>
+      <h3>비선점형 스케줄링</h3>
       <p>프로세스가 <b>자발적으로 CPU를 반납</b>(종료 또는 I/O 대기)할 때까지 기다립니다.</p>
       <ul>
         <li>예시: FCFS, SJF (비선점형)</li>
@@ -309,14 +309,14 @@ title: "운영체제 면접 대비"
       <details>
         <summary style="font-size:1rem;"><b>Q1. Round Robin 스케줄링에서 Time Quantum이 너무 크거나 작으면 어떤 문제가 발생하나요?</b></summary>
         <div class="accordion-content">
-          <h4>Time Quantum이 너무 클 때</h4>
+          <h3>Time Quantum이 너무 클 때</h3>
           <ul>
             <li>FCFS와 동일하게 동작합니다.</li>
             <li>긴 프로세스가 CPU를 오래 점유하게 됩니다.</li>
             <li>응답 시간이 길어져 대화형 시스템에 부적합합니다.</li>
           </ul>
           <br>
-          <h3>Time Quantum이 너무 작을 때</h4>
+          <h3>Time Quantum이 너무 작을 때</h3>
           <ul>
             <li>컨텍스트 스위칭이 너무 자주 발생합니다.</li>
             <li>스위칭 오버헤드가 증가하여 실제 작업 시간보다 전환 시간이 더 많아질 수 있습니다.</li>
