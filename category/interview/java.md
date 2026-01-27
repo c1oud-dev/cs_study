@@ -1,16 +1,16 @@
 ---
 layout: default
-title: "Java Interview — 완벽 가이드"
+title: "Java 면접 대비"
 ---
 
 <p class="breadcrumb"><a href="/cs_study/home.html">🏠 홈으로</a></p>
 
 <section>
   <h2>자바 면접 대비</h2>
-  <p>구성: 📋 기본 면접 Q&A → 💡 추가 예상 질문 Q&A → 📚 자바 개념 요약 노트</p>
+  <p>구성: 📋 기본 면접 Q&A → 💡 추가 예상 질문 Q&A</p>
 </section>
 
-<details open>
+<details open class="section-box">
   <summary><span class="accordion-title">📋 기본 면접 Q&A</span> <span class="indicator">펼치기</span></summary>
   <div class="accordion-content">
 <details>
@@ -158,7 +158,7 @@ title: "Java Interview — 완벽 가이드"
   <div class="accordion-content">
     <p>가비지 컬렉션은 JVM이 더 이상 사용되지 않는 객체들을 자동으로 찾아서 메모리에서 정리해 주는 메커니즘입니다. 자바에서는 개발자가 new로 객체를 만들기만 하고, 그 객체를 더 이상 참조하지 않게 되면, JVM의 가비지 컬렉터가 그 객체를 “쓸모없는 쓰레기”로 판단하고 메모리를 회수합니다.</p>
     <p>JVM 힙 메모리는 보통 Young Generation과 Old Generation으로 나뉘어 관리되고, 새로 생성된 객체는 Young 쪽에 먼저 들어갑니다. Young 영역에서 필요 없어진 객체들을 치우는 작업을 Minor GC, 오래 살아남아 Old 영역으로 올라간 객체들까지 대상으로 하는 큰 단위 수집을 Major GC 또는 Full GC라고 부릅니다.</p>
-    <p>이 덕분에 자바 개발자는 C처럼 메모리를 일일이 해제하지 않아도 된다는 큰 장점이 있지만, 가비지 컬렉션이 실행되는 순간에는 Stop-the-world라고 해서 애플리케이션이 잠깐 멈출 수 있다는 비용도 있습니다. 그래서 실무에서는 이 자동 메모리 관리가 주는 편리함을 활용하면서도, 멈춤 시간을 줄이기 위해 GC 방식이나 힙 크기를 튜닝하는 작업이 중요해집니다.</p>
+    <p>이 덕분에 자바 개발자는 C처럼 메모리를 일일이 해제하지 않아도 된다는 큰 장점이 있지만, 가비지 컬렉션이 실행되는 순간에는 Stop-the-world라고 해서 애플리케이션이 잠깐 멈출 수 있다는 단점도 있습니다. 그래서 실무에서는 이 자동 메모리 관리가 주는 편리함을 활용하면서도, 멈춤 시간을 줄이기 위해 GC 방식이나 힙 크기를 튜닝하는 작업이 중요해집니다.</p>
   </div>
 </details>
 
@@ -234,7 +234,7 @@ title: "Java Interview — 완벽 가이드"
   </div>
 </details>
 
-<details>
+<details class="section-box">
   <summary><span class="accordion-title">💡 추가 예상 질문 Q&A</span> <span class="indicator">펼치기</span></summary>
   <div class="accordion-content">
 <details>
@@ -300,178 +300,5 @@ title: "Java Interview — 완벽 가이드"
   </div>
 </details>
 
-  </div>
-</details>
-
-<details>
-  <summary><span class="accordion-title">📚 자바 개념 요약 노트</span> <span class="indicator">펼치기</span></summary>
-  <div class="accordion-content">
-    <h3>🏗 기본 개념</h3>
-    <h4>자바 플랫폼</h4>
-    <ul>
-    <li><b>JVM</b>: 바이트코드 실행 환경</li>
-    <li><b>JRE</b>: JVM + 실행 라이브러리</li>
-    <li><b>JDK</b>: JRE + 개발 도구</li>
-    </ul>
-    <h4>데이터 타입</h4>
-    <ul>
-    <li><b>기본 타입</b>: byte, short, int, long, float, double, char, boolean</li>
-    <li><b>참조 타입</b>: 배열, 클래스, 인터페이스, 열거형</li>
-    </ul>
-    <h4>메모리 구조</h4>
-    <ul>
-    <li><b>메서드 영역</b>: 클래스 정보, static 변수</li>
-    <li><b>힙 영역</b>: 객체, 인스턴스 변수</li>
-    <li><b>스택 영역</b>: 지역 변수, 메서드 매개변수</li>
-    <li><b>PC 레지스터</b>: 현재 실행 명령어 주소</li>
-    <li><b>네이티브 메서드 스택</b>: JNI 메서드</li>
-    </ul>
-    <h3>⚙️ 객체지향</h3>
-    <h4>4대 특징</h4>
-    <ul>
-    <li><b>캡슐화</b>: 데이터 은닉, 접근 제한자</li>
-    <li><b>상속</b>: extends, 코드 재사용</li>
-    <li><b>다형성</b>: 오버로딩/오버라이딩, 업캐스팅</li>
-    <li><b>추상화</b>: abstract, interface</li>
-    </ul>
-    <h4>접근 제한자</h4>
-    <ul>
-    <li><b>private</b>: 클래스 내부만</li>
-    <li><b>default</b>: 패키지 내부만  </li>
-    <li><b>protected</b>: 패키지 + 상속 관계</li>
-    <li><b>public</b>: 모든 곳</li>
-    </ul>
-    <h4>클래스 관계</h4>
-    <ul>
-    <li><b>상속</b>: IS-A 관계 (extends)</li>
-    <li><b>구현</b>: 인터페이스 구현 (implements)</li>
-    <li><b>포함</b>: HAS-A 관계 (멤버 변수)</li>
-    </ul>
-    <h3>📦 컬렉션 프레임워크</h3>
-    <h4>계층 구조</h4>
-    <pre><code>Collection
-    ├── List (순서O, 중복O)
-    │   ├── ArrayList (배열 기반)
-    │   ├── LinkedList (노드 기반)
-    │   └── Vector (동기화)
-    ├── Set (순서X, 중복X)
-    │   ├── HashSet (해시 테이블)
-    │   ├── TreeSet (정렬)
-    │   └── LinkedHashSet (입력 순서)
-    └── Queue (FIFO)
-        ├── LinkedList
-        └── PriorityQueue (우선순위)
-    </pre></code>
-    <pre><code>Map (키-값 쌍)
-    ├── HashMap (해시 테이블)
-    ├── TreeMap (정렬)
-    ├── LinkedHashMap (입력 순서)
-    └── Hashtable (동기화)
-    </pre></code>
-    <h4>성능 비교</h4>
-    <table>
-    <thead><tr><th>구분</th><th>검색</th><th>삽입/삭제</th><th>정렬</th><th>동기화</th></tr></thead>
-    <tbody>
-    <tr><td>ArrayList</td><td>O(1)</td><td>O(n)</td><td>수동</td><td>X</td></tr>
-    <tr><td>LinkedList</td><td>O(n)</td><td>O(1)</td><td>수동</td><td>X</td></tr>
-    <tr><td>HashMap</td><td>O(1)</td><td>O(1)</td><td>X</td><td>X</td></tr>
-    <tr><td>TreeMap</td><td>O(log n)</td><td>O(log n)</td><td>O</td><td>X</td></tr>
-    </tbody>
-    </table>
-    <h3>🧵 동시성</h3>
-    <h4>스레드 생성</h4>
-    <ul>
-    <li><b>Thread 상속</b>: class MyThread extends Thread</li>
-    <li><b>Runnable 구현</b>: class MyTask implements Runnable</li>
-    <li><b>람다 표현식</b>: new Thread(() -&gt; {...}).start()</li>
-    </ul>
-    <h4>동기화 방법</h4>
-    <ul>
-    <li><b>synchronized</b>: 메서드/블록 동기화</li>
-    <li><b>volatile</b>: 가시성 보장</li>
-    <li><b>Lock</b>: 명시적 락 제어</li>
-    <li><b>Atomic</b>: 원자적 연산</li>
-    </ul>
-    <h4>스레드 상태</h4>
-    <ul>
-    <li>NEW → RUNNABLE → WAITING/BLOCKED → TERMINATED</li>
-    </ul>
-    <h3>💾 메모리 관리</h3>
-    <h4>가비지 컬렉션</h4>
-    <ul>
-    <li><b>Young Generation</b>: Eden, Survivor0, Survivor1</li>
-    <li><b>Old Generation</b>: Tenured</li>
-    <li><b>Permanent</b>: 클래스 메타데이터 (Java 8+에서 Metaspace)</li>
-    </ul>
-    <h4>GC 종류</h4>
-    <ul>
-    <li><b>Minor GC</b>: Young Generation 대상</li>
-    <li><b>Major GC</b>: Old Generation 대상  </li>
-    <li><b>Full GC</b>: 전체 힙 대상</li>
-    </ul>
-    <h3>📝 예외 처리</h3>
-    <h4>예외 계층</h4>
-    <pre><code>Throwable
-    ├── Error (시스템 오류)
-    └── Exception
-        ├── Checked Exception (컴파일 시 확인)
-        └── RuntimeException (실행 시 발생)
-    </code></pre>
-    <h4>처리 방법</h4>
-    <ul>
-    <li><b>try-catch</b>: 예외 처리</li>
-    <li><b>throws</b>: 예외 전파</li>
-    <li><b>finally</b>: 정리 코드</li>
-    <li><b>try-with-resources</b>: 자동 자원 해제</li>
-    </ul>
-    <h3>🔧 자바 8+ 특징</h3>
-    <h4>함수형 프로그래밍</h4>
-    <ul>
-    <li><b>람다</b>: (parameter) -&gt; expression</li>
-    <li><b>메서드 참조</b>: Class::method</li>
-    <li><b>함수형 인터페이스</b>: @FunctionalInterface</li>
-    </ul>
-    <h4>스트림 API</h4>
-    <pre><code class="language-java">list.stream()
-        .filter(x -&gt; x &gt; 10)
-        .map(x -&gt; x * 2)
-        .collect(Collectors.toList());
-    </code></pre>
-    <h4>Optional</h4>
-    <ul>
-    <li><b>생성</b>: Optional.of(), Optional.empty()</li>
-    <li><b>확인</b>: isPresent(), isEmpty()</li>
-    <li><b>처리</b>: orElse(), orElseThrow()</li>
-    </ul>
-    <h3>🎯 성능 최적화</h3>
-    <h4>문자열 처리</h4>
-    <ul>
-    <li>단순 연결: String</li>
-    <li>동기화 필요: StringBuffer</li>
-    <li>단일 스레드: StringBuilder</li>
-    </ul>
-    <h4>컬렉션 선택</h4>
-    <ul>
-    <li>빠른 검색: HashMap</li>
-    <li>정렬 필요: TreeMap  </li>
-    <li>순서 유지: LinkedHashMap</li>
-    <li>스레드 안전: ConcurrentHashMap</li>
-    </ul>
-    <h4>메모리 최적화</h4>
-    <ul>
-    <li><b>불변 객체</b>: 캐시 활용 가능</li>
-    <li><b>지연 초기화</b>: 필요 시점에 생성</li>
-    <li><b>약한 참조</b>: WeakReference 사용</li>
-    <li><b>풀링</b>: 객체 재사용</li>
-    </ul>
-    <h3>💡 면접 팁</h3>
-    <ol>
-    <li><b>기본기 탄탄히</b>: OOP 4원칙과 자바 기본 문법 완벽 숙지</li>
-    <li><b>예시 코드</b>: 설명과 함께 간단한 코드 작성 능력 보여주기</li>
-    <li><b>실무 경험</b>: 프로젝트에서 사용한 라이브러리나 패턴 언급</li>
-    <li><b>성능 고려</b>: 시간복잡도와 메모리 사용량 분석</li>
-    <li><b>최신 동향</b>: 자바 8+ 특징과 스프링 생태계 이해</li>
-    <li><b>트러블슈팅</b>: 실제 겪은 문제와 해결 과정 준비</li>
-    </ol>
   </div>
 </details>
