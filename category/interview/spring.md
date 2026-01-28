@@ -11,7 +11,7 @@ title: "Spring Interview"
 </section>
 
 <!-- ① 기본 면접 Q&A -->
-<details open>
+<details open class="section-box">
   <summary><span class="accordion-title">📋 기본 면접 Q&amp;A</span> <span class="indicator">펼치기</span></summary>
   <div class="accordion-content">
 <details>
@@ -244,7 +244,7 @@ title: "Spring Interview"
 </details>
 
 <!-- ② 추가 예상 질문 Q&A -->
-<details>
+<details class="section-box">
   <summary><span class="accordion-title">💡 추가 예상 질문 Q&amp;A</span> <span class="indicator">펼치기</span></summary><div class="accordion-content">
     <details>
       <summary style="font-size:1rem;"><b>Q17. 스프링의 빈 생명주기(Bean Lifecycle)를 설명해주세요.</b></summary>
